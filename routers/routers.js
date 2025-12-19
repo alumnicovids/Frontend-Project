@@ -10,7 +10,7 @@ document.addEventListener("click", (e) => {
 
 const routes = {
   "/": "/pages/home.html",
-  "/luxury-villas": "/pages/luxury.html",
+  "/couple-villas": "/pages/couple.html",
   "/family-villas": "/pages/family.html",
   "/promo-villas": "/pages/promo.html",
   "/Detailed-Property": "/pages/detail.html",
@@ -18,6 +18,7 @@ const routes = {
   "/my-booking": "/pages/my-booking.html",
   "/setting": "/pages/setting.html",
   "/wishlist": "/pages/whislist.html",
+  "/compare": "/pages/compare.html",
 };
 
 async function redirect() {
