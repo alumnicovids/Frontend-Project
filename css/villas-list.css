@@ -115,14 +115,14 @@
 }
 
 .price-container .price {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--accent-clr);
 }
 
 .price-container .unit {
   color: var(--secondary-text-clr);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .action-buttons {
