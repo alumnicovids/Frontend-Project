@@ -5,7 +5,7 @@
   --line-clr: #42434a;
   --hover-clr: #222533;
   --text-clr: #e6e6ef;
-  --accent-clr: #5e63ff;
+  --accent-clr: #792d8a;
   --secondary-text-clr: #b0b3c1;
 }
 
@@ -58,11 +58,12 @@ body {
   }
 }
 
-#sidebar ul li:active a {
+#sidebar ul li.active > a {
   color: var(--accent-clr);
-  i {
-    fill: var(--accent-clr);
-  }
+}
+
+#sidebar ul li.active > a i {
+  fill: var(--accent-clr);
 }
 
 #sidebar a,
