@@ -10,8 +10,8 @@ document.addEventListener("click", (e) => {
 
 const routes = {
   "/": "/pages/home.html",
-  "/luxury-villas": "/pages/luxury.html",
-  "/family-villas": "/pages/family.html",
+  "/Couple-villas": "/pages/Couple.html",
+  "/family-villas": "/pages/family.html", 
   "/promo-villas": "/pages/promo.html",
   "/Detailed-Property": "/pages/detail.html",
   "/Booking": "/pages/booking.html",
