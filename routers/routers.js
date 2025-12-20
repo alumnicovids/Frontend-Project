@@ -1,13 +1,3 @@
-document.addEventListener("click", (e) => {
-  const link = e.target.closest(".nav-link");
-  if (link) {
-    e.preventDefault();
-    const href = link.getAttribute("href");
-    window.history.pushState({}, "", href);
-    redirect();
-  }
-});
-
 const routes = {
   "/": "/pages/home.html",
   "/couple-villas": "/pages/couple.html",
@@ -22,12 +12,13 @@ const routes = {
 };
 
 async function redirect() {
-  const path = window.location.pathname;
+  const hash = window.location.hash || "#/";
+  const path = hash.slice(1);
   const route = routes[path] || routes["/"];
 
   try {
     const response = await fetch(route);
-    if (!response.ok) throw new Error("Page not found");
+    if (!response.ok) throw new Error();
     const html = await response.text();
     document.getElementById("content").innerHTML = html;
   } catch (error) {
@@ -36,5 +27,5 @@ async function redirect() {
   }
 }
 
-window.onpopstate = redirect;
+window.addEventListener("hashchange", redirect);
 window.addEventListener("DOMContentLoaded", redirect);
