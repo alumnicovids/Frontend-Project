@@ -21,6 +21,22 @@ async function redirect() {
     if (!response.ok) throw new Error();
     const html = await response.text();
     document.getElementById("content").innerHTML = html;
+
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      const parentLi = link.parentElement;
+      parentLi.classList.remove("active");
+
+      if (link.getAttribute("href") === hash) {
+        parentLi.classList.add("active");
+
+        const subMenu = link.closest(".sub-menu");
+        if (subMenu) {
+          subMenu.classList.add("show");
+          const dropdownBtn = subMenu.previousElementSibling;
+          if (dropdownBtn) dropdownBtn.classList.add("rotate");
+        }
+      }
+    });
   } catch (error) {
     document.getElementById("content").innerHTML =
       "<h2>404</h2><p>Page not found.</p>";
