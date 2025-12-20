@@ -21,6 +21,13 @@ async function redirect() {
     if (!response.ok) throw new Error();
     const html = await response.text();
     document.getElementById("content").innerHTML = html;
+
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      link.parentElement.classList.remove("active");
+      if (link.getAttribute("href") === hash) {
+        link.parentElement.classList.add("active");
+      }
+    });
   } catch (error) {
     document.getElementById("content").innerHTML =
       "<h2>404</h2><p>Page not found.</p>";
