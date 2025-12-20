@@ -1,9 +1,9 @@
-/* --- Header Profil (Aksen Ungu LuxeNest) --- */
 .profile-header {
   background: var(--hover-clr);
   margin: -30px -7% 30px -7%;
   padding: 40px 7%;
   color: var(--text-clr);
+  font-family: Poppins;
 }
 
 .user-info {
@@ -15,7 +15,7 @@
 .avatar-large {
   width: 72px;
   height: 72px;
-  background-color: #feba02; /* Kuning aksen untuk kontras */
+  background-color: #feba02; 
   color: var(--base-clr);
   display: flex;
   align-items: center;
@@ -33,7 +33,6 @@
   margin: 0 !important;
 }
 
-/* --- Container Utama (Layout 2 Kolom) --- */
 .profile-edit-container {
   display: flex;
   gap: 40px;
@@ -45,7 +44,6 @@
   border-radius: 12px;
 }
 
-/* --- Sisi Kiri: Foto Profil --- */
 .photo-section {
   flex: 0 0 250px;
   text-align: center;
@@ -71,7 +69,6 @@
   object-fit: cover;
 }
 
-/* Efek Hover Tombol Pilih Foto */
 .btn-select-photo {
   width: 100%;
   padding: 10px;
@@ -100,7 +97,6 @@
   text-align: left;
 }
 
-/* --- Sisi Kanan: Detail Informasi --- */
 .info-section {
   flex: 1;
 }
@@ -142,9 +138,8 @@
   color: var(--text-clr);
 }
 
-/* Efek Hover Link Ubah/Tambah */
 .edit-link {
-  color: #00a86b; /* Hijau sesuai referensi */
+  color: #00a86b; 
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
@@ -169,7 +164,6 @@
   margin-right: 10px;
 }
 
-/* --- Navigasi Menu Lainnya (Jika Ada) --- */
 .setting-menu li {
   display: flex;
   justify-content: space-between;
@@ -182,7 +176,7 @@
 
 .setting-menu li:hover {
   background-color: var(--base-clr);
-  padding-left: 20px; /* Efek bergeser */
+  padding-left: 20px; 
 }
 
 .setting-menu li:hover span {
@@ -194,7 +188,6 @@
   transform: translateX(5px);
 }
 
-/* --- Responsif Mobile --- */
 @media (max-width: 800px) {
   .profile-edit-container {
     flex-direction: column;
