@@ -23,9 +23,18 @@ async function redirect() {
     document.getElementById("content").innerHTML = html;
 
     document.querySelectorAll(".nav-link").forEach((link) => {
-      link.parentElement.classList.remove("active");
+      const parentLi = link.parentElement;
+      parentLi.classList.remove("active");
+
       if (link.getAttribute("href") === hash) {
-        link.parentElement.classList.add("active");
+        parentLi.classList.add("active");
+
+        const subMenu = link.closest(".sub-menu");
+        if (subMenu) {
+          subMenu.classList.add("show");
+          const dropdownBtn = subMenu.previousElementSibling;
+          if (dropdownBtn) dropdownBtn.classList.add("rotate");
+        }
       }
     });
   } catch (error) {
