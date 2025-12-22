@@ -188,10 +188,13 @@
   color: #00a86b !important;
   font-weight: 800;
   font-size: 1.1rem;
+  opacity: 0.7;
 }
 
 .price-lose {
   color: #ff4d4d !important;
+  font-weight: 800;
+  font-size: 1.1rem;
   opacity: 0.7;
 }
 
@@ -200,6 +203,17 @@
   font-size: 18px;
   vertical-align: middle;
   margin-left: 5px;
+}
+
+.luxury-compare-table td i {
+  font-size: 1.2rem;
+  vertical-align: middle;
+  margin-right: 8px; 
+}
+
+.luxury-compare-table tr:not(.section-divider):hover td {
+  background: rgba(255, 255, 255, 0.03);
+  transition: background 0.3s ease;
 }
 
 .btn-select {
