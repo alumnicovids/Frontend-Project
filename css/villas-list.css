@@ -6,7 +6,7 @@
 }
 
 .card {
-  background-color: var(--hover-clr);
+  background-color: var(--base-clr);
   border-radius: 1.5rem;
   overflow: hidden;
   border: 1px solid var(--line-clr);
