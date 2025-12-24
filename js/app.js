@@ -68,7 +68,7 @@ function renderVillas(filterType = null) {
           return `
         <article class="card">
           <div class="card-image">
-            <img src="${villa.image}" alt="${villa.name}" />
+            <img src="${villa.image[0]}" alt="${villa.name}" />
             ${
               hasPromo
                 ? `<span class="promo-badge">${villa.promo.disc} OFF</span>`
@@ -86,7 +86,9 @@ function renderVillas(filterType = null) {
                 <span>${villa.rating}</span>
               </div>
             </div>
-            <a href="#/Detailed-Property" class="villa-title">${villa.name}</a>
+            <a href="#/Detailed-Property?name=${encodeURIComponent(
+              villa.name
+            )}" class="villa-title">${villa.name}</a>
             <p class="location">
               <i class="material-symbols-outlined">location_on</i>
               ${villa.location}
@@ -120,7 +122,9 @@ function renderVillas(filterType = null) {
                 <button class="compare-btn" title="Compare">
                   <i class="material-symbols-outlined">compare_arrows</i>
                 </button>
-                <button class="book-now">Book Now</button>
+                <button class="book-now">
+                  <a href="#/Booking" class="nav-link">Book Now</a>
+                </button>
               </div>
             </div>
           </div>
@@ -130,6 +134,169 @@ function renderVillas(filterType = null) {
         .join("");
     })
     .catch((error) => console.error("Error loading JSON:", error));
+}
+
+// Tambahkan/Update fungsi ini di app.js untuk mendukung data baru
+function renderVillaDetail() {
+  const params = new URLSearchParams(window.location.hash.split("?")[1]);
+  const villaName = params.get("name");
+  const container = document.getElementById("villa-detail-content");
+
+  if (!container || !villaName) return;
+
+  fetch("/JSON/villas.json")
+    .then((res) => res.json())
+    .then((data) => {
+      const villa = data.find((v) => v.name === villaName);
+
+      if (villa) {
+        const images = Array.isArray(villa.image) ? villa.image : [villa.image];
+
+        container.innerHTML = `
+          <div class="detail-header">
+            <h2>${villa.name}</h2>
+            <p class="location"><i class="material-symbols-outlined">location_on</i> ${
+              villa.location
+            }</p>
+          </div>
+
+          <div class="gallery-grid">
+            ${images
+              .map(
+                (img) => `
+            <img src="${img}" alt="${villa.name}" tabindex="0">
+            `
+              )
+              .join("")}
+          </div>
+
+          <div class="info-section">
+            <div class="main-info">
+              <h3>Description</h3>
+              <p>${villa.detail.description}</p>
+
+              <div class="amenities-summary">
+                <span><i class="material-symbols-outlined">bed</i> ${
+                  villa.amenities.bed
+                } Beds</span>
+                <span><i class="material-symbols-outlined">bathtub</i> ${
+                  villa.amenities.bathtub
+                } Baths</span>
+                ${
+                  villa.amenities.pool
+                    ? '<span><i class="material-symbols-outlined">pool</i> Private Pool</span>'
+                    : ""
+                }
+              </div>
+            </div>
+
+            <div class="sidebar-info">
+              <div class="price-card">
+                <p class="price-range">${villa.detail.priceRange}</p>
+                <p class="room-type">${villa.detail.roomType}</p>
+                <button class="book-now-btn">Book This Villa</button>
+              </div>
+
+              <div class="policy-card">
+                <p><strong>Check-in:</strong> ${villa.detail.checkInTime}</p>
+                <p><strong>Check-out:</strong> ${villa.detail.checkOutTime}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="nearby-section">
+            <h3>Nearby Places</h3>
+            <ul>
+              ${villa.detail.nearbyPlaces
+                .map((place) => `<li>${place}</li>`)
+                .join("")}
+            </ul>
+          </div>
+        `;
+      }
+
+      const observerOptions = {
+        root: document.querySelector(".gallery-grid"),
+        threshold: 0.7, // Gambar harus terlihat 70% di area scroll untuk menjadi aktif
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Hapus class active dari semua gambar
+            entry.target.parentElement
+              .querySelectorAll("img")
+              .forEach((img) => {
+                img.classList.remove("active");
+              });
+            // Tambahkan ke yang sedang di tengah
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+
+      // Daftarkan semua gambar ke observer
+      document.querySelectorAll(".gallery-grid img").forEach((img) => {
+        observer.observe(img);
+      });
+
+      const gallery = document.querySelector(".gallery-grid");
+      if (gallery) {
+        setupInfiniteScroll(gallery);
+      }
+    });
+}
+
+function setupInfiniteScroll(gallery) {
+  const items = [...gallery.querySelectorAll("img")];
+  if (items.length < 2) return;
+
+  const firstClone = items[0].cloneNode(true);
+  const lastClone = items[items.length - 1].cloneNode(true);
+
+  gallery.appendChild(firstClone);
+  gallery.insertBefore(lastClone, items[0]);
+
+  const itemWidth = items[0].offsetWidth + 20;
+  gallery.scrollLeft = itemWidth;
+
+  gallery.addEventListener("scroll", () => {
+    const scrollPos = gallery.scrollLeft;
+    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+
+    // Saat mencapai ujung kiri (clone terakhir)
+    if (scrollPos <= 0) {
+      gallery.style.scrollBehavior = "auto"; // Matikan smooth agar tidak terlihat bergeser balik
+      gallery.scrollLeft =
+        gallery.scrollWidth - (gallery.clientWidth + itemWidth);
+    }
+    // Saat mencapai ujung kanan (clone pertama)
+    else if (scrollPos >= maxScroll) {
+      gallery.style.scrollBehavior = "auto"; // Matikan smooth
+      gallery.scrollLeft = itemWidth;
+    }
+    // Kembalikan ke smooth untuk interaksi normal
+    else {
+      gallery.style.scrollBehavior = "smooth";
+    }
+  });
+
+  // Observer untuk update class active
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gallery
+            .querySelectorAll("img")
+            .forEach((img) => img.classList.remove("active"));
+          entry.target.classList.add("active");
+        }
+      });
+    },
+    { root: gallery, threshold: 0.6 }
+  );
+
+  gallery.querySelectorAll("img").forEach((img) => observer.observe(img));
 }
 
 document.addEventListener("click", (e) => {

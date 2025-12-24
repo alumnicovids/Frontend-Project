@@ -191,3 +191,8 @@
   font-weight: 700;
   color: var(--accent-clr);
 }
+
+.book-now a {
+  text-decoration: none;
+  color: var(--base-clr);
+}

@@ -10,10 +10,54 @@
       "pool": true
     },
     "price": 2025000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745599491.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745599491.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745599887.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745600118.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745600285.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745600438.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745600691.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745600927.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745601297.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745601535.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745601764.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745601910.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745602123.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745602425.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745602774.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745603072.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745603293.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745603679.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745604136.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/746707041.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/746707203.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/746707256.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/746707757.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/746708489.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/746708976.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/747814295.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp2.025.000 - Rp2.500.000",
+      "roomType": "1 Bedroom Private Pool Villa",
+      "description": "Nikmati pengalaman menginap mewah di Le Ayu Villa Canggu. Villa ini menawarkan privasi total dengan desain tropis modern, ruang tamu terbuka, dan kolam renang pribadi yang dikelilingi taman asri.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "nearbyPlaces": [
+        "Pantai Berawa (10 menit)",
+        "Finn's Beach Club (12 menit)",
+        "Atlas Beach Fest (12 menit)"
+      ],
+      "cancellationPolicy": "Pembatalan gratis hingga 48 jam sebelum tanggal kedatangan.",
+      "extraServices": [
+        "Floating Breakfast",
+        "Airport Transfer",
+        "Massage & Spa in Villa"
+      ]
     }
   },
   {
@@ -27,10 +71,36 @@
       "pool": true
     },
     "price": 844700,
-    "image": "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381830.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381830.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381768.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381811.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381819.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381823.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381824.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381829.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381839.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381844.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381845.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777384848.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777384855.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777726398.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777728603.jpg"
+    ],
     "promo": {
       "status": "active",
       "disc": "10%"
+    },
+    "detail": {
+      "priceRange": "Rp844.700 - Rp1.200.000",
+      "roomType": "Suite with Private Pool & Gym Access",
+      "description": "Terletak di tengah sawah yang tenang, Sake Bali Suites menawarkan udara bersih dan pemandangan hijau yang menyegarkan jiwa.",
+      "checkInTime": "14:00 - 23:00 WITA",
+      "checkOutTime": "06:00 - 12:00 WITA",
+      "nearbyPlaces": [
+        "Tegallalang Rice Terrace (5.3 km)",
+        "Tirta Empul Temple (2.0 km)"
+      ]
     }
   },
   {
@@ -39,15 +109,46 @@
     "rating": 4.8,
     "location": "Tumbak Bayuh, Bali",
     "amenities": {
-      "bed": 3,
+      "bed": 4,
       "bathtub": 3,
       "pool": true
     },
-    "price": 3952665,
-    "image": "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093295.jpg",
+    "price": 4500000,
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093295.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587092964.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093044.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093119.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093130.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093150.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093290.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093292.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093294.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093298.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093451.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093454.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093455.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093456.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093650.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587124376.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/600625276.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/752104668.jpg",
+      "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/752105435.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp4.500.000 - Rp6.000.000",
+      "roomType": "4 Bedroom Luxury Villa",
+      "description": "Villa megah dengan 5 kamar tidur yang luas, lounge unik, dan taman tropis yang magis. Sangat cocok untuk grup besar atau keluarga.",
+      "checkInTime": "15:00 - 22:00 WITA",
+      "checkOutTime": "07:00 - 12:00 WITA",
+      "nearbyPlaces": [
+        "Metis Restaurant (0.2 km)",
+        "Love Anchor Canggu (2.5 km)"
+      ]
     }
   },
   {
@@ -61,10 +162,66 @@
       "pool": true
     },
     "price": 4192799,
-    "image": "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487195.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487195.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487162.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487164.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487175.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487176.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487178.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487180.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487182.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487184.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487189.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487190.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487191.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487192.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487193.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487194.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487195.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487196.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487197.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487198.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487199.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487200.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487201.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487202.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487203.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487204.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487207.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487215.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487218.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487219.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487220.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487221.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487222.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487223.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487224.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487225.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487226.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487228.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487229.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487230.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487231.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487234.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487236.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487237.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487239.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487240.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487241.jpg",
+      "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487242.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp4.192.799 - Rp5.500.000",
+      "roomType": "4 Bedroom Family Villa",
+      "description": "Hunian luas dengan arsitektur terbuka yang memadukan kenyamanan modern dan sentuhan tradisional Bali, cocok untuk liburan keluarga besar.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "nearbyPlaces": ["La Brisa Bali (1.8 km)", "Pantai Echo (2.0 km)"]
     }
   },
   {
@@ -78,10 +235,52 @@
       "pool": true
     },
     "price": 4500000,
-    "image": "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525944.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525944.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525874.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525940.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525950.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525953.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525974.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525981.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525985.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525990.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526000.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526006.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526009.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526014.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526015.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526021.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526023.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526024.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526029.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526033.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526038.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526039.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526043.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526045.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526049.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526054.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526056.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526060.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526066.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526077.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526081.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526084.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526089.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766526095.jpg"
+    ],
     "promo": {
       "status": "active",
       "disc": "15%"
+    },
+    "detail": {
+      "priceRange": "Rp4.500.000 - Rp6.200.000",
+      "roomType": "Luxury 5 Bedroom Villa",
+      "description": "Permata tersembunyi dengan 5 kamar tidur mewah. Menawarkan ketenangan total dengan fasilitas kolam renang infinity yang menghadap taman tropis.",
+      "checkInTime": "15:00 WITA",
+      "checkOutTime": "11:00 WITA",
+      "nearbyPlaces": ["Pantai Pererenan (1.5 km)", "Baked Pererenan (0.8 km)"]
     }
   },
   {
@@ -95,10 +294,39 @@
       "pool": true
     },
     "price": 2300000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/Sojourn/642183191.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642183191.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642183294.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642207282.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642207297.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642207309.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642216969.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642216978.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642216988.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642216990.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642217001.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642217025.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/642563810.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/757472947.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/757472959.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/757472978.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/757472994.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Sojourn/757473009.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp2.300.000 - Rp2.800.000",
+      "roomType": "2 Bedroom Private Sanctuary",
+      "description": "Terletak di Mengwi yang tenang, Sojourn menawarkan pelarian romantis dengan desain minimalis yang elegan dan pemandangan sawah.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "nearbyPlaces": [
+        "Pura Taman Ayun (3.5 km)",
+        "Sangeh Monkey Forest (12 km)"
+      ]
     }
   },
   {
@@ -112,10 +340,68 @@
       "pool": true
     },
     "price": 2800000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973372.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973372.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793970532.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793970807.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793971023.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793971089.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793971162.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793971304.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793971625.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793971717.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793971823.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972043.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972165.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972365.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972374.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972466.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972523.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972579.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972636.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972651.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972707.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972711.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972755.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972769.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972822.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793972864.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973112.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973167.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973238.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973328.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973576.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973625.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973705.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973753.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973779.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973795.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973805.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973846.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973878.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973915.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973917.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973967.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973988.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793974133.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793974149.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793974162.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793974200.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp2.800.000 - Rp3.200.000",
+      "roomType": "3 Bedroom Modern Tropical Villa",
+      "description": "Vila bergaya tropis modern di lokasi strategis Canggu. Memiliki ruang tamu semi-terbuka yang luas untuk menikmati udara Bali.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "11:00 WITA",
+      "nearbyPlaces": [
+        "Mason Restaurant (1.2 km)",
+        "Pantai Batu Bolong (1.5 km)"
+      ]
     }
   },
   {
@@ -129,10 +415,39 @@
       "pool": true
     },
     "price": 2000000,
-    "image": "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086206.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086206.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086114.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086119.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086128.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086139.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086144.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086151.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086174.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086191.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086195.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086210.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086214.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/773023501.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/773033809.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/773214948.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/773372492.jpg",
+      "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/781130666.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp2.000.000 - Rp2.500.000",
+      "roomType": "Resort Style 2 Bedroom Villa",
+      "description": "Rasakan suasana pedesaan Bali yang otentik di Kaba-Kaba. Resort ini menawarkan ketenangan jauh dari keramaian dengan pelayanan personal.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "nearbyPlaces": [
+        "Tanah Lot (15 menit berkendara)",
+        "Canggu Center (20 menit berkendara)"
+      ]
     }
   },
   {
@@ -146,10 +461,48 @@
       "pool": true
     },
     "price": 1200000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166831.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166831.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166469.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166585.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166626.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166641.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166655.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166668.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166682.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166696.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166709.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166725.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166741.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166751.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166762.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166769.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166777.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166791.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166798.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166816.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166826.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166843.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166855.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166866.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166882.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166891.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166901.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166913.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166927.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793167059.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp1.200.000 - Rp1.500.000",
+      "roomType": "Cozy 1 Bedroom Villa",
+      "description": "Pilihan sempurna untuk pasangan. Villa yang compact namun lengkap dengan vibra Canggu yang kental dan kolam renang pribadi.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "11:00 WITA",
+      "nearbyPlaces": ["Obsidian Canggu (0.5 km)", "Atlas Beach Fest (2.2 km)"]
     }
   },
   {
@@ -163,10 +516,61 @@
       "pool": true
     },
     "price": 1500000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196063.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196063.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756139986.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756140341.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756140359.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756140389.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756140434.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756140565.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756161593.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756169756.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756169757.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756169761.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756169765.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187090.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187107.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187119.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187134.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187147.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187168.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187179.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187198.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187214.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187217.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756187254.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756195842.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756195854.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756195867.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756195889.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756195910.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756195939.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756195965.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196002.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196023.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196063.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196089.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196109.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196142.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196162.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196181.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196196.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196216.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196238.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196258.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp1.500.000 - Rp2.200.000",
+      "roomType": "Spacious 5 Bedroom Boutique Villa",
+      "description": "Meskipun memiliki 5 kamar, Villa Fleur tetap mempertahankan suasana hangat dan intim. Desain interior yang cantik sangat 'Instagrammable'.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "nearbyPlaces": ["Milk & Madu (0.9 km)", "Pantai Berawa (1.2 km)"]
     }
   },
   {
@@ -180,10 +584,43 @@
       "pool": true
     },
     "price": 1000000,
-    "image": "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536715580.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536715580.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712869.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712926.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712930.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712933.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712934.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712938.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712939.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712940.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712942.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712943.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712944.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712953.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712960.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712985.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712990.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712991.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712992.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712993.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536712994.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536713585.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536713595.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536713596.jpg",
+      "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536716624.jpg"
+    ],
     "promo": {
       "status": "active",
       "disc": "20%"
+    },
+    "detail": {
+      "priceRange": "Rp800.000 - Rp1.200.000",
+      "roomType": "Multi-room Guesthouse",
+      "description": "Akomodasi yang ekonomis untuk grup besar atau keluarga di pusat Canggu. Menawarkan kenyamanan rumah dengan fasilitas kolam bersama.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "nearbyPlaces": ["Canggu Deli (0.3 km)", "Finns Recreation Club (0.6 km)"]
     }
   },
   {
@@ -197,10 +634,38 @@
       "pool": true
     },
     "price": 1400000,
-    "image": "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175078.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175078.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175136.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175141.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175146.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175156.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175159.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175170.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175175.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175186.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175191.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175193.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175196.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175200.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175207.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175210.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175214.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175220.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175224.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175229.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp1.400.000 - Rp1.800.000",
+      "roomType": "2 Bedroom Villa in Pererenan",
+      "description": "Tempat peristirahatan modern yang menggabungkan kenyamanan tropis dengan ketenangan lingkungan Pererenan.",
+      "checkInTime": "14:00 - 20:00 WITA",
+      "checkOutTime": "07:00 - 12:00 WITA",
+      "nearbyPlaces": ["Pererenan Beach (2.7 km)", "Tanah Lot Temple (8.0 km)"]
     }
   },
   {
@@ -214,10 +679,41 @@
       "pool": true
     },
     "price": 3200000,
-    "image": "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401595.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401595.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/650945232.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401481.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401499.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401505.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401507.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401529.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401545.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401561.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401565.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401567.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401569.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401578.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401582.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401583.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401593.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/702915630.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/702915644.jpg",
+      "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/702915771.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp3.200.000 - Rp4.000.000",
+      "roomType": "Elegant 3 Bedroom Villa",
+      "description": "Terletak di desa Pererenan yang asri, villa ini menawarkan arsitektur tradisional Bali yang berpadu dengan kenyamanan modern.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "nearbyPlaces": [
+        "Black Sand Brewery (5.2 km)",
+        "Batu Bolong Beach (6.8 km)"
+      ]
     }
   },
   {
@@ -231,10 +727,45 @@
       "pool": true
     },
     "price": 1800000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323311.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323311.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323187.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323233.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323269.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323286.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323332.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323352.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323415.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323427.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323430.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323465.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323471.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323482.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323485.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323500.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323504.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323507.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323511.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323514.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323516.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323518.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323521.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323523.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323529.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323530.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554700538.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp2.800.000 - Rp3.500.000",
+      "roomType": "Boutique 2 Bedroom Villa",
+      "description": "Hidden gem di Canggu. Villa butik yang indah dengan taman tropis dan kolam renang pribadi yang menenangkan.",
+      "checkInTime": "14:00 - 20:00 WITA",
+      "checkOutTime": "11:00 WITA",
+      "nearbyPlaces": ["Echo Beach (1.0 km)", "Petitenget Temple (8.3 km)"]
     }
   },
   {
@@ -248,10 +779,57 @@
       "pool": true
     },
     "price": 4500000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965190.jpg",
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965190.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555964957.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965102.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965111.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965121.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965133.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965147.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965162.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965172.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965210.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965221.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965233.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965257.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965270.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965287.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965303.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965321.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965334.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965354.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965383.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965422.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965435.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965465.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965481.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965496.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965509.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965531.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/685607892.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/685609607.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/685609856.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/685610057.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/685610799.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/685611426.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/685612528.jpg"
+    ],
     "promo": {
       "status": "none",
       "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp4.500.000 - Rp5.000.000",
+      "roomType": "3 Bedroom Luxury Private Villa",
+      "description": "Villa Sista menawarkan ketenangan di area Tumbak Bayuh yang asri. Desain interior yang elegan berpadu dengan pemandangan hijau, menjadikannya pilihan sempurna untuk relaksasi maksimal bersama pasangan atau keluarga.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "11:00 WITA",
+      "nearbyPlaces": [
+        "Munggu Beach (2.5 km)",
+        "Pererenan Area (3.0 km)",
+        "Pepito Market (1.8 km)"
+      ]
     }
   }
 ]

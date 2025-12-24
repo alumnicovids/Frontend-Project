@@ -13,7 +13,8 @@ const routes = {
 
 async function redirect() {
   const hash = window.location.hash || "#/";
-  const path = hash.slice(1);
+  const pathWithQuery = hash.slice(1);
+  const path = pathWithQuery.split("?")[0];
   const route = routes[path] || routes["/"];
 
   try {
@@ -24,7 +25,6 @@ async function redirect() {
     const contentDiv = document.getElementById("content");
     if (contentDiv) {
       contentDiv.innerHTML = html;
-
       window.scrollTo(0, 0);
 
       if (path === "/" || path === "") {
@@ -43,6 +43,10 @@ async function redirect() {
         if (typeof renderVillas === "function") renderVillas("promo");
       }
 
+      if (path === "/Detailed-Property") {
+        if (typeof renderVillaDetail === "function") renderVillaDetail();
+      }
+
       if (path === "/compare") {
         if (typeof window.initCompare === "function") {
           setTimeout(() => window.initCompare(), 50);
@@ -58,7 +62,7 @@ async function redirect() {
       const parentLi = link.parentElement;
       parentLi.classList.remove("active");
 
-      if (link.getAttribute("href") === hash) {
+      if (link.getAttribute("href") === hash.split("?")[0]) {
         parentLi.classList.add("active");
         const subMenu = link.closest(".sub-menu");
         if (subMenu) {
@@ -77,3 +81,5 @@ async function redirect() {
 
 window.addEventListener("hashchange", redirect);
 window.addEventListener("load", redirect);
+
+export { redirect };
