@@ -41,23 +41,39 @@ function closeAllSubMenu() {
   });
 }
 
-function renderVillas(filterTag = null) {
+function renderVillas(filterType = null) {
   fetch("/JSON/villas.json")
     .then((response) => response.json())
     .then((villaData) => {
       const container = document.querySelector(".villa-list");
       if (!container) return;
 
-      const filteredData = filterTag
-        ? villaData.filter((villa) => villa.tag === filterTag)
-        : villaData;
+      let filteredData = villaData;
+      if (filterType === "promo") {
+        filteredData = villaData.filter(
+          (villa) => villa.promo && villa.promo.status === "active"
+        );
+      } else if (filterType) {
+        filteredData = villaData.filter((villa) => villa.tag === filterType);
+      }
 
       container.innerHTML = filteredData
-        .map(
-          (villa) => `
+        .map((villa) => {
+          const hasPromo = villa.promo && villa.promo.status === "active";
+          const discountPercent = hasPromo ? parseInt(villa.promo.disc) : 0;
+          const discountedPrice = hasPromo
+            ? villa.price * (1 - discountPercent / 100)
+            : villa.price;
+
+          return `
         <article class="card">
           <div class="card-image">
             <img src="${villa.image}" alt="${villa.name}" />
+            ${
+              hasPromo
+                ? `<span class="promo-badge">${villa.promo.disc} OFF</span>`
+                : ""
+            }
             <button class="wishlist-btn">
               <i class="material-symbols-outlined">favorite</i>
             </button>
@@ -88,7 +104,14 @@ function renderVillas(filterTag = null) {
             </div>
             <div class="card-footer">
               <div class="price-container">
-                <span class="price">IDR ${villa.price.toLocaleString(
+                ${
+                  hasPromo
+                    ? `<span class="original-price">IDR ${villa.price.toLocaleString(
+                        "id-ID"
+                      )}</span>`
+                    : ""
+                }
+                <span class="price">IDR ${discountedPrice.toLocaleString(
                   "id-ID"
                 )}</span>
                 <span class="unit">/night</span>
@@ -102,8 +125,8 @@ function renderVillas(filterTag = null) {
             </div>
           </div>
         </article>
-      `
-        )
+      `;
+        })
         .join("");
     })
     .catch((error) => console.error("Error loading JSON:", error));

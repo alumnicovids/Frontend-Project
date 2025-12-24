@@ -10,7 +10,11 @@
       "pool": true
     },
     "price": 2025000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745599491.jpg"
+    "image": "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745599491.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Sake Bali Suites",
@@ -23,7 +27,11 @@
       "pool": true
     },
     "price": 844700,
-    "image": "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381830.jpg"
+    "image": "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381830.jpg",
+    "promo": {
+      "status": "active",
+      "disc": "10%"
+    }
   },
   {
     "name": "Da Vinci The Villa",
@@ -36,7 +44,11 @@
       "pool": true
     },
     "price": 3952665,
-    "image": "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093295.jpg"
+    "image": "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093295.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Enchanting Canggu Villa",
@@ -49,7 +61,11 @@
       "pool": true
     },
     "price": 4192799,
-    "image": "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487195.jpg"
+    "image": "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487195.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Hidden 5BR Gem Luxe Pool",
@@ -62,7 +78,11 @@
       "pool": true
     },
     "price": 4500000,
-    "image": "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525944.jpg"
+    "image": "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525944.jpg",
+    "promo": {
+      "status": "active",
+      "disc": "15%"
+    }
   },
   {
     "name": "Sojourn",
@@ -75,7 +95,11 @@
       "pool": true
     },
     "price": 2300000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/Sojourn/642183191.jpg"
+    "image": "/media/FolderFoto_Project/Couple_Villas/Sojourn/642183191.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Villa Kiki Modern Tropical",
@@ -88,7 +112,11 @@
       "pool": true
     },
     "price": 2800000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973372.jpg"
+    "image": "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973372.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Predmed Kabaka Resort",
@@ -101,7 +129,11 @@
       "pool": true
     },
     "price": 2000000,
-    "image": "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086206.jpg"
+    "image": "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086206.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Villa 10 Viber Canggu",
@@ -114,7 +146,11 @@
       "pool": true
     },
     "price": 1200000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166831.jpg"
+    "image": "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166831.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Villa Fleur",
@@ -127,7 +163,11 @@
       "pool": true
     },
     "price": 1500000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196063.jpg"
+    "image": "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196063.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Riyuri Guesthouse",
@@ -140,7 +180,11 @@
       "pool": true
     },
     "price": 1000000,
-    "image": "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536715580.jpg"
+    "image": "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536715580.jpg",
+    "promo": {
+      "status": "active",
+      "disc": "20%"
+    }
   },
   {
     "name": "Villa Auri Pererenan",
@@ -153,7 +197,11 @@
       "pool": true
     },
     "price": 1400000,
-    "image": "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175078.jpg"
+    "image": "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175078.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Villa Salamanca",
@@ -166,7 +214,11 @@
       "pool": true
     },
     "price": 3200000,
-    "image": "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401595.jpg"
+    "image": "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401595.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Villa Rosado",
@@ -179,7 +231,11 @@
       "pool": true
     },
     "price": 1800000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323311.jpg"
+    "image": "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323311.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   },
   {
     "name": "Villa Sista",
@@ -192,6 +248,10 @@
       "pool": true
     },
     "price": 4500000,
-    "image": "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965190.jpg"
+    "image": "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965190.jpg",
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    }
   }
 ]

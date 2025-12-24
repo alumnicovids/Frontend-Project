@@ -40,6 +40,11 @@ async function redirect() {
           renderVillas("Family Villa");
         }
       }
+      if (path === "/promo-villas") {
+        if (typeof renderVillas === "function") {
+          renderVillas("promo");
+        }
+      }
       if (path === "/setting") {
         if (typeof initSetting === "function") {
           initSetting();

@@ -159,3 +159,35 @@
 .book-now:hover {
   filter: brightness(1.2);
 }
+
+.promo-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #ff4757;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: -0.2rem;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-container .price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-clr);
+}
