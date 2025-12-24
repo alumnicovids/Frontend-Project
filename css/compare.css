@@ -231,7 +231,7 @@
   background: var(--accent-clr);
   color: white;
   transform: scale(1.02);
-  box-shadow: 0 5px 15px rgba(121, 45, 138, 0.3);
+  box-shadow: var(--accent-clr) 0px 4px 15px;
 }
 
 @media (max-width: 600px) {
