@@ -18,9 +18,19 @@ async function redirect() {
 
   try {
     const response = await fetch(route);
-    if (!response.ok) throw new Error();
+    if (!response.ok) throw new Error("Page not found");
     const html = await response.text();
-    document.getElementById("content").innerHTML = html;
+
+    const contentDiv = document.getElementById("content");
+    if (contentDiv) {
+      contentDiv.innerHTML = html;
+
+      if (path === "/setting") {
+        if (typeof initSetting === "function") {
+          initSetting();
+        }
+      }
+    }
 
     document.querySelectorAll(".nav-link").forEach((link) => {
       const parentLi = link.parentElement;

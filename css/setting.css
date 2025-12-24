@@ -15,7 +15,7 @@
 .avatar-large {
   width: 72px;
   height: 72px;
-  background-color: #feba02; 
+  background-color: #feba02;
   color: var(--base-clr);
   display: flex;
   align-items: center;
@@ -139,17 +139,18 @@
 }
 
 .edit-link {
-  color: #00a86b; 
+  color: #00a86b;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 5px 12px;
   border-radius: 4px;
   transition: all 0.2s ease;
+  background-color: rgba(0, 168, 107, 0.1);
 }
 
 .edit-link:hover {
-  background-color: rgba(0, 168, 107, 0.1);
+  background-color: #fff;
   text-decoration: underline;
   transform: scale(1.05);
 }
@@ -176,7 +177,7 @@
 
 .setting-menu li:hover {
   background-color: var(--base-clr);
-  padding-left: 20px; 
+  padding-left: 20px;
 }
 
 .setting-menu li:hover span {
