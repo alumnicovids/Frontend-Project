@@ -1,0 +1,197 @@
+[
+  {
+    "name": "Le Ayu Villa Canggu",
+    "tag": "Couple Villa",
+    "rating": 4.8,
+    "location": "Canggu, Bali",
+    "amenities": {
+      "bed": 2,
+      "bathtub": 3,
+      "pool": true
+    },
+    "price": 2025000,
+    "image": "/media/FolderFoto_Project/Couple_Villas/LeAyuVillaCanggu/745599491.jpg"
+  },
+  {
+    "name": "Sake Bali Suites",
+    "tag": "Couple Villa",
+    "rating": 5.0,
+    "location": "Tampaksiring, Bali",
+    "amenities": {
+      "bed": 1,
+      "bathtub": 1,
+      "pool": true
+    },
+    "price": 844700,
+    "image": "/media/FolderFoto_Project/Couple_Villas/SakeBaliSuites/777381830.jpg"
+  },
+  {
+    "name": "Da Vinci The Villa",
+    "tag": "Family Villa",
+    "rating": 4.8,
+    "location": "Tumbak Bayuh, Bali",
+    "amenities": {
+      "bed": 3,
+      "bathtub": 3,
+      "pool": true
+    },
+    "price": 3952665,
+    "image": "/media/FolderFoto_Project/Family_Villas/DaVinciTheVillaByNagisaBali/587093295.jpg"
+  },
+  {
+    "name": "Enchanting Canggu Villa",
+    "tag": "Family Villa",
+    "rating": 4.2,
+    "location": "Canggu, Bali",
+    "amenities": {
+      "bed": 4,
+      "bathtub": 4,
+      "pool": true
+    },
+    "price": 4192799,
+    "image": "/media/FolderFoto_Project/Family_Villas/EnchantingCangguVilla/610487195.jpg"
+  },
+  {
+    "name": "Hidden 5BR Gem Luxe Pool",
+    "tag": "Family Villa",
+    "rating": 5.0,
+    "location": "Pererenan, Bali",
+    "amenities": {
+      "bed": 5,
+      "bathtub": 5,
+      "pool": true
+    },
+    "price": 4500000,
+    "image": "/media/FolderFoto_Project/Family_Villas/Hidden5BRGemLuxePoolVilla/766525944.jpg"
+  },
+  {
+    "name": "Sojourn",
+    "tag": "Couple Villa",
+    "rating": 4.95,
+    "location": "Mengwi, Bali",
+    "amenities": {
+      "bed": 2,
+      "bathtub": 2,
+      "pool": true
+    },
+    "price": 2300000,
+    "image": "/media/FolderFoto_Project/Couple_Villas/Sojourn/642183191.jpg"
+  },
+  {
+    "name": "Villa Kiki Modern Tropical",
+    "tag": "Couple Villa",
+    "rating": 4.0,
+    "location": "Canggu, Bali",
+    "amenities": {
+      "bed": 3,
+      "bathtub": 3,
+      "pool": true
+    },
+    "price": 2800000,
+    "image": "/media/FolderFoto_Project/Couple_Villas/Villa Kiki-Modern Tropical3BREscapeinCanggu/793973372.jpg"
+  },
+  {
+    "name": "Predmed Kabaka Resort",
+    "tag": "Family Villa",
+    "rating": 4.5,
+    "location": "Kaba-Kaba, Bali",
+    "amenities": {
+      "bed": 2,
+      "bathtub": 4,
+      "pool": true
+    },
+    "price": 2000000,
+    "image": "/media/FolderFoto_Project/Family_Villas/PredmedKabakaResort/772086206.jpg"
+  },
+  {
+    "name": "Villa 10 Viber Canggu",
+    "tag": "Couple Villa",
+    "rating": 4.7,
+    "location": "Canggu, Bali",
+    "amenities": {
+      "bed": 1,
+      "bathtub": 1,
+      "pool": true
+    },
+    "price": 1200000,
+    "image": "/media/FolderFoto_Project/Couple_Villas/Villa10ViberCanggu/793166831.jpg"
+  },
+  {
+    "name": "Villa Fleur",
+    "tag": "Couple Villa",
+    "rating": 4.8,
+    "location": "Canggu, Bali",
+    "amenities": {
+      "bed": 5,
+      "bathtub": 5,
+      "pool": true
+    },
+    "price": 1500000,
+    "image": "/media/FolderFoto_Project/Couple_Villas/VillaFleur/756196063.jpg"
+  },
+  {
+    "name": "Riyuri Guesthouse",
+    "tag": "Family Villa",
+    "rating": 4.7,
+    "location": "Canggu, Bali",
+    "amenities": {
+      "bed": 5,
+      "bathtub": 5,
+      "pool": true
+    },
+    "price": 1000000,
+    "image": "/media/FolderFoto_Project/Family_Villas/RIYURIGUESTHOUSE/536715580.jpg"
+  },
+  {
+    "name": "Villa Auri Pererenan",
+    "tag": "Family Villa",
+    "rating": 4.7,
+    "location": "Tumbak Bayuh, Bali",
+    "amenities": {
+      "bed": 2,
+      "bathtub": 2,
+      "pool": true
+    },
+    "price": 1400000,
+    "image": "/media/FolderFoto_Project/Family_Villas/VillaAuriPererenan/763175078.jpg"
+  },
+  {
+    "name": "Villa Salamanca",
+    "tag": "Family Villa",
+    "rating": 4.5,
+    "location": "Tumbak Bayuh, Bali",
+    "amenities": {
+      "bed": 3,
+      "bathtub": 3,
+      "pool": true
+    },
+    "price": 3200000,
+    "image": "/media/FolderFoto_Project/Family_Villas/VillaSalamancaPererenanbyBlacksand/651401595.jpg"
+  },
+  {
+    "name": "Villa Rosado",
+    "tag": "Couple Villa",
+    "rating": 4.8,
+    "location": "Canggu, Bali",
+    "amenities": {
+      "bed": 2,
+      "bathtub": 2,
+      "pool": true
+    },
+    "price": 1800000,
+    "image": "/media/FolderFoto_Project/Couple_Villas/VillaRosadoCanggu/554323311.jpg"
+  },
+  {
+    "name": "Villa Sista",
+    "tag": "Couple Villa",
+    "rating": 5.0,
+    "location": "Tumbak Bayuh, Bali",
+    "amenities": {
+      "bed": 3,
+      "bathtub": 3,
+      "pool": true
+    },
+    "price": 4500000,
+    "image": "/media/FolderFoto_Project/Couple_Villas/VILLASISTA/555965190.jpg"
+  }
+]

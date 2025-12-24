@@ -25,6 +25,21 @@ async function redirect() {
     if (contentDiv) {
       contentDiv.innerHTML = html;
 
+      if (path === "/" || path === "") {
+        if (typeof renderVillas === "function") {
+          renderVillas();
+        }
+      }
+      if (path === "/couple-villas") {
+        if (typeof renderVillas === "function") {
+          renderVillas("Couple Villa");
+        }
+      }
+      if (path === "/family-villas") {
+        if (typeof renderVillas === "function") {
+          renderVillas("Family Villa");
+        }
+      }
       if (path === "/setting") {
         if (typeof initSetting === "function") {
           initSetting();
