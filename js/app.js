@@ -136,7 +136,6 @@ function renderVillas(filterType = null) {
     .catch((error) => console.error("Error loading JSON:", error));
 }
 
-// Tambahkan/Update fungsi ini di app.js untuk mendukung data baru
 function renderVillaDetail() {
   const params = new URLSearchParams(window.location.hash.split("?")[1]);
   const villaName = params.get("name");
@@ -217,25 +216,22 @@ function renderVillaDetail() {
 
       const observerOptions = {
         root: document.querySelector(".gallery-grid"),
-        threshold: 0.7, // Gambar harus terlihat 70% di area scroll untuk menjadi aktif
+        threshold: 0.7,
       };
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Hapus class active dari semua gambar
             entry.target.parentElement
               .querySelectorAll("img")
               .forEach((img) => {
                 img.classList.remove("active");
               });
-            // Tambahkan ke yang sedang di tengah
             entry.target.classList.add("active");
           }
         });
       }, observerOptions);
 
-      // Daftarkan semua gambar ke observer
       document.querySelectorAll(".gallery-grid img").forEach((img) => {
         observer.observe(img);
       });
@@ -264,24 +260,18 @@ function setupInfiniteScroll(gallery) {
     const scrollPos = gallery.scrollLeft;
     const maxScroll = gallery.scrollWidth - gallery.clientWidth;
 
-    // Saat mencapai ujung kiri (clone terakhir)
     if (scrollPos <= 0) {
-      gallery.style.scrollBehavior = "auto"; // Matikan smooth agar tidak terlihat bergeser balik
+      gallery.style.scrollBehavior = "auto";
       gallery.scrollLeft =
         gallery.scrollWidth - (gallery.clientWidth + itemWidth);
-    }
-    // Saat mencapai ujung kanan (clone pertama)
-    else if (scrollPos >= maxScroll) {
-      gallery.style.scrollBehavior = "auto"; // Matikan smooth
+    } else if (scrollPos >= maxScroll) {
+      gallery.style.scrollBehavior = "auto";
       gallery.scrollLeft = itemWidth;
-    }
-    // Kembalikan ke smooth untuk interaksi normal
-    else {
+    } else {
       gallery.style.scrollBehavior = "smooth";
     }
   });
 
-  // Observer untuk update class active
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
