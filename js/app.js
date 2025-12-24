@@ -131,3 +131,23 @@ function renderVillas(filterType = null) {
     })
     .catch((error) => console.error("Error loading JSON:", error));
 }
+
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".compare-btn")) {
+    const card = e.target.closest(".card");
+    const villaName = card.querySelector(".villa-title").innerText;
+
+    fetch("/JSON/villas.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const villa = data.find((v) => v.name === villaName);
+        let compareList = JSON.parse(localStorage.getItem("compareList")) || [];
+
+        if (compareList.length >= 2) compareList.shift();
+        compareList.push(villa);
+
+        localStorage.setItem("compareList", JSON.stringify(compareList));
+        window.location.hash = "#/compare";
+      });
+  }
+});

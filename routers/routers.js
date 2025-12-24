@@ -25,30 +25,32 @@ async function redirect() {
     if (contentDiv) {
       contentDiv.innerHTML = html;
 
+      window.scrollTo(0, 0);
+
       if (path === "/" || path === "") {
-        if (typeof renderVillas === "function") {
-          renderVillas();
-        }
+        if (typeof renderVillas === "function") renderVillas();
       }
+
       if (path === "/couple-villas") {
-        if (typeof renderVillas === "function") {
-          renderVillas("Couple Villa");
-        }
+        if (typeof renderVillas === "function") renderVillas("Couple Villa");
       }
+
       if (path === "/family-villas") {
-        if (typeof renderVillas === "function") {
-          renderVillas("Family Villa");
-        }
+        if (typeof renderVillas === "function") renderVillas("Family Villa");
       }
+
       if (path === "/promo-villas") {
-        if (typeof renderVillas === "function") {
-          renderVillas("promo");
+        if (typeof renderVillas === "function") renderVillas("promo");
+      }
+
+      if (path === "/compare") {
+        if (typeof window.initCompare === "function") {
+          setTimeout(() => window.initCompare(), 50);
         }
       }
+
       if (path === "/setting") {
-        if (typeof initSetting === "function") {
-          initSetting();
-        }
+        if (typeof initSetting === "function") initSetting();
       }
     }
 
@@ -58,7 +60,6 @@ async function redirect() {
 
       if (link.getAttribute("href") === hash) {
         parentLi.classList.add("active");
-
         const subMenu = link.closest(".sub-menu");
         if (subMenu) {
           subMenu.classList.add("show");
@@ -68,10 +69,11 @@ async function redirect() {
       }
     });
   } catch (error) {
-    document.getElementById("content").innerHTML =
-      "<h2>404</h2><p>Page not found.</p>";
+    console.error("Routing error:", error);
+    const contentDiv = document.getElementById("content");
+    if (contentDiv) contentDiv.innerHTML = "<h2>404 - Page Not Found</h2>";
   }
 }
 
 window.addEventListener("hashchange", redirect);
-window.addEventListener("DOMContentLoaded", redirect);
+window.addEventListener("load", redirect);
