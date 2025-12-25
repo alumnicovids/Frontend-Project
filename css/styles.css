@@ -69,10 +69,12 @@ body {
 
 #sidebar ul li.active > a {
   color: var(--accent-clr);
+  font-weight: 500;
 }
 
 #sidebar ul li.active > a i {
   fill: var(--accent-clr);
+  font-weight: 500;
 }
 
 #sidebar a,

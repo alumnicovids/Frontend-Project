@@ -52,7 +52,7 @@ function renderHeaderSlot(villa, index) {
   }
   return `<td>
             <div class="villa-head" onclick="openVillaModal(${index})" style="cursor:pointer;">
-              <div class="image-box"><img src="${villa.image}" style="width:100%; height:150px; object-fit:cover; border-radius:8px;"></div>
+              <div class="image-box"><img src="${villa.image[0]}" style="width:100%; height:150px; object-fit:cover; border-radius:8px;"></div>
               <h4>${villa.name}</h4>
               <span class="loc-tag">${villa.location}</span>
             </div>
@@ -127,7 +127,7 @@ window.openVillaModal = function (slot) {
           .map(
             (villa) => `
           <div class="selection-item" onclick="selectVilla('${villa.name}')" style="display:flex; gap:10px; padding:10px; border-bottom:1px solid #eee; cursor:pointer;">
-            <img src="${villa.image}" style="width:60px; height:45px; object-fit:cover; border-radius:4px;">
+            <img src="${villa.image[0]}" style="width:60px; height:45px; object-fit:cover; border-radius:4px;">
             <div class="info">
               <h5 style="margin:0;">${villa.name}</h5>
               <small>${villa.tag}</small>
@@ -186,7 +186,7 @@ window.openVillaModal = function (slot) {
         .map(
           (villa) => `
         <div class="selection-item" onclick="selectVilla('${villa.name}')">
-          <img src="${villa.image}">
+          <img src="${villa.image[0]}">
           <div class="info">
             <h5>${villa.name}</h5>
             <p>${villa.tag} - IDR ${villa.price.toLocaleString("id-ID")}</p>
