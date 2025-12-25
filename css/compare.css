@@ -6,7 +6,7 @@
 }
 
 .profile-header {
-  background: linear-gradient(to right, var(--accent-clr), #3a1542); 
+  background: linear-gradient(to right, var(--hover-clr)) !important; 
   margin: 0 0 30px 0; 
   padding: 35px 5%;
   color: white;
@@ -64,7 +64,7 @@
 }
 
 .btn-primary {
-  background: #feba02; 
+  background: #6d4c41eb;
   color: var(--base-clr);
   border: none;
   padding: 10px 20px;
@@ -78,9 +78,9 @@
 }
 
 .btn-primary:hover {
-  background: #ffd000;
+  background: var(--text-clr);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(254, 186, 2, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
 }
 
 .btn-secondary {
@@ -105,7 +105,7 @@
   border: 1px solid var(--line-clr);
   overflow-x: auto; 
   width: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(160, 160, 160, 0.2);
 }
 
 .luxury-compare-table {
@@ -116,7 +116,7 @@
 
 .luxury-compare-table th {
   padding: 25px 20px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(184, 184, 184, 0.1);
   border-bottom: 2px solid var(--line-clr);
 }
 
@@ -174,7 +174,7 @@
 }
 
 .section-divider td {
-  background: rgba(121, 45, 138, 0.1);
+  background: var(--hover-clr) ;
   color: var(--accent-clr);
   text-align: left !important;
   font-size: 0.75rem;

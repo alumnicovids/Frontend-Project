@@ -4,6 +4,7 @@
   padding: 40px 8%;
   color: var(--text-clr);
   font-family: Poppins;
+  font-weight: 700;
 }
 
 .user-info {
@@ -36,7 +37,7 @@
 .profile-edit-container {
   display: flex;
   gap: 40px;
-  background-color: var(--) !important;
+  background-color: var(--base-clr) !important;
   border: 1px solid var(--line-clr) !important;
   align-items: flex-start;
   padding: 40px;

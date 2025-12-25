@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --base-clr: rgba(240, 240, 227, 0.85);
+  --base-clr: rgba(240, 240, 227, 0.589);
   --line-clr: #d2b48c;
-  --hover-clr: rgba(255, 255, 255, 0.6);
+  --hover-clr: rgba(255, 255, 255, 0.151);
   --text-clr: #4b3621;
   --accent-clr: #8b5a2b;
   --secondary-text-clr: #6d4c41;
