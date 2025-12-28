@@ -123,7 +123,9 @@ function renderVillas(filterType = null) {
                   <i class="material-symbols-outlined">compare_arrows</i>
                 </button>
                 <button class="book-now">
-                  <a href="#/Booking" class="nav-link">Book Now</a>
+                  <a href="#/Booking?name=${encodeURIComponent(
+                    villa.name
+                  )}" class="nav-link">Book Now</a>
                 </button>
               </div>
             </div>
@@ -193,7 +195,11 @@ function renderVillaDetail() {
               <div class="price-card">
                 <p class="price-range">${villa.detail.priceRange}</p>
                 <p class="room-type">${villa.detail.roomType}</p>
-                <button class="book-now-btn">Book This Villa</button>
+                <button class="book-now-btn">
+                  <a href="#/Booking?name=${encodeURIComponent(
+                    villa.name
+                  )}" class="book-now-btn">Book Now</a>
+                </button>
               </div>
 
               <div class="policy-card">

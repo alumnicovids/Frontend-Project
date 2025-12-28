@@ -47,18 +47,36 @@
       "description": "Nikmati pengalaman menginap mewah di Le Ayu Villa Canggu. Villa ini menawarkan privasi total dengan desain tropis modern, ruang tamu terbuka, dan kolam renang pribadi yang dikelilingi taman asri.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "12:00 WITA",
+      "address": "Jl. Munduk Tengah No.3, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351",
       "nearbyPlaces": [
         "Pantai Berawa (10 menit)",
         "Finn's Beach Club (12 menit)",
-        "Atlas Beach Fest (12 menit)"
+        "Atlas Beach Fest (12 menit)",
+        "Pantai Pererenan (2.5 km)",
+        "Echo Beach (2.5 km)"
       ],
       "cancellationPolicy": "Pembatalan gratis hingga 48 jam sebelum tanggal kedatangan.",
       "extraServices": [
         "Floating Breakfast",
         "Airport Transfer",
-        "Massage & Spa in Villa"
+        "Massage & Spa in Villa",
+        "Car & Bicycle Rental"
+      ],
+      "facilities": [
+        "Free WiFi",
+        "Free Private Parking",
+        "Air Conditioning",
+        "Fully Equipped Kitchenette",
+        "Flat-screen TV",
+        "Seating Area",
+        "24-hour Front Desk"
       ]
-    }
+    },
+    "rooms": [
+      { "type": "Standard Room", "price": 1500000 },
+      { "type": "Deluxe Room", "price": 2000000 },
+      { "type": "Suite Room", "price": 3500000 }
+    ]
   },
   {
     "name": "Sake Bali Suites",
@@ -94,14 +112,49 @@
     "detail": {
       "priceRange": "Rp844.700 - Rp1.200.000",
       "roomType": "Suite with Private Pool & Gym Access",
-      "description": "Terletak di tengah sawah yang tenang, Sake Bali Suites menawarkan udara bersih dan pemandangan hijau yang menyegarkan jiwa.",
+      "description": "Sake Bali Suites menghadirkan kemewahan yang menyatu dengan spiritualitas dan alam Tampaksiring. Terletak di antara hamparan sawah hijau yang ikonik, suite ini menawarkan privasi mutlak bagi pasangan yang mencari ketenangan. Dengan akses ke fasilitas kebugaran modern dan kedekatan dengan situs-situs suci bersejarah, tempat ini merupakan perpaduan sempurna antara gaya hidup sehat dan kedamaian batin.",
       "checkInTime": "14:00 - 23:00 WITA",
       "checkOutTime": "06:00 - 12:00 WITA",
+      "address": "Jl. Erlangga, Manukaya, Kec. Tampaksiring, Kabupaten Gianyar, Bali 80552",
       "nearbyPlaces": [
-        "Tegallalang Rice Terrace (5.3 km)",
-        "Tirta Empul Temple (2.0 km)"
-      ]
-    }
+        "Pura Mengening (1.8 km)",
+        "Tirta Empul Temple (2.0 km)",
+        "Istana Tampaksiring (2.2 km)",
+        "Gunung Kawi Temple (2.8 km)",
+        "Tegallalang Rice Terrace (5.3 km)"
+      ],
+      "facilities": [
+        "Private Outdoor Pool",
+        "Fitness Center/Gym Access",
+        "Free High-Speed WiFi",
+        "Air Conditioning",
+        "Room Service",
+        "En-suite Bathroom with Bathtub",
+        "Private Terrace with Rice Field View",
+        "Free Private Parking"
+      ],
+      "extraServices": [
+        "Airport Shuttle (Surcharge)",
+        "Laundry Service",
+        "Massage & Wellness Treatment",
+        "Traditional Village Tour Arrangement"
+      ],
+      "cancellationPolicy": "Pembatalan dapat dilakukan sesuai dengan syarat dan ketentuan yang berlaku pada saat pemesanan."
+    },
+    "rooms": [
+      {
+        "type": "Suite with Private Pool",
+        "price": 844700
+      },
+      {
+        "type": "Deluxe Garden Suite",
+        "price": 1050000
+      },
+      {
+        "type": "Premium Paddy Field View Suite",
+        "price": 1200000
+      }
+    ]
   },
   {
     "name": "Da Vinci The Villa",
@@ -142,14 +195,46 @@
     "detail": {
       "priceRange": "Rp4.500.000 - Rp6.000.000",
       "roomType": "4 Bedroom Luxury Villa",
-      "description": "Villa megah dengan 5 kamar tidur yang luas, lounge unik, dan taman tropis yang magis. Sangat cocok untuk grup besar atau keluarga.",
+      "description": "Da Vinci The Villa by Nagisa Bali adalah properti megah yang menawarkan privasi maksimal di kawasan Tumbak Bayuh. Dengan desain arsitektur yang elegan, villa ini memiliki ruang tamu semi-terbuka yang luas, dapur modern, dan taman tropis yang rimbun menghadap kolam renang pribadi besar. Sangat ideal untuk liburan keluarga besar atau grup yang menginginkan kemewahan di tengah suasana pedesaan Bali yang tenang.",
       "checkInTime": "15:00 - 22:00 WITA",
       "checkOutTime": "07:00 - 12:00 WITA",
+      "address": "Jl. Tumbak Bayuh No.64, Tumbak Bayuh, Kec. Mengwi, Kabupaten Badung, Bali 80351",
       "nearbyPlaces": [
-        "Metis Restaurant (0.2 km)",
-        "Love Anchor Canggu (2.5 km)"
-      ]
-    }
+        "Pererenan Beach (4.2 km)",
+        "Echo Beach (4.5 km)",
+        "Love Anchor Canggu (2.5 km)",
+        "Metis Restaurant (6.8 km)",
+        "Tanah Lot Temple (9.5 km)"
+      ],
+      "facilities": [
+        "Large Private Swimming Pool",
+        "Free High-Speed WiFi",
+        "Fully Equipped Designer Kitchen",
+        "En-suite Bathrooms with Premium Amenities",
+        "Spacious Sun Deck & Tropical Garden",
+        "Flat-screen TV with Satellite Channels",
+        "Air Conditioning",
+        "Private Garage"
+      ],
+      "extraServices": [
+        "Private Chef Service",
+        "Daily Housekeeping",
+        "Airport Transfer (Surcharge)",
+        "In-villa Massage",
+        "Car Rental with Driver"
+      ],
+      "cancellationPolicy": "Kebijakan pembatalan bervariasi sesuai dengan ketentuan periode reservasi."
+    },
+    "rooms": [
+      {
+        "type": "Entire 4 Bedroom Villa",
+        "price": 4500000
+      },
+      {
+        "type": "Luxury Family Executive Package",
+        "price": 6000000
+      }
+    ]
   },
   {
     "name": "Enchanting Canggu Villa",
@@ -218,11 +303,46 @@
     "detail": {
       "priceRange": "Rp4.192.799 - Rp5.500.000",
       "roomType": "4 Bedroom Family Villa",
-      "description": "Hunian luas dengan arsitektur terbuka yang memadukan kenyamanan modern dan sentuhan tradisional Bali, cocok untuk liburan keluarga besar.",
+      "description": "Enchanting Canggu Villa menawarkan akomodasi luas dengan kolam renang pribadi luar ruangan, taman, dan fasilitas BBQ. Villa ini memiliki desain konsep terbuka dengan dapur lengkap, ruang tamu besar, dan setiap kamar dilengkapi kamar mandi dalam. Sangat ideal untuk keluarga besar yang ingin menikmati suasana pesisir Canggu yang ikonik dengan kenyamanan rumah modern.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "12:00 WITA",
-      "nearbyPlaces": ["La Brisa Bali (1.8 km)", "Pantai Echo (2.0 km)"]
-    }
+      "address": "Jl. Nelayan No.31, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
+      "nearbyPlaces": [
+        "Nelayan Beach (0.6 km)",
+        "Batu Bolong Beach (1.2 km)",
+        "Canggu Beach (1.3 km)",
+        "La Brisa Bali (1.8 km)",
+        "Pantai Echo (2.0 km)"
+      ],
+      "facilities": [
+        "Private Outdoor Swimming Pool",
+        "Free WiFi",
+        "Air Conditioning",
+        "Flat-screen TV",
+        "Fully Equipped Kitchen",
+        "BBQ Facilities",
+        "Terrace & Tropical Garden",
+        "Free Private Parking",
+        "Safety Deposit Box"
+      ],
+      "extraServices": [
+        "Airport Shuttle (Surcharge)",
+        "Bicycle & Car Rental",
+        "Daily Housekeeping",
+        "Grocery Deliveries"
+      ],
+      "cancellationPolicy": "Kebijakan pembatalan fleksibel sesuai dengan platform pemesanan yang digunakan."
+    },
+    "rooms": [
+      {
+        "type": "Standard 4 Bedroom Villa",
+        "price": 4192799
+      },
+      {
+        "type": "Premium Family Package Villa",
+        "price": 5500000
+      }
+    ]
   },
   {
     "name": "Hidden 5BR Gem Luxe Pool",
@@ -277,11 +397,46 @@
     "detail": {
       "priceRange": "Rp4.500.000 - Rp6.200.000",
       "roomType": "Luxury 5 Bedroom Villa",
-      "description": "Permata tersembunyi dengan 5 kamar tidur mewah. Menawarkan ketenangan total dengan fasilitas kolam renang infinity yang menghadap taman tropis.",
+      "description": "Hidden 5BR Gem Luxe Pool Villa menawarkan pengalaman menginap eksklusif di Pererenan dengan desain modern minimalis yang dipadukan dengan kenyamanan tropis. Properti ini memiliki kolam renang infinity pribadi, ruang tamu terbuka yang sangat luas, serta dapur gourmet yang lengkap, menjadikannya pilihan ideal untuk acara keluarga atau grup besar yang mencari privasi.",
       "checkInTime": "15:00 WITA",
       "checkOutTime": "11:00 WITA",
-      "nearbyPlaces": ["Pantai Pererenan (1.5 km)", "Baked Pererenan (0.8 km)"]
-    }
+      "address": "Jl. Pantai Pererenan, Pererenan, Kec. Mengwi, Kabupaten Badung, Bali 80351",
+      "nearbyPlaces": [
+        "Baked Pererenan (0.8 km)",
+        "Pantai Pererenan (1.5 km)",
+        "Echo Beach (2.1 km)",
+        "La Brisa Bali (2.3 km)",
+        "Tanah Lot Temple (8.5 km)"
+      ],
+      "facilities": [
+        "Private Infinity Pool",
+        "High-speed WiFi",
+        "Smart TV with Netflix",
+        "Fully Equipped Gourmet Kitchen",
+        "Air Conditioning in all bedrooms",
+        "En-suite Bathrooms with Bathtub",
+        "Sun Terrace & Tropical Garden",
+        "Free Private Parking"
+      ],
+      "extraServices": [
+        "Daily Housekeeping",
+        "In-villa Private Chef",
+        "Airport Transfer (Surcharge)",
+        "Scooter & Car Rental",
+        "Laundry Service"
+      ],
+      "cancellationPolicy": "Pembatalan gratis tersedia hingga 14 hari sebelum kedatangan."
+    },
+    "rooms": [
+      {
+        "type": "Entire 5 Bedroom Luxury Villa",
+        "price": 4500000
+      },
+      {
+        "type": "Premium Family Event Package",
+        "price": 6200000
+      }
+    ]
   },
   {
     "name": "Sojourn",
@@ -320,14 +475,46 @@
     "detail": {
       "priceRange": "Rp2.300.000 - Rp2.800.000",
       "roomType": "2 Bedroom Private Sanctuary",
-      "description": "Terletak di Mengwi yang tenang, Sojourn menawarkan pelarian romantis dengan desain minimalis yang elegan dan pemandangan sawah.",
+      "description": "Sojourn adalah villa butik eksklusif di Mengwi yang menggabungkan kemewahan modern dengan ketenangan alam pedesaan. Villa ini memiliki konsep ruang terbuka dengan kolam renang pribadi yang menghadap ke sawah hijau, interior minimalis yang hangat, dan suasana yang sangat privat untuk pasangan atau keluarga kecil yang ingin menjauh dari keramaian kota.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "12:00 WITA",
+      "address": "Jl. Raya duma, Mengwi, Kec. Mengwi, Kabupaten Badung, Bali 80351",
       "nearbyPlaces": [
         "Pura Taman Ayun (3.5 km)",
-        "Sangeh Monkey Forest (12 km)"
-      ]
-    }
+        "Sangeh Monkey Forest (12 km)",
+        "Nungnung Waterfall (25 km)",
+        "Tanah Lot (15 km)",
+        "Canggu Area (12 km)"
+      ],
+      "facilities": [
+        "Private Pool with Rice Field View",
+        "Free High-Speed WiFi",
+        "Air Conditioning",
+        "Fully Equipped Modern Kitchen",
+        "Smart TV",
+        "Semi-Open Living Area",
+        "En-suite Bathrooms with Bathtub",
+        "Free Private Parking"
+      ],
+      "extraServices": [
+        "Floating Breakfast",
+        "Daily Housekeeping",
+        "Airport Shuttle (Surcharge)",
+        "In-villa Spa & Massage",
+        "Car Rental with Driver"
+      ],
+      "cancellationPolicy": "Pembatalan gratis tersedia hingga 7 hari sebelum tanggal check-in."
+    },
+    "rooms": [
+      {
+        "type": "Standard 2 Bedroom Sanctuary",
+        "price": 2300000
+      },
+      {
+        "type": "Luxury Rice Field View Suite",
+        "price": 2800000
+      }
+    ]
   },
   {
     "name": "Villa Kiki Modern Tropical",
@@ -395,14 +582,44 @@
     "detail": {
       "priceRange": "Rp2.800.000 - Rp3.200.000",
       "roomType": "3 Bedroom Modern Tropical Villa",
-      "description": "Vila bergaya tropis modern di lokasi strategis Canggu. Memiliki ruang tamu semi-terbuka yang luas untuk menikmati udara Bali.",
+      "description": "Villa Kiki Modern Tropical adalah pelarian mewah di jantung Canggu. Menawarkan desain tropis kontemporer dengan 3 kamar tidur yang luas, vila ini dilengkapi dengan kolam renang pribadi, dapur modern, dan area lounge semi-terbuka yang elegan. Sangat cocok bagi pasangan atau grup kecil yang mencari kenyamanan di kawasan paling trendy di Bali.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "11:00 WITA",
+      "address": "Jl. Nelayan, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
       "nearbyPlaces": [
+        "Nelayan Beach (1.1 km)",
+        "Pantai Batu Bolong (1.5 km)",
         "Mason Restaurant (1.2 km)",
-        "Pantai Batu Bolong (1.5 km)"
-      ]
-    }
+        "Deus Ex Machina (1.0 km)",
+        "The Practice Yoga (0.8 km)"
+      ],
+      "facilities": [
+        "Private Swimming Pool",
+        "Free High-Speed WiFi",
+        "Air Conditioning",
+        "Fully Equipped Kitchen",
+        "En-suite Bathrooms with Bathtub",
+        "Flat-screen TV",
+        "Sun Terrace & Lounge"
+      ],
+      "extraServices": [
+        "Daily Housekeeping",
+        "Airport Transfer (Surcharge)",
+        "Laundry Service",
+        "In-villa Massage"
+      ],
+      "cancellationPolicy": "Pembatalan bervariasi sesuai dengan platform dan waktu pemesanan."
+    },
+    "rooms": [
+      {
+        "type": "Standard 3 Bedroom Villa",
+        "price": 2800000
+      },
+      {
+        "type": "Premium Tropical Package",
+        "price": 3200000
+      }
+    ]
   },
   {
     "name": "Predmed Kabaka Resort",
@@ -441,14 +658,46 @@
     "detail": {
       "priceRange": "Rp2.000.000 - Rp2.500.000",
       "roomType": "Resort Style 2 Bedroom Villa",
-      "description": "Rasakan suasana pedesaan Bali yang otentik di Kaba-Kaba. Resort ini menawarkan ketenangan jauh dari keramaian dengan pelayanan personal.",
+      "description": "Predmed Kabaka Resort menawarkan pelarian eksklusif di desa Kaba-Kaba yang tenang. Properti ini menghadirkan perpaduan arsitektur modern dan lanskap tropis Bali yang asri, lengkap dengan kolam renang pribadi luas, area makan terbuka, dan pemandangan persawahan yang menenangkan jiwa. Sangat cocok bagi keluarga yang mencari suasana pedesaan yang autentik namun tetap menginginkan fasilitas resort modern.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "12:00 WITA",
+      "address": "Jl. Kaba-Kaba, Kaba-Kaba, Kec. Kediri, Kabupaten Tabanan, Bali 82121",
       "nearbyPlaces": [
-        "Tanah Lot (15 menit berkendara)",
-        "Canggu Center (20 menit berkendara)"
-      ]
-    }
+        "Pantai Nyanyi (6.2 km)",
+        "Tanah Lot Temple (7.5 km)",
+        "Pantai Pererenan (8.0 km)",
+        "Canggu Center (9.0 km)",
+        "Alas Kedaton Monkey Forest (10 km)"
+      ],
+      "facilities": [
+        "Private Outdoor Pool",
+        "Free WiFi Throughout",
+        "Full Kitchenette",
+        "Flat-screen TV with International Channels",
+        "En-suite Bathrooms with 4 Bathtubs",
+        "Spacious Tropical Garden",
+        "Daily Housekeeping",
+        "Free Parking Area"
+      ],
+      "extraServices": [
+        "Airport Pickup (Surcharge)",
+        "Floating Breakfast",
+        "Bike Rental",
+        "Tour Desk",
+        "In-room Massage"
+      ],
+      "cancellationPolicy": "Pembatalan gratis tersedia tergantung pada syarat dan ketentuan periode pemesanan."
+    },
+    "rooms": [
+      {
+        "type": "2 Bedroom Villa Garden View",
+        "price": 2000000
+      },
+      {
+        "type": "2 Bedroom Villa Rice Field View",
+        "price": 2500000
+      }
+    ]
   },
   {
     "name": "Villa 10 Viber Canggu",
@@ -499,11 +748,45 @@
     "detail": {
       "priceRange": "Rp1.200.000 - Rp1.500.000",
       "roomType": "Cozy 1 Bedroom Villa",
-      "description": "Pilihan sempurna untuk pasangan. Villa yang compact namun lengkap dengan vibra Canggu yang kental dan kolam renang pribadi.",
+      "description": "Villa 10 Viber Canggu adalah oase modern bagi pasangan yang mencari kenyamanan dan gaya di lokasi paling trendi di Bali. Vila ini menonjolkan estetika minimalis dengan sentuhan boho-chic, menawarkan area kamar tidur yang tenang yang terhubung langsung ke kolam renang pribadi dan dek berjemur yang intim. Lokasinya yang strategis memudahkan akses ke berbagai beach club dan kafe populer di kawasan Canggu.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "11:00 WITA",
-      "nearbyPlaces": ["Obsidian Canggu (0.5 km)", "Atlas Beach Fest (2.2 km)"]
-    }
+      "address": "Jl. Tegal Sari No.10, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
+      "nearbyPlaces": [
+        "Obsidian Canggu (0.5 km)",
+        "Milk & Madu (1.5 km)",
+        "Berawa Beach (2.0 km)",
+        "Atlas Beach Fest (2.2 km)",
+        "Finns Beach Club (2.3 km)"
+      ],
+      "facilities": [
+        "Private Swimming Pool",
+        "Free High-Speed WiFi",
+        "Air Conditioning",
+        "Kitchenette with Refrigerator",
+        "En-suite Bathroom with Rain Shower & Bathtub",
+        "Safety Deposit Box",
+        "Sunbed & Outdoor Lounge Area"
+      ],
+      "extraServices": [
+        "Daily Housekeeping",
+        "Airport Transfer (Surcharge)",
+        "Scooter Rental",
+        "In-villa Massage",
+        "Floating Breakfast Arrangement"
+      ],
+      "cancellationPolicy": "Pembatalan gratis tersedia hingga 3 hari sebelum kedatangan."
+    },
+    "rooms": [
+      {
+        "type": "Standard 1 Bedroom Villa",
+        "price": 1200000
+      },
+      {
+        "type": "Premium Honeymoon Package",
+        "price": 1500000
+      }
+    ]
   },
   {
     "name": "Villa Fleur",
@@ -565,13 +848,51 @@
       "disc": "0%"
     },
     "detail": {
-      "priceRange": "Rp1.500.000 - Rp2.200.000",
-      "roomType": "Spacious 5 Bedroom Boutique Villa",
-      "description": "Meskipun memiliki 5 kamar, Villa Fleur tetap mempertahankan suasana hangat dan intim. Desain interior yang cantik sangat 'Instagrammable'.",
+      "priceRange": "Rp1.500.000 - Rp4.500.000",
+      "roomType": "5 Bedroom Boutique Villa",
+      "description": "Villa Fleur menawarkan kemewahan tropis dengan sentuhan desain 'chic' yang memadukan estetika modern dan material alami. Villa ini sangat luas namun tetap memberikan rasa privasi yang hangat, dilengkapi kolam renang pribadi kristal, area santai yang estetik, dan setiap kamar memiliki desain unik yang sangat Instagrammable di kawasan premium Canggu.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "12:00 WITA",
-      "nearbyPlaces": ["Milk & Madu (0.9 km)", "Pantai Berawa (1.2 km)"]
-    }
+      "address": "Jl. Nelayan, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
+      "nearbyPlaces": [
+        "Milk & Madu (0.9 km)",
+        "Pantai Berawa (1.2 km)",
+        "Finns Recreation Club (1.5 km)",
+        "The Practice Yoga (0.7 km)",
+        "Canggu Beach (1.0 km)"
+      ],
+      "facilities": [
+        "Large Private Swimming Pool",
+        "Free High-Speed WiFi",
+        "Full Modern Kitchen",
+        "En-suite Bathrooms with Premium Amenities",
+        "Spacious Living Area",
+        "Air Conditioning in all rooms",
+        "Sun Deck & Garden",
+        "Security Box"
+      ],
+      "extraServices": [
+        "In-villa Private Chef",
+        "Daily Housekeeping",
+        "Airport Shuttle (Surcharge)",
+        "Massage & Spa Treatment",
+        "Laundry Service"
+      ]
+    },
+    "rooms": [
+      {
+        "type": "Standard Double Room",
+        "price": 1500000
+      },
+      {
+        "type": "Deluxe Room with Pool Access",
+        "price": 2200000
+      },
+      {
+        "type": "Entire 5 Bedroom Villa",
+        "price": 4500000
+      }
+    ]
   },
   {
     "name": "Riyuri Guesthouse",
@@ -617,11 +938,48 @@
     "detail": {
       "priceRange": "Rp800.000 - Rp1.200.000",
       "roomType": "Multi-room Guesthouse",
-      "description": "Akomodasi yang ekonomis untuk grup besar atau keluarga di pusat Canggu. Menawarkan kenyamanan rumah dengan fasilitas kolam bersama.",
+      "description": "Riyuri Guesthouse menyediakan akomodasi yang nyaman dan terjangkau di area strategis Berawa, Canggu. Sangat cocok untuk keluarga atau grup yang menginginkan akses mudah ke berbagai beach club dan kafe populer tanpa mengorbankan ketenangan. Guesthouse ini menawarkan kamar-kamar yang bersih, dapur bersama yang lengkap, serta kolam renang outdoor untuk bersantai di bawah matahari Bali.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "12:00 WITA",
-      "nearbyPlaces": ["Canggu Deli (0.3 km)", "Finns Recreation Club (0.6 km)"]
-    }
+      "address": "Jl. Subak Sari No.12, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
+      "nearbyPlaces": [
+        "Canggu Deli (0.3 km)",
+        "Finns Recreation Club (0.6 km)",
+        "Berawa Beach (1.1 km)",
+        "Atlas Beach Fest (0.9 km)",
+        "Nude Cafe (0.5 km)"
+      ],
+      "facilities": [
+        "Shared Outdoor Swimming Pool",
+        "Free WiFi",
+        "Air Conditioning",
+        "Flat-screen TV",
+        "Shared Kitchen",
+        "Daily Housekeeping",
+        "Free Parking Area",
+        "Terrace/Balcony"
+      ],
+      "extraServices": [
+        "Scooter Rental",
+        "Laundry Service",
+        "Airport Transfer (Surcharge)",
+        "Tour Arrangement"
+      ]
+    },
+    "rooms": [
+      {
+        "type": "Standard Double Room",
+        "price": 350000
+      },
+      {
+        "type": "Superior Family Room",
+        "price": 650000
+      },
+      {
+        "type": "Entire House (5 Bedrooms)",
+        "price": 1000000
+      }
+    ]
   },
   {
     "name": "Villa Auri Pererenan",
@@ -662,11 +1020,45 @@
     "detail": {
       "priceRange": "Rp1.400.000 - Rp1.800.000",
       "roomType": "2 Bedroom Villa in Pererenan",
-      "description": "Tempat peristirahatan modern yang menggabungkan kenyamanan tropis dengan ketenangan lingkungan Pererenan.",
+      "description": "Villa Auri Pererenan menyuguhkan hunian modern yang asri di kawasan Tumbak Bayuh yang tenang. Villa ini dirancang dengan gaya minimalis tropis, memiliki kolam renang pribadi yang jernih, serta ruang tamu semi-terbuka yang memberikan sirkulasi udara alami yang segar, menjadikannya pilihan ideal untuk relaksasi keluarga di pinggiran Canggu.",
       "checkInTime": "14:00 - 20:00 WITA",
       "checkOutTime": "07:00 - 12:00 WITA",
-      "nearbyPlaces": ["Pererenan Beach (2.7 km)", "Tanah Lot Temple (8.0 km)"]
-    }
+      "address": "Jl. Tumbak Bayuh No.18, Tumbak Bayuh, Kec. Mengwi, Kabupaten Badung, Bali 80351",
+      "nearbyPlaces": [
+        "Pererenan Beach (2.7 km)",
+        "Tanah Lot Temple (8.0 km)",
+        "Baked Pererenan (2.3 km)",
+        "Echo Beach (3.5 km)",
+        "Pepito Market Pererenan (1.8 km)"
+      ],
+      "facilities": [
+        "Private Swimming Pool",
+        "Free High-Speed WiFi",
+        "Air Conditioning",
+        "Fully Functional Kitchen",
+        "Flat-screen TV",
+        "En-suite Bathrooms",
+        "Terrace & Garden Area",
+        "Private Parking"
+      ],
+      "extraServices": [
+        "Airport Transfer (Surcharge)",
+        "Scooter Rental",
+        "Daily Housekeeping",
+        "Laundry Service"
+      ],
+      "cancellationPolicy": "Kebijakan pembatalan tergantung pada ketentuan masing-masing saluran pemesanan."
+    },
+    "rooms": [
+      {
+        "type": "Standard 2 Bedroom Villa",
+        "price": 1400000
+      },
+      {
+        "type": "Deluxe 2 Bedroom Villa with Garden View",
+        "price": 1800000
+      }
+    ]
   },
   {
     "name": "Villa Salamanca",
@@ -707,14 +1099,46 @@
     "detail": {
       "priceRange": "Rp3.200.000 - Rp4.000.000",
       "roomType": "Elegant 3 Bedroom Villa",
-      "description": "Terletak di desa Pererenan yang asri, villa ini menawarkan arsitektur tradisional Bali yang berpadu dengan kenyamanan modern.",
+      "description": "Villa Salamanca by Blacksand adalah perpaduan harmonis antara estetika tradisional Bali dan kenyamanan kontemporer. Terletak di kawasan Tumbak Bayuh yang tenang, villa ini menawarkan privasi total dengan kolam renang pribadi yang dikelilingi taman tropis, ruang keluarga berkonsep terbuka, serta interior kayu yang elegan, menjadikannya rumah kedua yang sempurna untuk keluarga di Bali.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "12:00 WITA",
+      "address": "Jl. Tumbak Bayuh, Tumbak Bayuh, Kec. Mengwi, Kabupaten Badung, Bali 80351",
       "nearbyPlaces": [
         "Black Sand Brewery (5.2 km)",
-        "Batu Bolong Beach (6.8 km)"
-      ]
-    }
+        "Batu Bolong Beach (6.8 km)",
+        "Pererenan Beach (4.5 km)",
+        "Pepito Market Pererenan (3.0 km)",
+        "Tanah Lot (9.5 km)"
+      ],
+      "facilities": [
+        "Private Swimming Pool",
+        "Free High-Speed WiFi",
+        "Air Conditioning",
+        "Fully Equipped Kitchen",
+        "En-suite Bathrooms with Bathtub",
+        "Outdoor Lounge Area",
+        "Cable TV",
+        "Daily Housekeeping"
+      ],
+      "extraServices": [
+        "Airport Transfer (Surcharge)",
+        "Private Chef Service",
+        "Scooter & Car Rental",
+        "In-villa Massage",
+        "Laundry Service"
+      ],
+      "cancellationPolicy": "Kebijakan pembatalan bervariasi sesuai dengan ketentuan agen atau platform pemesanan."
+    },
+    "rooms": [
+      {
+        "type": "Entire 3 Bedroom Villa",
+        "price": 3200000
+      },
+      {
+        "type": "Luxury Family Suite (Whole Villa)",
+        "price": 4000000
+      }
+    ]
   },
   {
     "name": "Villa Rosado",
@@ -760,13 +1184,52 @@
       "disc": "0%"
     },
     "detail": {
-      "priceRange": "Rp2.800.000 - Rp3.500.000",
+      "priceRange": "Rp1.800.000 - Rp3.500.000",
       "roomType": "Boutique 2 Bedroom Villa",
-      "description": "Hidden gem di Canggu. Villa butik yang indah dengan taman tropis dan kolam renang pribadi yang menenangkan.",
+      "description": "Villa Rosado adalah oase tropis tersembunyi yang menawarkan kombinasi sempurna antara desain modern dan kenyamanan hangat. Terletak strategis di Canggu, villa ini menonjolkan area taman yang rimbun dengan kolam renang pribadi kristal, ruang tamu semi-terbuka yang elegan, serta interior kamar yang menenangkan, menjadikannya pilihan favorit bagi pasangan maupun traveler yang mencari ketenangan di tengah keramaian Bali.",
       "checkInTime": "14:00 - 20:00 WITA",
       "checkOutTime": "11:00 WITA",
-      "nearbyPlaces": ["Echo Beach (1.0 km)", "Petitenget Temple (8.3 km)"]
-    }
+      "address": "Jl. Nelayan, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
+      "nearbyPlaces": [
+        "Echo Beach (1.0 km)",
+        "Petitenget Temple (8.3 km)",
+        "Batu Bolong Beach (1.2 km)",
+        "The Practice Yoga (0.8 km)",
+        "La Brisa Bali (1.1 km)"
+      ],
+      "facilities": [
+        "Private Swimming Pool",
+        "Tropical Lush Garden",
+        "Free High-speed WiFi",
+        "Air Conditioning",
+        "Fully Equipped Kitchen",
+        "En-suite Bathrooms with Bathtub",
+        "Safety Deposit Box",
+        "Flat-screen TV with Cable"
+      ],
+      "extraServices": [
+        "Daily Housekeeping",
+        "Airport Pickup Arrangement",
+        "In-villa Spa & Massage",
+        "Car/Scooter Rental",
+        "Laundry & Dry Cleaning"
+      ],
+      "cancellationPolicy": "Syarat pembatalan bervariasi sesuai dengan platform dan tanggal reservasi."
+    },
+    "rooms": [
+      {
+        "type": "Standard 2 Bedroom Villa",
+        "price": 1800000
+      },
+      {
+        "type": "Luxury 2 Bedroom Villa (Pool Side)",
+        "price": 2800000
+      },
+      {
+        "type": "Premium Entire Villa Experience",
+        "price": 3500000
+      }
+    ]
   },
   {
     "name": "Villa Sista",
@@ -822,14 +1285,46 @@
     "detail": {
       "priceRange": "Rp4.500.000 - Rp5.000.000",
       "roomType": "3 Bedroom Luxury Private Villa",
-      "description": "Villa Sista menawarkan ketenangan di area Tumbak Bayuh yang asri. Desain interior yang elegan berpadu dengan pemandangan hijau, menjadikannya pilihan sempurna untuk relaksasi maksimal bersama pasangan atau keluarga.",
+      "description": "Villa Sista adalah representasi kemewahan modern di tengah lanskap asri Tumbak Bayuh. Menawarkan privasi mutlak, vila ini memiliki jendela-jendela besar yang menghadap langsung ke taman tropis dan kolam renang infinity. Dengan interior kontemporer yang berkelas dan suasana yang sunyi, tempat ini menjadi destinasi unggulan untuk mereka yang mencari ketenangan premium di pinggiran kawasan Canggu.",
       "checkInTime": "14:00 WITA",
       "checkOutTime": "11:00 WITA",
+      "address": "Jl. Tumbak Bayuh, Kec. Mengwi, Kabupaten Badung, Bali 80351",
       "nearbyPlaces": [
         "Munggu Beach (2.5 km)",
         "Pererenan Area (3.0 km)",
-        "Pepito Market (1.8 km)"
-      ]
-    }
+        "Pepito Market (1.8 km)",
+        "Tanah Lot (8.5 km)",
+        "Echo Beach (4.2 km)"
+      ],
+      "facilities": [
+        "Private Infinity Pool",
+        "High-speed WiFi",
+        "Fully Equipped Designer Kitchen",
+        "Luxury En-suite Bathrooms",
+        "Spacious Sun Deck",
+        "Smart TV with Sound System",
+        "Air Conditioning",
+        "Enclosed Living Area",
+        "Private Garage"
+      ],
+      "extraServices": [
+        "Daily Housekeeping",
+        "In-villa Private Chef",
+        "Airport Transfer",
+        "Laundry Service",
+        "Car Rental with Driver"
+      ],
+      "cancellationPolicy": "Pembatalan non-refundable atau sesuai kebijakan platform pemesanan."
+    },
+    "rooms": [
+      {
+        "type": "Entire 3 Bedroom Luxury Villa",
+        "price": 4500000
+      },
+      {
+        "type": "Executive Suite Experience",
+        "price": 5000000
+      }
+    ]
   }
 ]
