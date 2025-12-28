@@ -154,18 +154,21 @@ function renderVillaDetail() {
         const images = Array.isArray(villa.image) ? villa.image : [villa.image];
 
         container.innerHTML = `
-          <div class="detail-header">
+          <div class="header-section">
             <h2>${villa.name}</h2>
-            <p class="location"><i class="material-symbols-outlined">location_on</i> ${
-              villa.location
-            }</p>
+            <div class="location">
+              <i class="material-symbols-outlined">location_on</i>
+              <span>${villa.detail.address}</span>
+            </div>
           </div>
 
           <div class="gallery-grid">
             ${images
               .map(
-                (img) => `
-            <img src="${img}" alt="${villa.name}" tabindex="0">
+                (img, index) => `
+            <img src="${img}" alt="${villa.name}" tabindex="0" class="${
+                  index === 0 ? "active" : ""
+                }">
             `
               )
               .join("")}
@@ -173,27 +176,66 @@ function renderVillaDetail() {
 
           <div class="info-section">
             <div class="main-info">
-              <h3>Description</h3>
-              <p>${villa.detail.description}</p>
+              <div class="description-card">
+                <h3>Deskripsi Properti</h3>
+                <p>${villa.detail.description}</p>
 
-              <div class="amenities-summary">
-                <span><i class="material-symbols-outlined">bed</i> ${
-                  villa.amenities.bed
-                } Beds</span>
-                <span><i class="material-symbols-outlined">bathtub</i> ${
-                  villa.amenities.bathtub
-                } Baths</span>
-                ${
-                  villa.amenities.pool
-                    ? '<span><i class="material-symbols-outlined">pool</i> Private Pool</span>'
-                    : ""
-                }
+                <div class="amenities-summary">
+                  <span><i class="material-symbols-outlined">bed</i> ${
+                    villa.amenities.bed
+                  } Bed</span>
+                  <span><i class="material-symbols-outlined">bathtub</i> ${
+                    villa.amenities.bathtub
+                  } Bath</span>
+                  ${
+                    villa.amenities.pool
+                      ? '<span><i class="material-symbols-outlined">pool</i> Private Pool</span>'
+                      : ""
+                  }
+                </div>
+              </div>
+
+              <div class="rooms-section">
+                <h3>Tipe Kamar & Harga</h3>
+                <div class="rooms-grid">
+                  ${villa.rooms
+                    .map(
+                      (room) => `
+                    <div class="room-item-card">
+                      <div class="room-info">
+                        <h4>${room.type}</h4>
+                        <p>${room.description}</p>
+                      </div>
+                      <div class="room-price">
+                        <span class="price">IDR ${room.price.toLocaleString(
+                          "id-ID"
+                        )}</span>
+                        <span class="unit">/night</span>
+                      </div>
+                    </div>
+                  `
+                    )
+                    .join("")}
+                </div>
+              </div>
+
+              <div class="facilities-grid">
+                <h3>Fasilitas</h3>
+                <ul>
+                  ${villa.detail.facilities
+                    .map(
+                      (f) => `
+                    <li><i class="material-symbols-outlined">check_circle</i> ${f}</li>
+                  `
+                    )
+                    .join("")}
+                </ul>
               </div>
             </div>
 
             <div class="sidebar-info">
               <div class="price-card">
-                <p class="price-range">${villa.detail.priceRange}</p>
+                <span class="price-range">${villa.detail.priceRange}</span>
                 <p class="room-type">${villa.detail.roomType}</p>
                 <button class="book-now-btn">
                   <a href="#/Booking?name=${encodeURIComponent(
@@ -202,20 +244,26 @@ function renderVillaDetail() {
                 </button>
               </div>
 
+              <div class="nearby-card">
+                <h3>Tempat Terdekat</h3>
+                <ul>
+                  ${villa.detail.nearbyPlaces
+                    .map(
+                      (p) => `
+                    <li><i class="material-symbols-outlined">explore</i> ${p}</li>
+                  `
+                    )
+                    .join("")}
+                </ul>
+              </div>
+
               <div class="policy-card">
+                <h3>Kebijakan</h3>
                 <p><strong>Check-in:</strong> ${villa.detail.checkInTime}</p>
                 <p><strong>Check-out:</strong> ${villa.detail.checkOutTime}</p>
+                <p class="cancel-policy">${villa.detail.cancellationPolicy}</p>
               </div>
             </div>
-          </div>
-
-          <div class="nearby-section">
-            <h3>Nearby Places</h3>
-            <ul>
-              ${villa.detail.nearbyPlaces
-                .map((place) => `<li>${place}</li>`)
-                .join("")}
-            </ul>
           </div>
         `;
       }
@@ -224,28 +272,22 @@ function renderVillaDetail() {
         root: document.querySelector(".gallery-grid"),
         threshold: 0.7,
       };
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.parentElement
               .querySelectorAll("img")
-              .forEach((img) => {
-                img.classList.remove("active");
-              });
+              .forEach((img) => img.classList.remove("active"));
             entry.target.classList.add("active");
           }
         });
       }, observerOptions);
 
-      document.querySelectorAll(".gallery-grid img").forEach((img) => {
-        observer.observe(img);
-      });
-
+      document
+        .querySelectorAll(".gallery-grid img")
+        .forEach((img) => observer.observe(img));
       const gallery = document.querySelector(".gallery-grid");
-      if (gallery) {
-        setupInfiniteScroll(gallery);
-      }
+      if (gallery) setupInfiniteScroll(gallery);
     });
 }
 
