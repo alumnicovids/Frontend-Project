@@ -53,6 +53,12 @@ async function redirect() {
         }
       }
 
+      if (path === "/Booking") {
+        if (typeof initBooking === "function") {
+          setTimeout(() => initBooking(), 50);
+        }
+      }
+
       if (path === "/setting") {
         if (typeof initSetting === "function") initSetting();
       }
