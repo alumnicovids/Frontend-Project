@@ -29,6 +29,14 @@ body {
   margin: 0;
 }
 
+#booking-content {
+  background-color: var(--bg-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 20px;
+}
+
 h3,
 .d-block,
 .d-flex {
@@ -40,7 +48,7 @@ h3,
   margin: 40px auto;
   padding: 0 20px;
   font-family: "Poppins", sans-serif;
-  animation: fadeInUp 0.8s ease-out;
+  animation: fadeInUp 0.5s ease-out;
 }
 
 .progress-tracker {
@@ -104,10 +112,12 @@ h3,
 
 .step.active .step-icon::after {
   content: "";
+  padding: 0 ;
   width: 12px;
   height: 12px;
   background: var(--accent-clr);
   border-radius: 50%;
+  transform: translateX(-2px);
 }
 
 .booking-card {
@@ -118,7 +128,7 @@ h3,
   display: flex;
   flex-direction: column;
   gap: 30px;
-  animation: fadeInUp 1s ease-out 0.2s backwards;
+  animation: fadeInUp 0.5s ease-out 0.2s backwards;
   backdrop-filter: blur(5px);
   border: 1px solid var(--line-clr);
 }
@@ -144,6 +154,7 @@ h3,
 .form-group select,
 .form-group input {
   width: 100%;
+  margin-top: 5px;
   box-sizing: border-box;
   padding: 16px 20px;
   border: 1px solid var(--line-clr);
@@ -202,6 +213,7 @@ h3,
 }
 .service-item {
   display: flex;
+  margin-top: 5px;
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
@@ -268,6 +280,7 @@ h3,
 
 .pay-btn {
   width: 100%;
+  margin-top: 5px;
   border: 1px solid var(--line-clr);
   padding: 18px;
   border-radius: 14px;
@@ -373,7 +386,7 @@ h3,
   box-shadow: 0 5px 15px rgba(139, 90, 43, 0.4);
 }
 
-.book-btn-primary {
+.book-btn {
   background: var(--primary-gradient);
   color: white;
   border: none;
@@ -386,6 +399,10 @@ h3,
   text-decoration: none;
   display: inline-block;
   text-align: center;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
 }
 
 .total-section {

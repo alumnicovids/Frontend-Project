@@ -77,7 +77,7 @@ function renderBookingForm(villa) {
           <span id="display-total">Rp0</span>
         </div>
       </div>
-      <button class="book-btn-primary w-100" onclick="confirmPayment('${
+      <button class="book-btn w-100" onclick="confirmPayment('${
         villa.name
       }')">Confirm Payment</button>
     </div>
@@ -185,8 +185,8 @@ function renderBookingStatus(booking) {
             <span class="status-badge waiting">Waiting for Payment</span>
         </div>
     <p>Total Bayar: Rp${parseInt(booking.totalPrice).toLocaleString()}</p>
-    <button class="btn-primary w-100" onclick="payNow()">Bayar Sekarang</button>
-    <button class="btn-outline w-100 mt-2" onclick="cancelBooking()">Cancel Booking</button>
+    <button class="book-btn w-100" onclick="payNow()">Pay Now</button>
+    <button class="book-btn w-100 mt-2" onclick="cancelBooking()">Cancel Booking</button>
     </div>
     `;
     startTimer(booking.deadline);
@@ -195,14 +195,14 @@ function renderBookingStatus(booking) {
       <div class="booking-card text-center">
         <h4>Pembayaran Berhasil!</h4>
         <p>Silahkan check-in pada tanggal ${booking.checkin}</p>
-        <button class="btn-primary" onclick="processCheckIn()">Check In</button>
+        <button class="book-btn" onclick="processCheckIn()">Check In</button>
       </div>
     `;
   } else if (booking.status === "checked-in") {
     container.innerHTML = `
       <div class="booking-card text-center">
         <h4>Anda sedang menginap</h4>
-        <button class="btn-primary" onclick="processCheckOut()">Check Out</button>
+        <button class="book-btn" onclick="processCheckOut()">Check Out</button>
       </div>
     `;
   }
@@ -273,7 +273,7 @@ function renderEmpty() {
   document.getElementById("booking-content").innerHTML = `
     <div class="empty-booking">
       <p>Belum ada villa yang dibooking</p>
-      <a href="#/" class="book-btn-primary">Cari Villa</a>
+      <a href="#/" class="book-btn">Cari Villa</a>
     </div>
   `;
 }
