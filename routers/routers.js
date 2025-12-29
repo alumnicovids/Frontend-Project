@@ -59,6 +59,12 @@ async function redirect() {
         }
       }
 
+      if (path === "/my-booking") {
+        if (typeof renderMyBookings === "function") {
+          setTimeout(() => renderMyBookings(), 50);
+        }
+      }
+
       if (path === "/setting") {
         if (typeof initSetting === "function") initSetting();
       }

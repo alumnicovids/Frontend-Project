@@ -278,4 +278,35 @@ function renderEmpty() {
   `;
 }
 
+function renderMyBookings() {
+  const container = document.getElementById("my-booking-list");
+  const history = JSON.parse(localStorage.getItem("myBookings")) || [];
+
+  if (history.length === 0) {
+    container.innerHTML = `<p class="text-center">Belum ada riwayat transaksi.</p>`;
+    return;
+  }
+
+  container.innerHTML = history
+    .map(
+      (item) => `
+    <div class="booking-card mb-3">
+      <div class="d-flex justify-between">
+        <strong>${item.villaName}</strong>
+        <span class="status-badge success">${item.status}</span>
+      </div>
+      <p style="font-size: 0.9em; color: #666;">
+        ${item.roomType} | ${item.checkin} - ${item.checkout}
+      </p>
+      <div class="d-flex justify-between mt-2">
+        <span>Metode: ${item.paymentMethod}</span>
+        <strong style="color: var(--accent-clr);">Rp${item.totalPrice.toLocaleString()}</strong>
+      </div>
+    </div>
+  `
+    )
+    .join("");
+}
+
 window.initBooking = initBooking;
+window.renderMyBookings = renderMyBookings;
