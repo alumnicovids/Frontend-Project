@@ -45,6 +45,7 @@ function renderVillas(filterType = null) {
   fetch("/JSON/villas.json")
     .then((response) => response.json())
     .then((villaData) => {
+      const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
       const container = document.querySelector(".villa-list");
       if (!container) return;
 
@@ -59,6 +60,9 @@ function renderVillas(filterType = null) {
 
       container.innerHTML = filteredData
         .map((villa) => {
+          const isWishlisted = wishlist.some(
+            (item) => item.name === villa.name
+          );
           const hasPromo = villa.promo && villa.promo.status === "active";
           const discountPercent = hasPromo ? parseInt(villa.promo.disc) : 0;
           const discountedPrice = hasPromo
@@ -74,7 +78,7 @@ function renderVillas(filterType = null) {
                 ? `<span class="promo-badge">${villa.promo.disc} OFF</span>`
                 : ""
             }
-            <button class="wishlist-btn">
+            <button class="wishlist-btn ${isWishlisted ? "active" : ""}">
               <i class="material-symbols-outlined">favorite</i>
             </button>
           </div>
@@ -336,6 +340,77 @@ function setupInfiniteScroll(gallery) {
 
   gallery.querySelectorAll("img").forEach((img) => observer.observe(img));
 }
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".wishlist-btn");
+  if (btn) {
+    const card = btn.closest(".card");
+    const villaName = card.querySelector(".villa-title").innerText;
+
+    btn.classList.toggle("active");
+
+    fetch("/JSON/villas.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const villa = data.find((v) => v.name === villaName);
+        let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+        const index = wishlist.findIndex((item) => item.name === villa.name);
+
+        if (index === -1) {
+          wishlist.push(villa);
+        } else {
+          wishlist.splice(index, 1);
+        }
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      });
+  }
+});
+
+function renderWishlist() {
+  const container = document.querySelector(".wishlist-container");
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  if (!container) return;
+
+  if (wishlist.length === 0) {
+    container.innerHTML = "<p>Wishlist kosong</p>";
+    return;
+  }
+
+  container.innerHTML = wishlist
+    .map(
+      (villa) => `
+      <article class="card">
+        <div class="card-image">
+          <img src="${villa.image[0]}" alt="${villa.name}" />
+          <button class="wishlist-btn active">
+            <i class="material-symbols-outlined">favorite</i>
+          </button>
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="tag">${villa.tag}</span>
+          </div>
+          <a href="#/Detailed-Property?name=${encodeURIComponent(
+            villa.name
+          )}" class="villa-title">${villa.name}</a>
+          <p class="location">
+            <i class="material-symbols-outlined">location_on</i>
+            ${villa.location}
+          </p>
+        </div>
+      </article>
+    `
+    )
+    .join("");
+}
+
+window.removeFromWishlist = function (name) {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  wishlist = wishlist.filter((item) => item.name !== name);
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+  renderWishlist();
+};
 
 document.addEventListener("click", (e) => {
   if (e.target.closest(".compare-btn")) {

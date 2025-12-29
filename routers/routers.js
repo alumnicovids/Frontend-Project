@@ -7,7 +7,7 @@ const routes = {
   "/Booking": "/pages/booking.html",
   "/my-booking": "/pages/my-booking.html",
   "/setting": "/pages/setting.html",
-  "/wishlist": "/pages/whislist.html",
+  "/wishlist": "/pages/wishlist.html",
   "/compare": "/pages/compare.html",
 };
 
@@ -67,6 +67,10 @@ async function redirect() {
 
       if (path === "/setting") {
         if (typeof initSetting === "function") initSetting();
+      }
+
+      if (path === "/wishlist") {
+        renderWishlist();
       }
     }
 
