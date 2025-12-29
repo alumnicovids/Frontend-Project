@@ -77,7 +77,7 @@ function renderBookingForm(villa) {
           <span id="display-total">Rp0</span>
         </div>
       </div>
-      <button class="btn-primary w-100" onclick="confirmPayment('${
+      <button class="book-btn-primary w-100" onclick="confirmPayment('${
         villa.name
       }')">Confirm Payment</button>
     </div>
@@ -273,7 +273,7 @@ function renderEmpty() {
   document.getElementById("booking-content").innerHTML = `
     <div class="empty-booking">
       <p>Belum ada villa yang dibooking</p>
-      <a href="#/" class="btn-primary">Cari Villa</a>
+      <a href="#/" class="book-btn-primary">Cari Villa</a>
     </div>
   `;
 }
