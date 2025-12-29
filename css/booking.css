@@ -123,6 +123,7 @@ h3,
 .booking-card {
   background: var(--card-bg);
   border-radius: 24px;
+  margin-top: 25px;
   padding: 40px;
   box-shadow: var(--shadow-soft);
   display: flex;
