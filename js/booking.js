@@ -287,7 +287,9 @@ function renderMyBookings() {
     return;
   }
 
-  container.innerHTML = history
+  const sortedHistory = [...history].reverse();
+
+  container.innerHTML = sortedHistory
     .map(
       (item) => `
     <div class="booking-card mb-3">
