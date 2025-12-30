@@ -378,18 +378,34 @@ function renderWishlist() {
   }
 
   container.innerHTML = wishlist
-    .map(
-      (villa) => `
+    .map((villa) => {
+      const isWishlisted = true;
+      const hasPromo = villa.promo && villa.promo.status === "active";
+      const discountPercent = hasPromo ? parseInt(villa.promo.disc) : 0;
+      const discountedPrice = hasPromo
+        ? villa.price * (1 - discountPercent / 100)
+        : villa.price;
+
+      return `
       <article class="card">
         <div class="card-image">
           <img src="${villa.image[0]}" alt="${villa.name}" />
-          <button class="wishlist-btn active">
+          ${
+            hasPromo
+              ? `<span class="promo-badge">${villa.promo.disc} OFF</span>`
+              : ""
+          }
+          <button class="wishlist-btn ${isWishlisted ? "active" : ""}">
             <i class="material-symbols-outlined">favorite</i>
           </button>
         </div>
         <div class="card-content">
           <div class="card-header">
             <span class="tag">${villa.tag}</span>
+            <div class="rating">
+              <i class="material-symbols-outlined">star</i>
+              <span>${villa.rating}</span>
+            </div>
           </div>
           <a href="#/Detailed-Property?name=${encodeURIComponent(
             villa.name
@@ -398,10 +414,46 @@ function renderWishlist() {
             <i class="material-symbols-outlined">location_on</i>
             ${villa.location}
           </p>
+          <div class="amenities">
+            <span><i class="material-symbols-outlined">bed</i> ${
+              villa.amenities.bed
+            }</span>
+            <span><i class="material-symbols-outlined">bathtub</i> ${
+              villa.amenities.bathtub
+            }</span>
+            <span><i class="material-symbols-outlined">pool</i> ${
+              villa.amenities.pool ? "Yes" : "No"
+            }</span>
+          </div>
+          <div class="card-footer">
+            <div class="price-container">
+              ${
+                hasPromo
+                  ? `<span class="original-price">IDR ${villa.price.toLocaleString(
+                      "id-ID"
+                    )}</span>`
+                  : ""
+              }
+              <span class="price">IDR ${discountedPrice.toLocaleString(
+                "id-ID"
+              )}</span>
+              <span class="unit">/night</span>
+            </div>
+            <div class="action-buttons">
+              <button class="compare-btn" title="Compare">
+                <i class="material-symbols-outlined">compare_arrows</i>
+              </button>
+              <button class="book-now">
+                <a href="#/Booking?name=${encodeURIComponent(
+                  villa.name
+                )}" class="nav-link">Book Now</a>
+              </button>
+            </div>
+          </div>
         </div>
       </article>
-    `
-    )
+    `;
+    })
     .join("");
 }
 
