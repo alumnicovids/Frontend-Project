@@ -347,6 +347,9 @@ h3,
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 50%;
 }
 
 .confirm-btn::before {

@@ -35,7 +35,7 @@ function renderBookingForm(villa) {
       <div class="card-header">
         <h3>${villa.name}</h3>
         <p class="text-muted">Lengkapi detail reservasi Anda di bawah ini.</p>
-      </div>
+    </div>
 
       <div class="form-group">
         <label>Pilih Tipe Kamar</label>
@@ -178,6 +178,11 @@ function renderBookingStatus(booking) {
 
   if (booking.status === "waiting") {
     container.innerHTML = `
+      <div class="progress-tracker">
+        <div class="step"><div class="step-icon">1</div>Detail</div>
+        <div class="step active"><div class="step-icon">2</div>Payment</div>
+        <div class="step"><div class="step-icon">3</div>Finish</div>
+      </div>
       <div class="timer-banner">Selesaikan pembayaran dalam: <span id="timer">--:--:--</span></div>
       <div class="booking-card status-card">
         <div class="d-flex justify-between align-center">
@@ -204,6 +209,11 @@ function renderBookingStatus(booking) {
     startTimer(booking.deadline);
   } else if (booking.status === "paid") {
     container.innerHTML = `
+      <div class="progress-tracker">
+        <div class="step"><div class="step-icon">1</div>Detail</div>
+        <div class="step"><div class="step-icon">2</div>Payment</div>
+        <div class="step active"><div class="step-icon">3</div>Finish</div>
+      </div>
       <div class="booking-card text-center py-5">
         <div class="success-icon mb-4">✓</div>
         <h4>Pembayaran Berhasil!</h4>
@@ -286,77 +296,6 @@ function renderEmpty() {
       <a href="#/" class="confirm-btn" style="text-decoration:none">Cari Villa Sekarang</a>
     </div>
   `;
-}
-
-async function renderMyBookings() {
-  const container = document.getElementById("my-booking-list");
-  if (!container) return;
-
-  const history = JSON.parse(localStorage.getItem("myBookings")) || [];
-
-  if (history.length === 0) {
-    container.innerHTML = `<div class="empty-state"><p>Belum ada riwayat transaksi.</p></div>`;
-    return;
-  }
-
-  try {
-    const res = await fetch("/JSON/villas.json");
-    const villasData = await res.json();
-
-    container.innerHTML = history
-      .slice()
-      .reverse()
-      .map((item, index) => {
-        const villaInfo = villasData.find((v) => v.name === item.villaName);
-        const villaImage =
-          villaInfo?.image?.[0] || "https://via.placeholder.com/150";
-
-        return `
-      <div class="booking-card history-card" style="animation-delay: ${
-        index * 0.1
-      }s">
-        <div class="card-content-wrapper">
-          <div class="villa-image-container">
-             <img src="${villaImage}" alt="${item.villaName}" class="villa-img">
-          </div>
-          <div class="villa-details">
-            <div class="d-flex justify-between align-start">
-              <div>
-                <h4 class="m-0">${item.villaName}</h4>
-                <small class="text-muted">TRX-${String(item.id).slice(
-                  -6
-                )}</small>
-              </div>
-              <span class="status-badge-booking status-${item.status}">${
-          item.status
-        }</span>
-            </div>
-            <p class="room-info">
-              <span>🛏️ ${item.roomType}</span>
-              <span class="mx-2">|</span>
-              <span>📅 ${item.checkin} - ${item.checkout}</span>
-            </p>
-            <div class="d-flex justify-between align-center mt-3">
-              <div class="payment-info">
-                <span class="method">${item.paymentMethod}</span>
-                <span class="price">Rp${item.totalPrice.toLocaleString()}</span>
-              </div>
-              <div class="action-buttons">
-                <button class="btn-action ${
-                  item.status === "completed" ? "btn-review" : ""
-                }">
-                  ${item.status === "completed" ? "Beri Ulasan" : "Detail"}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>`;
-      })
-      .join("");
-  } catch (error) {
-    container.innerHTML = `<p>Gagal memuat riwayat.</p>`;
-  }
 }
 
 async function renderMyBookings() {
