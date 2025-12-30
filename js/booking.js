@@ -36,7 +36,7 @@ function renderBookingForm(villa) {
         <h3>${villa.name}</h3>
         <p class="text-muted">Lengkapi detail reservasi Anda di bawah ini.</p>
       </div>
-      
+
       <div class="form-group">
         <label>Pilih Tipe Kamar</label>
         <select id="room-select" onchange="calculateTotal()">
@@ -153,10 +153,10 @@ function confirmPayment(villaName) {
   const checkin = document.getElementById("checkin-date").value;
   const checkout = document.getElementById("checkout-date").value;
 
-  if (!checkin || !checkout) return alert("Harap pilih tanggal inap!");
+  if (!checkin || !checkout) return showToast("Harap pilih tanggal inap!!");
   if (new Date(checkout) <= new Date(checkin))
-    return alert("Tanggal tidak valid!");
-  if (!method) return alert("Pilih metode pembayaran!");
+    return showToast("Tanggal tidak valid!!");
+  if (!method) return showToast("Pilih metode pembayar!!");
 
   const booking = {
     villaName,
@@ -260,7 +260,7 @@ function processCheckOut() {
   history.push({ ...booking, status: "completed", id: Date.now() });
   localStorage.setItem("myBookings", JSON.stringify(history));
   localStorage.removeItem("activeBooking");
-  alert("Terima kasih telah berkunjung!");
+  showToast("Terimakasih telah berkunjung!");
   window.location.hash = "#/my-booking";
 }
 
@@ -359,52 +359,6 @@ async function renderMyBookings() {
   }
 }
 
-function showReviewPopup(villaName) {
-  const overlay = document.createElement("div");
-  overlay.className = "review-overlay";
-  overlay.innerHTML = `
-    <div class="review-popup">
-      <div class="popup-header">
-        <h4>Berikan Ulasan</h4>
-        <p>${villaName}</p>
-      </div>
-      <div class="star-rating">
-        <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
-        <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
-        <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
-        <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
-        <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
-      </div>
-      <textarea id="review-text" placeholder="Ceritakan pengalaman Anda..."></textarea>
-      <div class="popup-actions">
-        <button class="btn-cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
-        <button class="confirm-btn" onclick="submitReview('${villaName}')">Kirim Ulasan</button>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(overlay);
-}
-
-function closeReviewPopup() {
-  const overlay = document.querySelector(".review-overlay");
-  if (overlay) {
-    overlay.style.opacity = "0";
-    setTimeout(() => overlay.remove(), 300);
-  }
-}
-
-function submitReview(villaName) {
-  const rating = document.querySelector('input[name="rating"]:checked')?.value;
-  const comment = document.getElementById("review-text").value;
-
-  if (!rating) return alert("Pilih rating bintang terlebih dahulu!");
-
-  alert(
-    `Terima kasih! Ulasan bintang ${rating} untuk ${villaName} telah terkirim.`
-  );
-  document.querySelector(".review-overlay").remove();
-}
-
 async function renderMyBookings() {
   const container = document.getElementById("my-booking-list");
   if (!container) return;
@@ -461,11 +415,11 @@ async function renderMyBookings() {
               <div class="action-buttons">
                 <button class="btn-action ${
                   item.status === "completed" ? "btn-review" : ""
-                }" 
+                }"
                   onclick="${
                     item.status === "completed"
                       ? `showReviewPopup('${item.villaName}')`
-                      : "alert('Detail pemesanan')"
+                      : "showToast('Detail pemesanan')"
                   }">
                   ${item.status === "completed" ? "Beri Ulasan" : "Detail"}
                 </button>

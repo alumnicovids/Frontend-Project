@@ -1,3 +1,15 @@
+const state = JSON.parse(localStorage.getItem("userProfile")) || {
+  name: "Undefined",
+  birth: "Undefined",
+  sex: "Undefined",
+  Email: "Undefined",
+  Phone: "Undefined",
+};
+
+function saveState() {
+  localStorage.setItem("userProfile", JSON.stringify(state));
+}
+
 function loadProfile() {
   const fields = {
     profileName: state.name,
@@ -52,15 +64,12 @@ function attachEventListeners() {
       if (!valueSpan) return;
 
       const fieldName = fieldId.replace("change", "");
-      const newValue = prompt(
-        `Masukkan ${fieldName} baru:`,
-        valueSpan.innerText
-      );
 
-      if (newValue !== null && newValue.trim() !== "") {
+      showEditModal(fieldName, valueSpan.innerText, (newValue) => {
         valueSpan.innerText = newValue;
+        showToast(fieldName + " Berhasil diperbarui");
         updateProfile();
-      }
+      });
     };
   });
 
@@ -69,7 +78,7 @@ function attachEventListeners() {
   if (birthBtn && birthInput) {
     birthBtn.onclick = () => {
       updateProfile();
-      alert("Tanggal lahir berhasil diperbarui");
+      showToast("Tanggal lahir berhasil diperbarui");
     };
   }
 
@@ -89,7 +98,7 @@ function attachEventListeners() {
           };
           reader.readAsDataURL(file);
         } else {
-          alert("File terlalu besar atau format tidak sesuai");
+          showToast("File terlalu besar atau format tidak sesuai");
         }
       };
       input.click();

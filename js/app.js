@@ -1,15 +1,3 @@
-const state = JSON.parse(localStorage.getItem("userProfile")) || {
-  name: "Undefined",
-  birth: "Undefined",
-  sex: "Undefined",
-  Email: "Undefined",
-  Phone: "Undefined",
-};
-
-function saveState() {
-  localStorage.setItem("userProfile", JSON.stringify(state));
-}
-
 const toggleButton = document.getElementById("toggle-btn");
 const sidebar = document.getElementById("sidebar");
 

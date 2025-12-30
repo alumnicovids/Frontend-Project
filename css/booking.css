@@ -1,17 +1,3 @@
-:root {
-  --primary-gradient: linear-gradient(135deg, #8b5a2b, #4b3621);
-  --accent-clr: #8b5a2b;
-  --bg-color: rgba(240, 240, 227, 0.85);
-  --card-bg: rgba(255, 255, 255, 0.4);
-  --input-bg: rgba(255, 255, 255, 0.6);
-  --text-main: #4b3621;
-  --text-muted: #6d4c41;
-  --shadow-soft: 0 10px 30px rgba(75, 54, 33, 0.1);
-  --shadow-hover: 0 15px 35px rgba(139, 90, 43, 0.2);
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  --line-clr: #d2b48c;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -119,7 +105,7 @@ h3,
 
 .step.active .step-icon::after {
   content: "";
-  padding: 0 ;
+  padding: 0;
   width: 12px;
   height: 12px;
   background: var(--accent-clr);
@@ -342,6 +328,7 @@ h3,
   justify-content: center;
   margin-top: 20px;
 }
+
 .confirm-btn {
   background: var(--primary-gradient);
   color: white;
@@ -507,10 +494,22 @@ h3,
   font-size: 0.75rem !important;
 }
 
-.status-completed { background: #dcfce7; color: #166534 !important; }
-.status-waiting { background: #fef3c7; color: #92400e !important; }
-.status-paid { background: #dbeafe; color: #1e40af !important; }
-.status-cancelled { background: #fee2e2; color: #991b1b !important; }
+.status-completed {
+  background: #dcfce7;
+  color: #166534 !important;
+}
+.status-waiting {
+  background: #fef3c7;
+  color: #92400e !important;
+}
+.status-paid {
+  background: #dbeafe;
+  color: #1e40af !important;
+}
+.status-cancelled {
+  background: #fee2e2;
+  color: #991b1b !important;
+}
 
 .room-info {
   font-size: 0.85rem;
@@ -572,8 +571,8 @@ h3,
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -582,24 +581,35 @@ h3,
 }
 
 .review-popup {
-  background: white;
+  background: var(bg--glass);
+  backdrop-filter: blur(8px);
   width: 90%;
   max-width: 400px;
   padding: 30px;
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   text-align: center;
   animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes popIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .star-rating {
@@ -652,10 +662,10 @@ h3,
   margin-top: 10px;
 }
 
-.btn-cancel, 
+.btn-cancel,
 .review-popup .confirm-btn {
-  flex: 1; /* Membuat kedua tombol berbagi ruang yang sama rata */
-  height: 50px; /* Menyeragamkan tinggi tombol */
+  flex: 1;
+  height: 50px;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 700;
@@ -701,10 +711,10 @@ h3,
   font-size: 0.9rem;
 }
 
-.confirm-btn, 
+.confirm-btn,
 .booking-btn-secondary {
   width: 100%;
-  padding: 18px 0; 
+  padding: 18px 0;
   border-radius: 50px;
   font-size: 1rem;
   font-weight: 700;
