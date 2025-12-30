@@ -43,6 +43,13 @@ h3,
   color: var(--text-main);
 }
 
+.status-badge-booking {
+  color: var(--accent-clr) !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 0 !important;
+}
+
 .booking-container {
   max-width: 900px;
   margin: 40px auto;
@@ -429,6 +436,318 @@ h3,
   font-weight: 800;
   font-size: 1.4rem;
   color: var(--accent-clr) !important;
+}
+
+.villa-image-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--line-clr);
+}
+
+.villa-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.history-card:hover .villa-img {
+  transform: scale(1.1);
+}
+
+.card-content-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.history-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  border-left: 5px solid var(--accent-clr);
+  padding: 20px !important;
+  gap: 0 !important;
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-content-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.villa-image-placeholder {
+  width: 100px;
+  height: 100px;
+  background: var(--line-clr);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.villa-details {
+  flex-grow: 1;
+}
+
+.status-badge-booking {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem !important;
+}
+
+.status-completed { background: #dcfce7; color: #166534 !important; }
+.status-waiting { background: #fef3c7; color: #92400e !important; }
+.status-paid { background: #dbeafe; color: #1e40af !important; }
+.status-cancelled { background: #fee2e2; color: #991b1b !important; }
+
+.room-info {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-info .method {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.payment-info .price {
+  font-weight: 800;
+  color: var(--accent-clr);
+}
+
+.btn-action {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--line-clr);
+  background: white;
+  font-weight: 600;
+}
+
+.btn-review {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+}
+
+.btn-action:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-soft);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  border: 2px dashed var(--line-clr);
+}
+
+.review-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.review-popup {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 40px;
+  color: #ddd;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+  color: #ffc107;
+  transform: scale(1.1);
+}
+
+.star-rating label:active {
+  transform: scale(1.3);
+}
+
+#review-text {
+  width: 100%;
+  height: 100px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line-clr);
+  background: var(--bg-color);
+  font-family: inherit;
+  resize: none;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-cancel, 
+.review-popup .confirm-btn {
+  flex: 1; /* Membuat kedua tombol berbagi ruang yang sama rata */
+  height: 50px; /* Menyeragamkan tinggi tombol */
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.btn-cancel {
+  background: #f8f8f8;
+  color: #4b3621;
+  border: 1px solid #d2b48c;
+}
+
+.btn-cancel:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  border-color: #8b5a2b;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  color: #8b5a2b;
+}
+
+.review-popup .confirm-btn {
+  background: linear-gradient(135deg, #8b5a2b, #4b3621);
+  color: white;
+  box-shadow: 0 10px 20px rgba(139, 90, 43, 0.3);
+}
+
+.review-popup .confirm-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(139, 90, 43, 0.4);
+}
+
+.review-popup .confirm-btn {
+  flex: 2;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+.confirm-btn, 
+.booking-btn-secondary {
+  width: 100%;
+  padding: 18px 0; 
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.confirm-btn {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  box-shadow: 0 10px 20px rgba(139, 90, 43, 0.3);
+}
+
+.booking-btn-secondary {
+  background: rgba(0, 0, 0, 0.1);
+  color: #ca3636;
+  border: 1px solid rgba(140, 71, 71, 0.3);
+  margin-top: 10px;
+}
+
+.confirm-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(139, 90, 43, 0.5);
+}
+
+.booking-btn-secondary:hover {
+  background: rgba(153, 27, 27, 0.2);
+  color: #ff9999;
+  border-color: #991b1b;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.booking-btn-secondary:active,
+.confirm-btn:active {
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

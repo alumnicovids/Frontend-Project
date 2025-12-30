@@ -27,7 +27,7 @@
 }
 
 .status-badge {
-  color: var(--accent-clr) !important;
+  color: aliceblue !important;
   font-weight: 700;
   font-size: 0.85rem;
   margin: 0 !important;

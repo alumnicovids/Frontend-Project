@@ -32,9 +32,13 @@ function renderBookingForm(villa) {
       <div class="step"><div class="step-icon">3</div>Finish</div>
     </div>
     <div class="booking-card">
-      <h3>${villa.name}</h3>
+      <div class="card-header">
+        <h3>${villa.name}</h3>
+        <p class="text-muted">Lengkapi detail reservasi Anda di bawah ini.</p>
+      </div>
+      
       <div class="form-group">
-        <label>Pilih Kamar</label>
+        <label>Pilih Tipe Kamar</label>
         <select id="room-select" onchange="calculateTotal()">
           ${villa.rooms
             .map(
@@ -46,54 +50,84 @@ function renderBookingForm(villa) {
             .join("")}
         </select>
       </div>
+
       <div class="form-group">
         <label>Durasi Inap</label>
-        <div class="d-flex gap-2">
-          <input type="date" id="checkin-date" onchange="calculateTotal()">
-          <input type="date" id="checkout-date" onchange="calculateTotal()">
+        <div class="date-range-container">
+          <div class="date-input-wrapper">
+            <small>Check-in</small>
+            <input type="date" id="checkin-date" onchange="calculateTotal()">
+          </div>
+          <div class="date-input-wrapper">
+            <small>Check-out</small>
+            <input type="date" id="checkout-date" onchange="calculateTotal()">
+          </div>
         </div>
       </div>
+
       <div class="form-group">
-        <label>Add-on Services</label>
-        <div class="service-item"><label><input type="checkbox" class="addon" data-price="150000" onchange="calculateTotal()"> Sarapan</label><span>Rp150.000</span></div>
-        <div class="service-item"><label><input type="checkbox" class="addon" data-price="250000" onchange="calculateTotal()"> Jemput Bandara</label><span>Rp250.000</span></div>
-        <div class="service-item"><label><input type="checkbox" class="addon" data-price="100000" onchange="calculateTotal()"> Extra Bed</label><span>Rp100.000</span></div>
-      </div>
-      <div class="form-group">
-        <label>Promo Code</label>
-        <input type="text" id="promo-code" placeholder="Gunakan 'DISKON10' untuk 10%" oninput="calculateTotal()">
-      </div>
-      <div class="payment-methods mb-3">
-        <label class="d-block mb-2">Metode Pembayaran</label>
-        <div class="d-flex gap-2">
-          <button class="pay-btn" onclick="selectPay(this)" data-method="Bank Transfer">Bank</button>
-          <button class="pay-btn" onclick="selectPay(this)" data-method="E-Wallet">E-Wallet</button>
+        <label>Layanan Tambahan (Add-on)</label>
+        <div class="service-list">
+          <div class="service-item">
+            <label><input type="checkbox" class="addon" data-price="150000" onchange="calculateTotal()"> Sarapan</label>
+            <span class="service-price">Rp150.000</span>
+          </div>
+          <div class="service-item">
+            <label><input type="checkbox" class="addon" data-price="250000" onchange="calculateTotal()"> Jemput Bandara</label>
+            <span class="service-price">Rp250.000</span>
+          </div>
+          <div class="service-item">
+            <label><input type="checkbox" class="addon" data-price="100000" onchange="calculateTotal()"> Extra Bed</label>
+            <span class="service-price">Rp100.000</span>
+          </div>
         </div>
       </div>
-      <div class="total-section card-summary p-3 mb-3" style="background: #f9f9f9; border-radius: 8px;">
-        <div class="d-flex justify-between"><span>Durasi:</span> <span id="display-nights">0 Malam</span></div>
-        <div class="d-flex justify-between font-bold mt-2" style="font-size: 1.2em; color: var(--accent-clr);">
+
+      <div class="form-group">
+        <label>Kode Promo</label>
+        <input type="text" id="promo-code" placeholder="Contoh: DISKON10" oninput="calculateTotal()">
+      </div>
+
+      <div class="form-group">
+        <label>Metode Pembayaran</label>
+        <div class="payment-methods">
+          <button class="pay-btn" onclick="selectPay(this)" data-method="Bank Transfer">Bank Transfer</button>
+          <button class="pay-btn" onclick="selectPay(this)" data-method="E-Wallet">E-Wallet / Qris</button>
+        </div>
+      </div>
+
+      <div class="total-section">
+        <div class="d-flex justify-between">
+          <span>Durasi Menginap:</span>
+          <span id="display-nights" class="font-bold">0 Malam</span>
+        </div>
+        <div class="d-flex justify-between mt-3 total-row">
           <span>Total Estimasi:</span>
           <span id="display-total">Rp0</span>
         </div>
       </div>
-      <button class="book-btn w-100" onclick="confirmPayment('${
+
+      <button class="confirm-btn w-100" onclick="confirmPayment('${
         villa.name
-      }')">Confirm Payment</button>
+      }')">Konfirmasi & Bayar</button>
     </div>
   `;
 }
 
 function calculateTotal() {
   const roomPrice = parseInt(document.getElementById("room-select").value);
-  const checkin = new Date(document.getElementById("checkin-date").value);
-  const checkout = new Date(document.getElementById("checkout-date").value);
+  const checkinVal = document.getElementById("checkin-date").value;
+  const checkoutVal = document.getElementById("checkout-date").value;
   const addons = document.querySelectorAll(".addon:checked");
   const promo = document.getElementById("promo-code").value;
 
   let nights = 0;
-  if (checkin && checkout && checkout > checkin) {
-    nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+  if (checkinVal && checkoutVal) {
+    const checkin = new Date(checkinVal);
+    const checkout = new Date(checkoutVal);
+    if (checkout > checkin) {
+      nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+    }
   }
 
   let addonTotal = 0;
@@ -116,7 +150,12 @@ function confirmPayment(villaName) {
   const total = calculateTotal();
   const selectedRoom = document.getElementById("room-select");
   const method = document.querySelector(".pay-btn.selected")?.dataset.method;
+  const checkin = document.getElementById("checkin-date").value;
+  const checkout = document.getElementById("checkout-date").value;
 
+  if (!checkin || !checkout) return alert("Harap pilih tanggal inap!");
+  if (new Date(checkout) <= new Date(checkin))
+    return alert("Tanggal tidak valid!");
   if (!method) return alert("Pilih metode pembayaran!");
 
   const booking = {
@@ -125,45 +164,8 @@ function confirmPayment(villaName) {
     totalPrice: total,
     status: "waiting",
     deadline: new Date().getTime() + 24 * 60 * 60 * 1000,
-    checkin: document.getElementById("checkin-date").value,
-    checkout: document.getElementById("checkout-date").value,
-    paymentMethod: method,
-  };
-
-  localStorage.setItem("activeBooking", JSON.stringify(booking));
-  location.reload();
-}
-
-function confirmPayment(villaName) {
-  const total = calculateTotal();
-  const selectedRoom = document.getElementById("room-select");
-  const method = document.querySelector(".pay-btn.selected")?.dataset.method;
-  const checkin = document.getElementById("checkin-date").value;
-  const checkout = document.getElementById("checkout-date").value;
-
-  if (!checkin || !checkout) {
-    alert("Harap pilih tanggal check-in dan check-out!");
-    return;
-  }
-
-  if (new Date(checkout) <= new Date(checkin)) {
-    alert("Tanggal check-out harus setelah tanggal check-in!");
-    return;
-  }
-
-  if (!method) {
-    alert("Harap pilih metode pembayaran!");
-    return;
-  }
-
-  const booking = {
-    villaName,
-    roomType: selectedRoom.options[selectedRoom.selectedIndex].dataset.name,
-    totalPrice: total,
-    status: "waiting",
-    deadline: new Date().getTime() + 24 * 60 * 60 * 1000,
-    checkin: checkin,
-    checkout: checkout,
+    checkin,
+    checkout,
     paymentMethod: method,
   };
 
@@ -173,36 +175,49 @@ function confirmPayment(villaName) {
 
 function renderBookingStatus(booking) {
   const container = document.getElementById("booking-content");
-  const now = new Date().getTime();
-  const timeLeft = booking.deadline - now;
 
   if (booking.status === "waiting") {
     container.innerHTML = `
-    <div class="timer-banner">Selesaikan pembayaran dalam: <span id="timer"></span></div>
-    <div class="booking-card">
-        <div class="d-flex justify-between">
-            <h4>${booking.villaName}</h4>
-            <span class="status-badge waiting">Waiting for Payment</span>
+      <div class="timer-banner">Selesaikan pembayaran dalam: <span id="timer">--:--:--</span></div>
+      <div class="booking-card status-card">
+        <div class="d-flex justify-between align-center">
+          <div>
+            <h4 class="m-0">${booking.villaName}</h4>
+            <p class="text-muted m-0">${booking.roomType}</p>
+          </div>
+          <span class="status-badge-booking status-waiting">Waiting</span>
         </div>
-    <p>Total Bayar: Rp${parseInt(booking.totalPrice).toLocaleString()}</p>
-    <button class="book-btn w-100" onclick="payNow()">Pay Now</button>
-    <button class="book-btn w-100 mt-2" onclick="cancelBooking()">Cancel Booking</button>
-    </div>
+        <hr class="my-4" style="border: 0; border-top: 1px solid var(--line-clr); opacity: 0.3;">
+        <div class="payment-detail-box">
+          <small>Total yang harus dibayar</small>
+          <h2 class="price-highlight">Rp${parseInt(
+            booking.totalPrice
+          ).toLocaleString()}</h2>
+          <p>Metode: <strong>${booking.paymentMethod}</strong></p>
+        </div>
+        <div class="d-flex flex-column gap-3">
+          <button class="confirm-btn w-100" onclick="payNow()">Bayar Sekarang</button>
+          <button class="booking-btn-secondary w-100" onclick="cancelBooking()">Batalkan Pesanan</button>
+        </div>
+      </div>
     `;
     startTimer(booking.deadline);
   } else if (booking.status === "paid") {
     container.innerHTML = `
-      <div class="booking-card text-center">
+      <div class="booking-card text-center py-5">
+        <div class="success-icon mb-4">✓</div>
         <h4>Pembayaran Berhasil!</h4>
-        <p>Silahkan check-in pada tanggal ${booking.checkin}</p>
-        <button class="book-btn" onclick="processCheckIn()">Check In</button>
+        <p class="text-muted">Terima kasih atas reservasi Anda.<br>Silakan check-in pada <strong>${booking.checkin}</strong></p>
+        <button class="confirm-btn mt-4" onclick="processCheckIn()">Check In Sekarang</button>
       </div>
     `;
   } else if (booking.status === "checked-in") {
     container.innerHTML = `
-      <div class="booking-card text-center">
-        <h4>Anda sedang menginap</h4>
-        <button class="book-btn" onclick="processCheckOut()">Check Out</button>
+      <div class="booking-card text-center py-5">
+        <div class="stay-icon mb-4">🏠</div>
+        <h4>Selamat Menikmati Liburan</h4>
+        <p class="text-muted">Anda sedang dalam masa inap di ${booking.villaName}.</p>
+        <button class="confirm-btn mt-4" onclick="processCheckOut()">Check Out</button>
       </div>
     `;
   }
@@ -212,35 +227,29 @@ function startTimer(deadline) {
   const x = setInterval(() => {
     const now = new Date().getTime();
     const distance = deadline - now;
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById(
-      "timer"
-    ).innerHTML = `${hours}j ${minutes}m ${seconds}s`;
-
     if (distance < 0) {
       clearInterval(x);
       localStorage.removeItem("activeBooking");
       location.reload();
+      return;
     }
+    const h = Math.floor((distance % 86400000) / 3600000);
+    const m = Math.floor((distance % 3600000) / 60000);
+    const s = Math.floor((distance % 60000) / 1000);
+    const timerElem = document.getElementById("timer");
+    if (timerElem) timerElem.innerHTML = `${h}j ${m}m ${s}s`;
   }, 1000);
 }
 
 function payNow() {
   updateStatus("paid");
 }
-
 function cancelBooking() {
-  if (confirm("Apakah Anda yakin ingin membatalkan booking ini?")) {
+  if (confirm("Batalkan pesanan?")) {
     localStorage.removeItem("activeBooking");
     location.reload();
   }
 }
-
 function processCheckIn() {
   updateStatus("checked-in");
 }
@@ -248,10 +257,10 @@ function processCheckIn() {
 function processCheckOut() {
   let booking = JSON.parse(localStorage.getItem("activeBooking"));
   let history = JSON.parse(localStorage.getItem("myBookings")) || [];
-  history.push({ ...booking, status: "completed" });
+  history.push({ ...booking, status: "completed", id: Date.now() });
   localStorage.setItem("myBookings", JSON.stringify(history));
   localStorage.removeItem("activeBooking");
-  alert("Transaksi Selesai!");
+  alert("Terima kasih telah berkunjung!");
   window.location.hash = "#/my-booking";
 }
 
@@ -271,43 +280,205 @@ function selectPay(btn) {
 
 function renderEmpty() {
   document.getElementById("booking-content").innerHTML = `
-    <div class="empty-booking">
+    <div class="empty-state">
+      <div class="empty-icon">🛏️</div>
       <p>Belum ada villa yang dibooking</p>
-      <a href="#/" class="book-btn">Cari Villa</a>
+      <a href="#/" class="confirm-btn" style="text-decoration:none">Cari Villa Sekarang</a>
     </div>
   `;
 }
 
-function renderMyBookings() {
+async function renderMyBookings() {
   const container = document.getElementById("my-booking-list");
+  if (!container) return;
+
   const history = JSON.parse(localStorage.getItem("myBookings")) || [];
 
   if (history.length === 0) {
-    container.innerHTML = `<p class="text-center">Belum ada riwayat transaksi.</p>`;
+    container.innerHTML = `<div class="empty-state"><p>Belum ada riwayat transaksi.</p></div>`;
     return;
   }
 
-  const sortedHistory = [...history].reverse();
+  try {
+    const res = await fetch("/JSON/villas.json");
+    const villasData = await res.json();
 
-  container.innerHTML = sortedHistory
-    .map(
-      (item) => `
-    <div class="booking-card mb-3">
-      <div class="d-flex justify-between">
-        <strong>${item.villaName}</strong>
-        <span class="status-badge success">${item.status}</span>
+    container.innerHTML = history
+      .slice()
+      .reverse()
+      .map((item, index) => {
+        const villaInfo = villasData.find((v) => v.name === item.villaName);
+        const villaImage =
+          villaInfo?.image?.[0] || "https://via.placeholder.com/150";
+
+        return `
+      <div class="booking-card history-card" style="animation-delay: ${
+        index * 0.1
+      }s">
+        <div class="card-content-wrapper">
+          <div class="villa-image-container">
+             <img src="${villaImage}" alt="${item.villaName}" class="villa-img">
+          </div>
+          <div class="villa-details">
+            <div class="d-flex justify-between align-start">
+              <div>
+                <h4 class="m-0">${item.villaName}</h4>
+                <small class="text-muted">TRX-${String(item.id).slice(
+                  -6
+                )}</small>
+              </div>
+              <span class="status-badge-booking status-${item.status}">${
+          item.status
+        }</span>
+            </div>
+            <p class="room-info">
+              <span>🛏️ ${item.roomType}</span>
+              <span class="mx-2">|</span>
+              <span>📅 ${item.checkin} - ${item.checkout}</span>
+            </p>
+            <div class="d-flex justify-between align-center mt-3">
+              <div class="payment-info">
+                <span class="method">${item.paymentMethod}</span>
+                <span class="price">Rp${item.totalPrice.toLocaleString()}</span>
+              </div>
+              <div class="action-buttons">
+                <button class="btn-action ${
+                  item.status === "completed" ? "btn-review" : ""
+                }">
+                  ${item.status === "completed" ? "Beri Ulasan" : "Detail"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+      })
+      .join("");
+  } catch (error) {
+    container.innerHTML = `<p>Gagal memuat riwayat.</p>`;
+  }
+}
+
+function showReviewPopup(villaName) {
+  const overlay = document.createElement("div");
+  overlay.className = "review-overlay";
+  overlay.innerHTML = `
+    <div class="review-popup">
+      <div class="popup-header">
+        <h4>Berikan Ulasan</h4>
+        <p>${villaName}</p>
       </div>
-      <p style="font-size: 0.9em; color: #666;">
-        ${item.roomType} | ${item.checkin} - ${item.checkout}
-      </p>
-      <div class="d-flex justify-between mt-2">
-        <span>Metode: ${item.paymentMethod}</span>
-        <strong style="color: var(--accent-clr);">Rp${item.totalPrice.toLocaleString()}</strong>
+      <div class="star-rating">
+        <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
+        <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
+        <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
+        <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
+        <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
+      </div>
+      <textarea id="review-text" placeholder="Ceritakan pengalaman Anda..."></textarea>
+      <div class="popup-actions">
+        <button class="btn-cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
+        <button class="confirm-btn" onclick="submitReview('${villaName}')">Kirim Ulasan</button>
       </div>
     </div>
-  `
-    )
-    .join("");
+  `;
+  document.body.appendChild(overlay);
+}
+
+function closeReviewPopup() {
+  const overlay = document.querySelector(".review-overlay");
+  if (overlay) {
+    overlay.style.opacity = "0";
+    setTimeout(() => overlay.remove(), 300);
+  }
+}
+
+function submitReview(villaName) {
+  const rating = document.querySelector('input[name="rating"]:checked')?.value;
+  const comment = document.getElementById("review-text").value;
+
+  if (!rating) return alert("Pilih rating bintang terlebih dahulu!");
+
+  alert(
+    `Terima kasih! Ulasan bintang ${rating} untuk ${villaName} telah terkirim.`
+  );
+  document.querySelector(".review-overlay").remove();
+}
+
+async function renderMyBookings() {
+  const container = document.getElementById("my-booking-list");
+  if (!container) return;
+
+  const history = JSON.parse(localStorage.getItem("myBookings")) || [];
+
+  if (history.length === 0) {
+    container.innerHTML = `<div class="empty-state"><p>Belum ada riwayat transaksi.</p></div>`;
+    return;
+  }
+
+  try {
+    const res = await fetch("/JSON/villas.json");
+    const villasData = await res.json();
+
+    container.innerHTML = history
+      .slice()
+      .reverse()
+      .map((item, index) => {
+        const villaInfo = villasData.find((v) => v.name === item.villaName);
+        const villaImage =
+          villaInfo?.image?.[0] || "https://via.placeholder.com/150";
+
+        return `
+      <div class="booking-card history-card" style="animation-delay: ${
+        index * 0.1
+      }s">
+        <div class="card-content-wrapper">
+          <div class="villa-image-container">
+             <img src="${villaImage}" alt="${item.villaName}" class="villa-img">
+          </div>
+          <div class="villa-details">
+            <div class="d-flex justify-between align-start">
+              <div>
+                <h4 class="m-0">${item.villaName}</h4>
+                <small class="text-muted">TRX-${String(item.id).slice(
+                  -6
+                )}</small>
+              </div>
+              <span class="status-badge-booking status-${item.status}">${
+          item.status
+        }</span>
+            </div>
+            <p class="room-info">
+              <span>🛏️ ${item.roomType}</span>
+              <span class="mx-2">|</span>
+              <span>📅 ${item.checkin} - ${item.checkout}</span>
+            </p>
+            <div class="d-flex justify-between align-center mt-3">
+              <div class="payment-info">
+                <span class="method">${item.paymentMethod}</span>
+                <span class="price">Rp${item.totalPrice.toLocaleString()}</span>
+              </div>
+              <div class="action-buttons">
+                <button class="btn-action ${
+                  item.status === "completed" ? "btn-review" : ""
+                }" 
+                  onclick="${
+                    item.status === "completed"
+                      ? `showReviewPopup('${item.villaName}')`
+                      : "alert('Detail pemesanan')"
+                  }">
+                  ${item.status === "completed" ? "Beri Ulasan" : "Detail"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+      })
+      .join("");
+  } catch (error) {
+    container.innerHTML = `<p>Gagal memuat riwayat.</p>`;
+  }
 }
 
 window.initBooking = initBooking;
