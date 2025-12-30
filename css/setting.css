@@ -6,6 +6,13 @@
   font-family: Poppins;
 }
 
+.profile-edit-container {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(8px);
+  color: var(--cappuccino-dark);
+  font-weight: bolder;
+}
+
 .user-info {
   display: flex;
   align-items: center;

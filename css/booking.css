@@ -110,7 +110,7 @@ h3,
   height: 12px;
   background: var(--accent-clr);
   border-radius: 50%;
-  transform: translateX(-2px);
+  transform: translateX(-3px);
 }
 
 .booking-card {
@@ -347,6 +347,9 @@ h3,
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  display: flex;
+  margin: 0 auto;
+  max-width: 50%;
 }
 
 .confirm-btn::before {

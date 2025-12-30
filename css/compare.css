@@ -1,6 +1,5 @@
 .compare-main {
   padding: 20px;
-  background: transparent;
   font-family: "Poppins", sans-serif;
   color: var(--text-clr);
   min-height: 100vh;
@@ -113,8 +112,8 @@
 
 .confirm-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(139, 90, 43, 0.5), 
-              0 0 15px rgba(210, 180, 140, 0.4);
+  box-shadow: 0 15px 30px rgba(139, 90, 43, 0.5),
+    0 0 15px rgba(210, 180, 140, 0.4);
   letter-spacing: 1.5px;
 }
 
@@ -137,8 +136,8 @@
   overflow-x: auto;
   border-radius: 12px;
   border: 1px solid var(--line-clr);
-  background: var(--hover-clr);
-  backdrop-filter: blur(5px);
+  background: var(--bg-glass);
+  backdrop-filter: blur(18px);
 }
 
 .luxury-compare-table {
@@ -177,7 +176,8 @@
   padding: 20px;
   text-align: center;
   border-bottom: 1px solid var(--line-clr);
-  color: var(--text-clr);
+  color: var(--creamy-foam);
+  font-weight: bolder;
 }
 
 .label-column,
@@ -232,8 +232,8 @@
 }
 
 .section-divider td {
-  background: var(--line-clr);
-  color: #fff;
+  background: var(--accent-clr);
+  color: var(--espresso);
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.75rem;
