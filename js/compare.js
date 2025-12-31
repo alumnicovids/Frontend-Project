@@ -102,10 +102,17 @@ function renderHeaderSlot(villa, index) {
   }
   return `<td>
             <div class="villa-head" onclick="openVillaModal(${index})" style="cursor:pointer;">
-              <div class="image-box"><img src="${villa.image[0]}" style="width:100%; height:150px; object-fit:cover; border-radius:8px;"></div>
+              <div class="image-box"><img src="${
+                villa.image[0]
+              }" style="width:100%; height:150px; object-fit:cover; border-radius:8px;"></div>
               <h4>${villa.name}</h4>
               <span class="loc-tag">${villa.location}</span>
             </div>
+            <button class="primary-btn compare detail">
+              <a href="#/Booking?name=${encodeURIComponent(
+                villa.name
+              )}">Book Now</a>
+            </button>
           </td>`;
 }
 

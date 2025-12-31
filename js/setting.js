@@ -55,7 +55,7 @@ function updateProfile() {
 }
 
 function attachEventListeners() {
-  document.querySelectorAll(".edit-link").forEach((button) => {
+  document.querySelectorAll(".primary-btn.edit").forEach((button) => {
     button.onclick = (e) => {
       const fieldId = e.target.id;
       if (fieldId === "changeBirth") return;
@@ -82,7 +82,7 @@ function attachEventListeners() {
     };
   }
 
-  const selectPhotoBtn = document.querySelector(".btn-select-photo");
+  const selectPhotoBtn = document.querySelector(".secondary-btn.setting");
   if (selectPhotoBtn) {
     selectPhotoBtn.onclick = () => {
       const input = document.createElement("input");

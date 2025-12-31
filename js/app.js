@@ -111,10 +111,10 @@ function renderVillas(filterType = null) {
                 <span class="unit">/night</span>
               </div>
               <div class="action-buttons">
-                <button class="compare-btn" title="Compare">
+                <button class="secondary-btn compare" title="Compare">
                   <i class="material-symbols-outlined">compare_arrows</i>
                 </button>
-                <button class="book-now">
+                <button class="primary-btn book">
                   <a href="#/Booking?name=${encodeURIComponent(
                     villa.name
                   )}" class="nav-link">Book Now</a>
@@ -148,9 +148,9 @@ function renderVillaDetail() {
         container.innerHTML = `
           <div class="header-section">
             <h2>${villa.name}</h2>
-            <div class="location">
+            <div class="location detail">
               <i class="material-symbols-outlined">location_on</i>
-              <span>${villa.detail.address}</span>
+              <span class="location detail">${villa.detail.address}</span>
             </div>
           </div>
 
@@ -199,7 +199,7 @@ function renderVillaDetail() {
                         <p>${room.description}</p>
                       </div>
                       <div class="room-price">
-                        <span class="price">IDR ${room.price.toLocaleString(
+                        <span class="price detail">IDR ${room.price.toLocaleString(
                           "id-ID"
                         )}</span>
                         <span class="unit">/night</span>
@@ -229,10 +229,10 @@ function renderVillaDetail() {
               <div class="price-card">
                 <span class="price-range">${villa.detail.priceRange}</span>
                 <p class="room-type">${villa.detail.roomType}</p>
-                <button class="book-now-btn">
+                <button class="primary-btn detail">
                   <a href="#/Booking?name=${encodeURIComponent(
                     villa.name
-                  )}" class="book-now-btn">Book Now</a>
+                  )}">Book Now</a>
                 </button>
               </div>
 
@@ -428,10 +428,10 @@ function renderWishlist() {
               <span class="unit">/night</span>
             </div>
             <div class="action-buttons">
-              <button class="compare-btn" title="Compare">
+              <button class="secondary-btn compare" title="Compare">
                 <i class="material-symbols-outlined">compare_arrows</i>
               </button>
-              <button class="book-now">
+              <button class="primary-btn book">
                 <a href="#/Booking?name=${encodeURIComponent(
                   villa.name
                 )}" class="nav-link">Book Now</a>
@@ -453,7 +453,7 @@ window.removeFromWishlist = function (name) {
 };
 
 document.addEventListener("click", (e) => {
-  if (e.target.closest(".compare-btn")) {
+  if (e.target.closest(".secondary-btn.compare")) {
     const card = e.target.closest(".card");
     const villaName = card.querySelector(".villa-title").innerText;
 

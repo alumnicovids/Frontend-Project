@@ -6,10 +6,10 @@ function showEditModal(fieldName, currentValue, callback) {
       <div class="popup-header">
         <h4>Change ${fieldName}</h4>
       </div>
-      <input type="text" id="modal-input" value="${currentValue}" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;">
+      <input type="text" id="modal-input" value="${currentValue}">
       <div class="popup-actions">
-        <button class="btn-cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
-        <button class="confirm-btn" id="modal-save">Simpan</button>
+        <button class="secondary-btn cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
+        <button class="primary-btn confirm" id="modal-save">Simpan</button>
       </div>
     </div>
   `;
@@ -58,8 +58,8 @@ function showReviewPopup(villaName) {
       </div>
       <textarea id="review-text" placeholder="Ceritakan pengalaman Anda..."></textarea>
       <div class="popup-actions">
-        <button class="btn-cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
-        <button class="confirm-btn" onclick="submitReview('${villaName}')">Kirim Ulasan</button>
+        <button class="secondary-btn cancel review" onclick="this.closest('.review-overlay').remove()">Batal</button>
+        <button class="primary-btn review confirm" onclick="submitReview('${villaName}')">Kirim Ulasan</button>
       </div>
     </div>
   `;

@@ -1,59 +1,12 @@
-.profile-header {
-  background: var(--) !important;
-  margin: -30px -7% 30px -7%;
-  padding: 40px 8%;
-  color: var(--text-clr);
-  font-family: Poppins;
-}
-
-.profile-edit-container {
-  background-color: var(--card-bg);
-  backdrop-filter: blur(8px);
-  color: var(--cappuccino-dark);
-  font-weight: bolder;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.avatar-large {
-  width: 72px;
-  height: 72px;
-  background-color: var(--accent-clr);
-  color: var(--base-clr);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 2rem;
-  font-weight: 800;
-  border: 4px solid rgba(255, 255, 255, 0.2) !important;
-}
-
-.photo-info {
-  font-family: Montserrat;
-}
-
-.status-badge {
-  color: aliceblue !important;
-  font-weight: 700;
-  font-size: 0.85rem;
-  margin: 0 !important;
-}
-
 .profile-edit-container {
   display: flex;
   gap: 40px;
-  background-color: var(--) !important;
-  border: 1px solid var(--line-clr) !important;
   align-items: flex-start;
   padding: 40px;
-  border-radius: 15px;
   font-family: Montserrat;
-  font-size:  0.75rem;
+  font-size: 0.75rem;
+  color: var(--cappuccino-dark);
+  font-weight: bolder;
 }
 
 .photo-section {
@@ -78,8 +31,7 @@
   object-fit: cover;
 }
 
-.btn-select-photo {
-  background-color: var(--accent-clr);
+.secondary-btn.setting {
   color: white;
   border: none;
   padding: 10px 24px;
@@ -88,10 +40,6 @@
   cursor: pointer;
   width: 100%;
   transition: all 0.3s ease;
-}
-
-.btn-select-photo:hover {
-  filter: brightness(1.1);
 }
 
 .info-section {
@@ -126,7 +74,7 @@
 
 .info-row .value {
   flex: 1;
-  color: var(--text-clr);
+  color: var(--creamy-foam);
 }
 
 input[type="date"].value-input {
@@ -135,9 +83,10 @@ input[type="date"].value-input {
   background: transparent;
   padding: 6px 12px;
   border-radius: 6px;
-  color: var(--text-clr);
+  color: var(--creamy-foam);
   font-family: inherit;
   outline: none;
+  margin-right: 10px;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -146,32 +95,34 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0.7;
 }
 
-.edit-link {
-  color: var(--accent-clr);
+.primary-btn.edit {
+  color: var(--cappuccino-light);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
   padding: 6px 16px;
   border-radius: 6px;
-  border: 1px solid var(--accent-clr);
-  background-color: transparent;
+  border: 1px solid var(--line-clr);
+  background: var(--glass-gradient);
+  backdrop-filter: blur(8px);
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
-.edit-link:hover {
+.primary-btn.edit:hover {
   background-color: var(--accent-clr);
   color: white;
   transform: translateY(-1px);
 }
 
 .status-tag {
-  background-color: rgba(139, 90, 43, 0.1);
-  color: var(--accent-clr);
+  background: var(--macha);
+  color: var(--creamy-foam);
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
   margin-right: 10px;
+  margin-left: 5px;
   border: 1px solid rgba(139, 90, 43, 0.2);
 }

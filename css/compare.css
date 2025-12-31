@@ -5,24 +5,6 @@
   min-height: 100vh;
 }
 
-.profile-header {
-  background: linear-gradient(to right, var(--accent-clr), var(--hover-clr));
-  margin-bottom: 30px;
-  margin-top: 10px;
-  padding: 25px;
-  color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-
-  width: calc(100% - 10px);
-  margin-left: 5px;
-  margin-right: 5px;
-
-  max-width: 100%;
-  overflow: hidden;
-}
-
 .header-content-wrapper {
   display: flex;
   justify-content: space-between;
@@ -60,73 +42,21 @@
   color: var(--base-clr);
 }
 
-.btn-primary,
-.btn-secondary {
+.primary-btn.compare-header,
+.secondary-btn.compare-header {
   border-radius: 20px;
   white-space: nowrap;
   font-size: 0.85rem;
   padding: 8px 15px;
 }
 
-.btn-primary:hover,
-.btn-secondary:hover {
+.primary-btn.compare-header:hover,
+.secondary-btn.compare-header:hover {
   transform: scale(1.05);
   background-color: var(--hover-clr);
 }
 
-.confirm-btn {
-  background: var(--primary-gradient);
-  color: white;
-  border: none;
-  padding: 18px 60px;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 20px rgba(139, 90, 43, 0.3);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: relative;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.confirm-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  transition: all 0.6s;
-}
-
-.confirm-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(139, 90, 43, 0.5),
-    0 0 15px rgba(210, 180, 140, 0.4);
-  letter-spacing: 1.5px;
-}
-
-.confirm-btn:hover::before {
-  left: 100%;
-}
-
-.confirm-btn:active {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(139, 90, 43, 0.4);
-}
-
-.btn-secondary {
+.secondary-btn.compare-header {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -169,6 +99,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 10px;
+  color: var(--line-clr);
 }
 
 .luxury-compare-table th,
@@ -190,11 +122,6 @@
   position: sticky;
   left: 0;
   z-index: 2;
-}
-
-.villa-head h4 {
-  margin-top: 10px;
-  color: var(--accent-clr);
 }
 
 .villa-head .image-box {
@@ -307,6 +234,10 @@
   height: 45px;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.primary-btn.compare {
+  margin-top: 10px;
 }
 
 @media (max-width: 800px) {

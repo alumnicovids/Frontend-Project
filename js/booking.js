@@ -107,7 +107,7 @@ function renderBookingForm(villa) {
         </div>
       </div>
 
-      <button class="confirm-btn w-100" onclick="confirmPayment('${
+      <button class="primary-btn confirm" onclick="confirmPayment('${
         villa.name
       }')">Konfirmasi & Bayar</button>
     </div>
@@ -200,9 +200,9 @@ function renderBookingStatus(booking) {
           ).toLocaleString()}</h2>
           <p>Metode: <strong>${booking.paymentMethod}</strong></p>
         </div>
-        <div class="d-flex flex-column gap-3">
-          <button class="confirm-btn w-100" onclick="payNow()">Bayar Sekarang</button>
-          <button class="booking-btn-secondary w-100" onclick="cancelBooking()">Batalkan Pesanan</button>
+        <div class="btn-card">
+          <button class="primary-btn confirm pay" onclick="payNow()">Bayar Sekarang</button>
+          <button class="secondary-btn cancel" onclick="cancelBooking()">Batalkan Pesanan</button>
         </div>
       </div>
     `;
@@ -218,7 +218,7 @@ function renderBookingStatus(booking) {
         <div class="success-icon mb-4">✓</div>
         <h4>Pembayaran Berhasil!</h4>
         <p class="text-muted">Terima kasih atas reservasi Anda.<br>Silakan check-in pada <strong>${booking.checkin}</strong></p>
-        <button class="confirm-btn mt-4" onclick="processCheckIn()">Check In Sekarang</button>
+        <button class="primary-btn confirm" onclick="processCheckIn()">Check In Sekarang</button>
       </div>
     `;
   } else if (booking.status === "checked-in") {
@@ -227,7 +227,7 @@ function renderBookingStatus(booking) {
         <div class="stay-icon mb-4">🏠</div>
         <h4>Selamat Menikmati Liburan</h4>
         <p class="text-muted">Anda sedang dalam masa inap di ${booking.villaName}.</p>
-        <button class="confirm-btn mt-4" onclick="processCheckOut()">Check Out</button>
+        <button class="primary-btn confirm" onclick="processCheckOut()">Check Out</button>
       </div>
     `;
   }
@@ -254,12 +254,14 @@ function startTimer(deadline) {
 function payNow() {
   updateStatus("paid");
 }
+
 function cancelBooking() {
   if (confirm("Batalkan pesanan?")) {
     localStorage.removeItem("activeBooking");
     location.reload();
   }
 }
+
 function processCheckIn() {
   updateStatus("checked-in");
 }
@@ -293,7 +295,7 @@ function renderEmpty() {
     <div class="empty-state">
       <div class="empty-icon">🛏️</div>
       <p>Belum ada villa yang dibooking</p>
-      <a href="#/" class="confirm-btn" style="text-decoration:none">Cari Villa Sekarang</a>
+      <a href="#/" class="primary-btn empty" style="text-decoration:none">Cari Villa Sekarang</a>
     </div>
   `;
 }
@@ -327,15 +329,13 @@ async function renderMyBookings() {
       }s">
         <div class="card-content-wrapper">
           <div class="villa-image-container">
-             <img src="${villaImage}" alt="${item.villaName}" class="villa-img">
+            <img src="${villaImage}" alt="${item.villaName}" class="villa-img">
           </div>
           <div class="villa-details">
-            <div class="d-flex justify-between align-start">
+            <div>
               <div>
-                <h4 class="m-0">${item.villaName}</h4>
-                <small class="text-muted">TRX-${String(item.id).slice(
-                  -6
-                )}</small>
+                <h4>${item.villaName}</h4>
+                <small>TRX-${String(item.id).slice(-6)}</small>
               </div>
               <span class="status-badge-booking status-${item.status}">${
           item.status
@@ -343,16 +343,16 @@ async function renderMyBookings() {
             </div>
             <p class="room-info">
               <span>🛏️ ${item.roomType}</span>
-              <span class="mx-2">|</span>
+              <span>|</span>
               <span>📅 ${item.checkin} - ${item.checkout}</span>
             </p>
-            <div class="d-flex justify-between align-center mt-3">
+            <div>
               <div class="payment-info">
                 <span class="method">${item.paymentMethod}</span>
                 <span class="price">Rp${item.totalPrice.toLocaleString()}</span>
               </div>
               <div class="action-buttons">
-                <button class="btn-action ${
+                <button class="primary-btn togrev ${
                   item.status === "completed" ? "btn-review" : ""
                 }"
                   onclick="${

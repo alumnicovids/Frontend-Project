@@ -1,3 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --base-clr: #f4ede4;
+  --line-clr: #d2b48c;
+  --text-clr: #3c2a21;
+  --text-muted: #634832;
+  --accent-clr: #8b5e3c;
+  --espresso: #4b3621;
+  --cappuccino-dark: #2c1e16;
+  --cappuccino-light: #dfd3c3;
+  --creamy-foam: #fcf8f5;
+  --macha: #777e5c;
+  --macha-dark: #555b41;
+
+  --hover-clr: rgba(210, 180, 140, 0.2);
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --input-bg: rgba(255, 255, 255, 0.6);
+  --bg-glass: transparent;
+  --glass-blur: blur(8px);
+
+  --primary-gradient: linear-gradient(
+    135deg,
+    var(--line-clr),
+    var(--cappuccino-dark)
+  );
+  --secondary-gradient: linear-gradient(
+    135deg,
+    var(--text-muted),
+    var(--cappuccino-light)
+  );
+  --glass-gradient: linear-gradient(
+    225deg,
+    var(--bg-glass) 60%,
+    rgba(0, 0, 0, 0.3)
+  );
+  --agree-gradient: linear-gradient(135deg, var(--macha), var(--macha-dark));
+
+  --shadow-soft: 0 10px 30px rgba(75, 54, 33, 0.1);
+  --shadow-hover: 0 15px 35px rgba(139, 90, 43, 0.2);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-image: linear-gradient(
+      rgba(245, 245, 220, 0.255),
+      rgba(245, 245, 220, 0.255)
+    ),
+    url(/Media/background-photo.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--text-clr);
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
 .review-overlay {
   position: fixed;
   top: 0;
@@ -67,4 +132,200 @@
 .toast-notification.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+}
+
+.primary-btn,
+.secondary-btn {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 18px 60px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(139, 90, 43, 0.3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.secondary-btn {
+  background: var(--secondary-gradient);
+}
+
+.primary-btn::before,
+.secondary-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(139, 90, 43, 0.5),
+    0 0 15px rgba(210, 180, 140, 0.4);
+  letter-spacing: 1.5px;
+}
+
+.primary-btn:hover::before,
+.secondary-btn:hover::before {
+  left: 100%;
+}
+
+.primary-btn:active,
+.secondary-btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 90, 43, 0.4);
+}
+
+.review-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.review-popup {
+  background: var(--bg-glass);
+  backdrop-filter: blur(50px);
+  padding: 2.5rem;
+  border-radius: 2rem;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.popup-header h4 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 0;
+}
+
+.popup-header p {
+  color: var(--line-clr);
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2.5rem;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffb400;
+}
+
+#review-text {
+  width: 100%;
+  height: 120px;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+  background: transparent;
+  font-family: inherit;
+  resize: none;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  outline: none;
+  color: var(--line-clr);
+}
+
+.popup-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.profile-header {
+  background: linear-gradient(to right, var(--accent-clr), var(--bg-glass));
+  margin-bottom: 30px;
+  margin-top: 10px;
+  padding: 25px;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  width: calc(100% - 10px);
+  margin-left: 5px;
+  margin-right: 5px;
+
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.glass-card,
+.progress-tracker,
+.booking-card,
+#villa-detail-content,
+.profile-edit-container,
+.table-container,
+.card {
+  background: var(--glass-gradient);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-clr);
+  box-shadow: var(--shadow-soft);
+  border-radius: 15px;
+}
+
+.status-badge-base,
+.status-badge-booking,
+.status-badge {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

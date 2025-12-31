@@ -6,15 +6,13 @@
 }
 
 .card {
-  background-color: var(--base-clr);
-  border-radius: 1.5rem;
   overflow: hidden;
-  border: 1px solid var(--line-clr);
   transition: transform 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  backdrop-filter: blur(50px);
 }
 
 .card-image {
@@ -32,11 +30,8 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--base-clr);
-  backdrop-filter: blur(8px);
+  background: var(--bg-glass);
   border: none;
-  border-radius: 50%;
-  padding: 0.5rem;
   color: var(--text-clr);
   cursor: pointer;
   display: flex;
@@ -88,7 +83,7 @@
 }
 
 .rating span {
-  color: var(--text-clr);
+  color: #ffb400;
   font-size: 0.9rem;
 }
 
@@ -106,7 +101,7 @@
   align-items: center;
   gap: 0.4rem;
   font-size: 0.85rem;
-  color: var(--secondary-text-clr);
+  color: #fff;
 }
 
 .amenities {
@@ -135,7 +130,7 @@
 .price-container .price {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--accent-clr);
+  color: #fff;
 }
 
 .price-container .unit {
@@ -148,34 +143,35 @@
   gap: 0.6rem;
 }
 
-.compare-btn,
-.book-now {
+.secondary-btn.compare,
+.primary-btn.book {
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
   font-family: inherit;
   transition: opacity 0.2s;
-  display: flex;
-  align-items: center;
 }
 
-.compare-btn {
-  background-color: var(--line-clr);
+.secondary-btn.compare {
+  background: var(--line-clr);
   color: var(--text-clr);
   padding: 0.6rem;
 }
 
-.book-now {
-  background-color: var(--accent-clr);
-  color: white;
-  padding: 0.6rem 1rem;
-  font-weight: 600;
-  font-size: 0.9rem;
+.secondary-btn.compare:hover {
+  background: var(--line-clr);
+  color: var(--text-clr);
 }
 
-.compare-btn:hover,
-.book-now:hover {
-  filter: brightness(1.2);
+.primary-btn.book {
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.primary-btn.book a {
+  text-decoration: none;
+  color: var(--text-clr);
 }
 
 .promo-badge {
@@ -207,10 +203,5 @@
 .price-container .price {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--accent-clr);
-}
-
-.book-now a {
-  text-decoration: none;
-  color: var(--base-clr);
+  color: #fff;
 }
