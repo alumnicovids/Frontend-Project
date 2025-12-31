@@ -135,10 +135,10 @@
   box-sizing: border-box;
   padding: 16px 20px;
   border: 1px solid var(--line-clr);
-  background: var(--input-bg);
+  background: var(--glass-gradient);
   border-radius: 12px;
   font-size: 1rem;
-  color: var(--text-main);
+  color: var(--creamy-foam);
   outline: none;
   transition: var(--transition);
   font-family: inherit;
@@ -146,9 +146,10 @@
 
 .form-group select:focus,
 .form-group input:focus {
-  background: white;
+  background: var(--bg-glass);
   box-shadow: 0 0 0 2px var(--accent-clr);
 }
+
 .service-item label {
   display: flex;
   align-items: center;
@@ -158,47 +159,22 @@
   margin-bottom: 0;
 }
 
-.service-item input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid var(--line-clr);
-  cursor: pointer;
-  position: relative;
-  transition: var(--transition);
-  flex-shrink: 0;
-  margin: 0;
-}
-
-.service-item input[type="checkbox"]:checked {
-  background-color: var(--accent-clr);
-  border-color: var(--accent-clr);
-}
-
-.service-item input[type="checkbox"]:checked::after {
-  content: "✓";
-  position: absolute;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
 .service-item {
   display: flex;
   margin-top: 5px;
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: var(--input-bg);
+  background: var(--glass-gradient);
   border-radius: 14px;
   transition: var(--transition);
   cursor: pointer;
   border: 1px solid var(--line-clr);
+  color: var(--creamy-foam);
+}
+
+.service-item:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .service-info {
@@ -228,8 +204,8 @@
 }
 
 .service-item input[type="checkbox"]:checked {
-  background-color: var(--accent-clr);
-  border-color: var(--accent-clr);
+  background: var(--agree-gradient);
+  border-color: var(--macha);
 }
 
 .service-item input[type="checkbox"]:checked::after {
@@ -245,7 +221,6 @@
 
 .service-price {
   font-weight: 700;
-  color: var(--accent-clr);
 }
 
 .payment-methods {
@@ -261,7 +236,7 @@
   border: 1px solid var(--line-clr);
   padding: 18px;
   border-radius: 14px;
-  background: var(--input-bg);
+  background: var(--glass-gradient);
   color: var(--text-main);
   cursor: pointer;
   transition: var(--transition);
@@ -273,14 +248,14 @@
 }
 
 .pay-btn:hover {
-  background: white;
+  background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
   color: var(--accent-clr);
 }
 
 .pay-btn.selected {
-  background: white;
+  background: rgba(0, 0, 0, 0.5);
   color: var(--accent-clr);
   box-shadow: 0 0 0 2px var(--accent-clr);
   border-color: var(--accent-clr);
@@ -299,8 +274,8 @@
 }
 
 .pay-btn.selected::before {
-  background: var(--accent-clr);
-  border-color: var(--accent-clr);
+  background: var(--macha-dark);
+  border-color: var(--macha);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='14px' height='14px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
   background-position: center;
   background-repeat: no-repeat;

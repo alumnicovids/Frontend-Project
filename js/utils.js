@@ -15,13 +15,41 @@ function showEditModal(fieldName, currentValue, callback) {
   `;
   document.body.appendChild(overlay);
 
-  document.getElementById("modal-save").onclick = () => {
-    const newValue = document.getElementById("modal-input").value;
-    if (newValue !== null && newValue.trim() !== "") {
+  const saveBtn = overlay.querySelector("#modal-save");
+  const input = overlay.querySelector("#modal-input");
+  const modal = overlay.querySelector(".review-popup");
+
+  saveBtn.addEventListener("mousedown", (e) => {
+    const ripple = document.createElement("span");
+    ripple.className = "ripple-effect";
+    saveBtn.appendChild(ripple);
+    const rect = saveBtn.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+    ripple.addEventListener("animationend", () => ripple.remove());
+  });
+
+  saveBtn.onclick = () => {
+    const newValue = input.value;
+    if (newValue && newValue.trim() !== "") {
       callback(newValue);
-      overlay.remove();
+      overlay.style.opacity = "0";
+      overlay.style.transition = "opacity 0.3s ease";
+      setTimeout(() => overlay.remove(), 300);
+    } else {
+      modal.classList.remove("shake");
+      void modal.offsetWidth;
+      modal.classList.add("shake");
     }
   };
+
+  input.focus();
+  overlay.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") saveBtn.click();
+    else if (e.key === "Escape") overlay.remove();
+  });
 }
 
 function showToast(message) {
@@ -32,11 +60,13 @@ function showToast(message) {
 
   setTimeout(() => {
     toast.classList.add("show");
-  }, 100);
+  }, 10);
 
   setTimeout(() => {
     toast.classList.remove("show");
-    setTimeout(() => toast.remove(), 500);
+    toast.addEventListener("transitionend", () => toast.remove(), {
+      once: true,
+    });
   }, 3000);
 }
 
