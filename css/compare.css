@@ -62,23 +62,22 @@
 }
 
 .table-container {
-  overflow-x: auto;
+  overflow-x: hidden;
   border-radius: 12px;
   border: 1px solid var(--line-clr);
   background: var(--bg-glass);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(30px);
 }
 
 .luxury-compare-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 800px;
+  table-layout: fixed;
 }
 
 .luxury-compare-table .image-box {
   width: 100%;
-  max-width: 500px;
-  height: 160px;
+  height: 200px;
   margin: 0 auto 15px;
   overflow: hidden;
   border-radius: 10px;
@@ -93,39 +92,47 @@
 }
 
 .villa-head h4 {
-  font-size: 1.1rem;
-  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  margin: 15px 0 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 10px;
-  color: var(--line-clr);
+  color: var(--cappuccino-light);
+}
+
+.loc-tag {
+  display: block;
+  color: var(--creamy-foam);
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .luxury-compare-table th,
 .luxury-compare-table td {
-  padding: 20px;
+  padding: 25px 15px;
   text-align: center;
   border-bottom: 1px solid var(--line-clr);
   color: var(--creamy-foam);
-  font-weight: bolder;
+  font-weight: 500;
+  width: 50%;
+  vertical-align: top;
 }
 
-.label-column,
-.label-cell {
-  width: 200px;
-  min-width: 200px;
-  text-align: left !important;
-  background: rgba(210, 180, 140, 0.15);
+.inner-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--secondary-text-clr);
+  opacity: 0.7;
+  margin-bottom: 8px;
   font-weight: 600;
-  position: sticky;
-  left: 0;
-  z-index: 2;
 }
 
 .villa-head .image-box {
   width: 100%;
-  height: 150px;
+  height: 200px;
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -137,18 +144,10 @@
   object-fit: cover;
 }
 
-.villa-head img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid var(--line-clr);
-}
-
 .villa-head.empty {
   border: 2px dashed var(--line-clr);
   border-radius: 10px;
-  height: 200px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,23 +158,24 @@
 
 .section-divider td {
   background: var(--accent-clr);
-  color: var(--espresso);
+  color: var(--creamy-foam);
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-align: left !important;
-  padding: 10px 20px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-align: center !important;
+  padding: 15px;
 }
 
 .price-win {
-  color: #27ae60 !important;
+  color: #1ac863 !important;
   font-weight: 700;
-  background: rgba(39, 174, 96, 0.1);
+  background: rgba(39, 174, 96, 0.05);
+  border-radius: 8px;
 }
 
 .price-lose {
-  color: #e74c3c !important;
+  color: #ff4833 !important;
   font-weight: 500;
 }
 
@@ -236,7 +236,8 @@
 }
 
 .primary-btn.compare {
-  margin-top: 10px;
+  margin-top: 15px;
+  width: 100%;
 }
 
 @media (max-width: 800px) {
@@ -252,11 +253,5 @@
   .header-actions {
     width: 100%;
     justify-content: center;
-  }
-
-  .label-column,
-  .label-cell {
-    width: 120px;
-    font-size: 0.85rem;
   }
 }

@@ -11,118 +11,119 @@ window.initCompare = function () {
   const v2 = compareList[1];
 
   table.querySelector("thead tr").innerHTML = `
-    <th class="sticky-col label-column"></th>
     ${renderHeaderSlot(v1, 0)}
     ${renderHeaderSlot(v2, 1)}
   `;
 
   table.querySelector("tbody").innerHTML = `
-    <tr class="section-divider"><td colspan="3">Ringkasan & Harga</td></tr>
-    <tr><td class="sticky-col label-cell">Rating</td>${renderValueCell(
-      v1,
-      "rating"
-    )}${renderValueCell(v2, "rating")}</tr>
-    <tr><td class="sticky-col label-cell">Lokasi</td>${renderValueCell(
-      v1,
-      "location"
-    )}${renderValueCell(v2, "location")}</tr>
-    <tr><td class="sticky-col label-cell">Harga Per Malam</td>${renderValueCell(
-      v1,
-      "price"
-    )}${renderValueCell(v2, "price")}</tr>
-    <tr><td class="sticky-col label-cell">Promo Diskon</td>${renderValueCell(
-      v1,
-      "promo.disc"
-    )}${renderValueCell(v2, "promo.disc")}</tr>
-    <tr><td class="sticky-col label-cell">Range Harga</td>${renderValueCell(
-      v1,
-      "detail.priceRange"
-    )}${renderValueCell(v2, "detail.priceRange")}</tr>
+    <tr class="section-divider"><td colspan="2">Ringkasan & Harga</td></tr>
+    <tr>
+        ${renderValueCell(v1, "rating", "Rating")}
+        ${renderValueCell(v2, "rating", "Rating")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "location", "Lokasi")}
+        ${renderValueCell(v2, "location", "Lokasi")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "price", "Harga Per Malam")}
+        ${renderValueCell(v2, "price", "Harga Per Malam")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "promo.disc", "Promo Diskon")}
+        ${renderValueCell(v2, "promo.disc", "Promo Diskon")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "detail.priceRange", "Range Harga")}
+        ${renderValueCell(v2, "detail.priceRange", "Range Harga")}
+    </tr>
 
-    <tr class="section-divider"><td colspan="3">Fasilitas & Kamar</td></tr>
-    <tr><td class="sticky-col label-cell">Tipe Kamar</td>${renderValueCell(
-      v1,
-      "detail.roomType"
-    )}${renderValueCell(v2, "detail.roomType")}</tr>
-    <tr><td class="sticky-col label-cell">Kamar Tidur</td>${renderValueCell(
-      v1,
-      "amenities.bed"
-    )}${renderValueCell(v2, "amenities.bed")}</tr>
-    <tr><td class="sticky-col label-cell">Kamar Mandi</td>${renderValueCell(
-      v1,
-      "amenities.bathtub"
-    )}${renderValueCell(v2, "amenities.bathtub")}</tr>
-    <tr><td class="sticky-col label-cell">Kolam Renang</td>${renderValueCell(
-      v1,
-      "amenities.pool"
-    )}${renderValueCell(v2, "amenities.pool")}</tr>
-    <tr><td class="sticky-col label-cell">Fasilitas Detail</td>${renderValueCell(
-      v1,
-      "detail.facilities"
-    )}${renderValueCell(v2, "detail.facilities")}</tr>
+    <tr class="section-divider"><td colspan="2">Fasilitas & Kamar</td></tr>
+    <tr>
+        ${renderValueCell(v1, "detail.roomType", "Tipe Kamar")}
+        ${renderValueCell(v2, "detail.roomType", "Tipe Kamar")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "amenities.bed", "Kamar Tidur")}
+        ${renderValueCell(v2, "amenities.bed", "Kamar Tidur")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "amenities.bathtub", "Kamar Mandi")}
+        ${renderValueCell(v2, "amenities.bathtub", "Kamar Mandi")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "amenities.pool", "Kolam Renang")}
+        ${renderValueCell(v2, "amenities.pool", "Kolam Renang")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "detail.facilities", "Fasilitas Detail")}
+        ${renderValueCell(v2, "detail.facilities", "Fasilitas Detail")}
+    </tr>
 
-    <tr class="section-divider"><td colspan="3">Waktu & Lokasi</td></tr>
-    <tr><td class="sticky-col label-cell">Check-In</td>${renderValueCell(
-      v1,
-      "detail.checkInTime"
-    )}${renderValueCell(v2, "detail.checkInTime")}</tr>
-    <tr><td class="sticky-col label-cell">Check-Out</td>${renderValueCell(
-      v1,
-      "detail.checkOutTime"
-    )}${renderValueCell(v2, "detail.checkOutTime")}</tr>
-    <tr><td class="sticky-col label-cell">Tempat Terdekat</td>${renderValueCell(
-      v1,
-      "detail.nearbyPlaces"
-    )}${renderValueCell(v2, "detail.nearbyPlaces")}</tr>
-    <tr><td class="sticky-col label-cell">Alamat</td>${renderValueCell(
-      v1,
-      "detail.address"
-    )}${renderValueCell(v2, "detail.address")}</tr>
+    <tr class="section-divider"><td colspan="2">Waktu & Lokasi</td></tr>
+    <tr>
+        ${renderValueCell(v1, "detail.checkInTime", "Check-In")}
+        ${renderValueCell(v2, "detail.checkInTime", "Check-In")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "detail.checkOutTime", "Check-Out")}
+        ${renderValueCell(v2, "detail.checkOutTime", "Check-Out")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "detail.nearbyPlaces", "Tempat Terdekat")}
+        ${renderValueCell(v2, "detail.nearbyPlaces", "Tempat Terdekat")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "detail.address", "Alamat")}
+        ${renderValueCell(v2, "detail.address", "Alamat")}
+    </tr>
 
-    <tr class="section-divider"><td colspan="3">Layanan & Kebijakan</td></tr>
-    <tr><td class="sticky-col label-cell">Layanan Extra</td>${renderValueCell(
-      v1,
-      "detail.extraServices"
-    )}${renderValueCell(v2, "detail.extraServices")}</tr>
-    <tr><td class="sticky-col label-cell">Kebijakan Pembatalan</td>${renderValueCell(
-      v1,
-      "detail.cancellationPolicy"
-    )}${renderValueCell(v2, "detail.cancellationPolicy")}</tr>
+    <tr class="section-divider"><td colspan="2">Layanan & Kebijakan</td></tr>
+    <tr>
+        ${renderValueCell(v1, "detail.extraServices", "Layanan Extra")}
+        ${renderValueCell(v2, "detail.extraServices", "Layanan Extra")}
+    </tr>
+    <tr>
+        ${renderValueCell(v1, "detail.cancellationPolicy", "Kebijakan Pembatalan")}
+        ${renderValueCell(v2, "detail.cancellationPolicy", "Kebijakan Pembatalan")}
+    </tr>
   `;
 };
 
 function renderHeaderSlot(villa, index) {
   if (!villa) {
     return `<td>
-              <div class="villa-head empty" onclick="openVillaModal(${index})" style="cursor:pointer; border:2px dashed #ccc; padding:20px; text-align:center;">
-                <div class="add-icon" style="font-size:2rem;">+</div>
-                <p>Tambah Villa</p>
+              <div class="villa-head empty" onclick="openVillaModal(${index})" style="cursor:pointer;">
+                <div class="add-icon" style="font-size:3rem; margin-bottom:10px;">+</div>
+                <p style="font-size:1.1rem; font-weight:600;">Tambah Villa</p>
               </div>
             </td>`;
   }
   return `<td>
             <div class="villa-head" onclick="openVillaModal(${index})" style="cursor:pointer;">
-              <div class="image-box"><img src="${
-                villa.image[0]
-              }" style="width:100%; height:150px; object-fit:cover; border-radius:8px;"></div>
+              <div class="image-box"><img src="${villa.image[0]}" alt="${
+    villa.name
+  }"></div>
               <h4>${villa.name}</h4>
               <span class="loc-tag">${villa.location}</span>
             </div>
             <button class="primary-btn compare detail">
               <a href="#/Booking?name=${encodeURIComponent(
                 villa.name
-              )}">Book Now</a>
+              )}" style="color:white; text-decoration:none;">Book Now</a>
             </button>
           </td>`;
 }
 
-function renderValueCell(villa, path) {
+function renderValueCell(villa, path, label) {
   const compareData = localStorage.getItem("compareList");
   let compareList = compareData ? JSON.parse(compareData) : [null, null];
   const v1 = compareList[0];
   const v2 = compareList[1];
 
-  if (!villa) return `<td class="value-cell">-</td>`;
+  const labelHtml = label ? `<span class="inner-label">${label}</span>` : "";
+
+  if (!villa) return `<td class="value-cell">${labelHtml}-</td>`;
 
   const getVal = (obj, p) =>
     p.split(".").reduce((acc, part) => acc && acc[part], obj);
@@ -165,8 +166,8 @@ function renderValueCell(villa, path) {
   }
 
   if (Array.isArray(currentVal)) {
-    displayValue = `<ul style="margin:0; padding-left:15px; font-size:0.85rem; text-align:left;">${currentVal
-      .map((i) => `<li>${i}</li>`)
+    displayValue = `<ul style="margin:0; padding-left:0; list-style:none; font-size:0.9rem;">${currentVal
+      .map((i) => `<li style="margin-bottom:4px;">• ${i}</li>`)
       .join("")}</ul>`;
   } else if (typeof currentVal === "boolean") {
     displayValue = currentVal ? "Tersedia" : "-";
@@ -176,7 +177,8 @@ function renderValueCell(villa, path) {
 
   return `
     <td class="value-cell ${statusClass}">
-      ${displayValue || "-"} ${icon}
+      ${labelHtml}
+      <div>${displayValue || "-"} ${icon}</div>
     </td>`;
 }
 
@@ -192,11 +194,17 @@ window.openVillaModal = function (slot) {
         container.innerHTML = data
           .map(
             (villa) => `
-          <div class="selection-item" onclick="selectVilla('${villa.name}')" style="display:flex; gap:10px; padding:10px; border-bottom:1px solid #eee; cursor:pointer;">
-            <img src="${villa.image[0]}" style="width:60px; height:45px; object-fit:cover; border-radius:4px;">
+          <div class="selection-item" onclick="selectVilla('${
+            villa.name
+          }')" style="display:flex; gap:10px; padding:10px; border-bottom:1px solid #eee; cursor:pointer;">
+            <img src="${
+              villa.image[0]
+            }" style="width:60px; height:45px; object-fit:cover; border-radius:4px;">
             <div class="info">
               <h5 style="margin:0;">${villa.name}</h5>
-              <small>${villa.tag}</small>
+              <small>${
+                villa.tag
+              } - IDR ${villa.price.toLocaleString()}</small>
             </div>
           </div>
         `
@@ -226,40 +234,9 @@ document.addEventListener("click", (e) => {
   if (e.target.classList.contains("close-modal")) {
     document.getElementById("villaModal").style.display = "none";
   }
-  if (e.target.closest(".btn-secondary")) {
-    localStorage.removeItem("compareList");
-    initCompare();
-  }
 });
 
 window.clearCompare = function () {
   localStorage.removeItem("compareList");
   initCompare();
-};
-
-window.openVillaModal = function (slot) {
-  currentSlot = slot;
-  const modal = document.getElementById("villaModal");
-  if (!modal) return;
-
-  modal.style.display = "flex";
-
-  fetch("/JSON/villas.json")
-    .then((res) => res.json())
-    .then((data) => {
-      const container = document.querySelector(".villa-selection-list");
-      container.innerHTML = data
-        .map(
-          (villa) => `
-        <div class="selection-item" onclick="selectVilla('${villa.name}')">
-          <img src="${villa.image[0]}">
-          <div class="info">
-            <h5>${villa.name}</h5>
-            <p>${villa.tag} - IDR ${villa.price.toLocaleString("id-ID")}</p>
-          </div>
-        </div>
-      `
-        )
-        .join("");
-    });
 };
