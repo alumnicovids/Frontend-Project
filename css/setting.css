@@ -3,8 +3,7 @@
   gap: 40px;
   align-items: flex-start;
   padding: 40px;
-  font-family: Montserrat;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--cappuccino-dark);
   font-weight: bolder;
 }
@@ -51,7 +50,7 @@
 }
 
 .info-group h3 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-bottom: 20px;
   color: var(--text-clr);
 }
@@ -84,7 +83,6 @@ input[type="date"].value-input {
   padding: 6px 12px;
   border-radius: 6px;
   color: var(--creamy-foam);
-  font-family: inherit;
   outline: none;
   margin-right: 10px;
 }

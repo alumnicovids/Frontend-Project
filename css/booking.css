@@ -12,7 +12,6 @@
   max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
-  font-family: "Poppins", sans-serif;
   animation: fadeInUp 0.5s ease-out;
 }
 
@@ -141,7 +140,6 @@
   color: var(--creamy-foam);
   outline: none;
   transition: var(--transition);
-  font-family: inherit;
 }
 
 .form-group select:focus,
@@ -251,12 +249,12 @@
   background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
-  color: var(--accent-clr);
+  color: var(--cappuccino-light);
 }
 
 .pay-btn.selected {
   background: rgba(0, 0, 0, 0.5);
-  color: var(--accent-clr);
+  color: var(--cappuccino-light);
   box-shadow: 0 0 0 2px var(--accent-clr);
   border-color: var(--accent-clr);
 }
@@ -282,7 +280,7 @@
 }
 
 .total-section {
-  background: rgba(255, 255, 255, 0.2) !important;
+  background: var(--glass-gradient) !important;
   backdrop-filter: blur(5px);
   border: 1px solid var(--line-clr);
   border-radius: 12px;
@@ -303,7 +301,7 @@
 #display-total {
   font-weight: 800;
   font-size: 1.4rem;
-  color: var(--accent-clr) !important;
+  color: var(--creamy-foam) !important;
 }
 
 .villa-image-container {

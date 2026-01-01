@@ -5,7 +5,6 @@
   padding: 5px 1em;
   background-color: var(--bg-glass);
   border-right: 1px solid var(--line-clr);
-  font-family: Poppins;
   position: sticky;
   top: 0;
   align-self: start;
@@ -32,6 +31,7 @@
 
 #sidebar .logo {
   font-weight: 600;
+  font-size: 2rem;
 }
 
 #sidebar ul li.active > a {

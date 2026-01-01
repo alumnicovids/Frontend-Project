@@ -149,7 +149,6 @@
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
-  font-family: inherit;
   transition: opacity 0.2s;
 }
 
