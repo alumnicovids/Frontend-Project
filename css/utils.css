@@ -18,10 +18,7 @@
   --macha-dark: #555b41;
 
   --hover-clr: rgba(210, 180, 140, 0.2);
-  --card-bg: rgba(255, 255, 255, 0.4);
-  --input-bg: rgba(255, 255, 255, 0.6);
   --bg-glass: transparent;
-  --glass-blur: blur(8px);
 
   --primary-gradient: linear-gradient(
     135deg,
@@ -41,7 +38,6 @@
   --agree-gradient: linear-gradient(135deg, var(--macha), var(--macha-dark));
 
   --shadow-soft: 0 10px 30px rgba(75, 54, 33, 0.1);
-  --shadow-hover: 0 15px 35px rgba(139, 90, 43, 0.2);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
