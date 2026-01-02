@@ -12,7 +12,7 @@
 
 .card:hover {
   transform: translateY(-5px);
-  backdrop-filter: blur(50px);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .card-image {
@@ -89,12 +89,21 @@
 }
 
 .villa-title {
+  border-radius: 5px;
   display: block;
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--text-clr);
   text-decoration: none;
   margin-bottom: 0.4rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.villa-title:hover {
+  color: var(--macha-dark);
+  font-weight: bolder;
+  font-size: x-large;
+  transform: translateY(-5px);
 }
 
 .location {
