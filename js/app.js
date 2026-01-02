@@ -481,11 +481,25 @@ searchInput.addEventListener("input", (e) => {
     .then((response) => response.json())
     .then((villaData) => {
       const filteredData = villaData.filter((villa) => {
-        return (
+        const matchesSearch =
           villa.name.toLowerCase().includes(searchTerm) ||
           villa.location.toLowerCase().includes(searchTerm) ||
-          villa.tag.toLowerCase().includes(searchTerm)
-        );
+          villa.tag.toLowerCase().includes(searchTerm) ||
+          villa.detail.address.toLowerCase().includes(searchTerm) ||
+          villa.detail.nearbyPlaces.some((place) =>
+            place.toLowerCase().includes(searchTerm)
+          );
+
+        let matchesFilter = true;
+        if (path === "/promo-villas") {
+          matchesFilter = villa.promo && villa.promo.status === "active";
+        } else if (path === "/couple-villas") {
+          matchesFilter = villa.tag === "Couple Villa";
+        } else if (path === "/family-villas") {
+          matchesFilter = villa.tag === "Family Villa";
+        }
+
+        return matchesSearch && matchesFilter;
       });
       updateVillaList(filteredData);
     });
@@ -498,7 +512,11 @@ function updateVillaList(filteredData) {
   if (!container) return;
 
   if (filteredData.length === 0) {
-    container.innerHTML = `<p class="no-results">Vila tidak ditemukan...</p>`;
+    container.innerHTML = `
+    <div class="no-results">
+      <h3>Vila tidak ditemukan</h3>
+    </div>
+    `;
     return;
   }
 
@@ -538,18 +556,41 @@ function updateVillaList(filteredData) {
               <i class="material-symbols-outlined">location_on</i>
               ${villa.location}
             </p>
+            <div class="amenities">
+              <span><i class="material-symbols-outlined">bed</i> ${
+                villa.amenities.bed
+              }</span>
+              <span><i class="material-symbols-outlined">bathtub</i> ${
+                villa.amenities.bathtub
+              }</span>
+              <span><i class="material-symbols-outlined">pool</i> ${
+                villa.amenities.pool ? "Yes" : "No"
+              }</span>
+            </div>
             <div class="card-footer">
               <div class="price-container">
+                ${
+                  hasPromo
+                    ? `<span class="original-price">IDR ${villa.price.toLocaleString(
+                        "id-ID"
+                      )}</span>`
+                    : ""
+                }
                 <span class="price">IDR ${discountedPrice.toLocaleString(
                   "id-ID"
                 )}</span>
                 <span class="unit">/night</span>
               </div>
-              <button class="primary-btn book">
-                <a href="#/Booking?name=${encodeURIComponent(
-                  villa.name
-                )}" class="nav-link">Book Now</a>
-              </button>
+              <div class="action-buttons">
+                <button class="secondary-btn compare" title="Compare">
+                  <i class="material-symbols-outlined">compare_arrows</i>
+                </button>
+                <button class="primary-btn book">
+                  <a href="#/Booking?name=${encodeURIComponent(
+                    villa.name
+                  )}" class="nav-link">Book Now</a>
+                </button>
+              </div>
             </div>
           </div>
         </article>

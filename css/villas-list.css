@@ -229,7 +229,42 @@
 
 #search-input:focus {
   border: 3px solid var(--macha);
-  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(var(--macha-rgb), 0.2);
   transform: translateY(-2px);
+}
+
+#search-input:focus::placeholder {
+  background-color: var(--agree-gradient);
+  opacity: 3;
+}
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: var(--espresso);
+  background: var(--glass-gradient);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px dashed var(--line-clr);
+  margin: 20px auto;
+  width: 100%;
+}
+
+.no-results::before {
+  content: "search_off";
+  font-family: "Material Symbols Outlined";
+  font-size: 48px;
+  margin-bottom: 15px;
+  opacity: 0.5;
+}
+
+.no-results::after {
+  content: "Coba gunakan kata kunci lain atau periksa ejaan Anda.";
+  font-size: 14px;
+  margin-top: 8px;
+  opacity: 0.6;
 }
