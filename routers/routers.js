@@ -27,20 +27,55 @@ async function redirect() {
       contentDiv.innerHTML = html;
       window.scrollTo(0, 0);
 
-      if (path === "/" || path === "") {
-        if (typeof renderVillas === "function") renderVillas();
-      }
+      if (
+        path === "/" ||
+        path === "" ||
+        path === "/couple-villas" ||
+        path === "/family-villas" ||
+        path === "/promo-villas"
+      ) {
+        if (path === "/couple-villas") {
+          if (typeof renderVillas === "function") renderVillas("Couple Villa");
+        } else if (path === "/family-villas") {
+          if (typeof renderVillas === "function") renderVillas("Family Villa");
+        } else if (path === "/promo-villas") {
+          if (typeof renderVillas === "function") renderVillas("promo");
+        } else {
+          if (typeof renderVillas === "function") renderVillas();
+        }
 
-      if (path === "/couple-villas") {
-        if (typeof renderVillas === "function") renderVillas("Couple Villa");
-      }
+        const searchInput = document.getElementById("search-input");
+        if (searchInput) {
+          searchInput.addEventListener("input", (e) => {
+            const searchTerm = e.target.value.toLowerCase();
 
-      if (path === "/family-villas") {
-        if (typeof renderVillas === "function") renderVillas("Family Villa");
-      }
+            let currentTag = null;
+            if (path === "/couple-villas") currentTag = "Couple Villa";
+            if (path === "/family-villas") currentTag = "Family Villa";
 
-      if (path === "/promo-villas") {
-        if (typeof renderVillas === "function") renderVillas("promo");
+            fetch("/JSON/villas.json")
+              .then((response) => response.json())
+              .then((villaData) => {
+                const filteredData = villaData.filter((villa) => {
+                  const matchesSearch =
+                    villa.name.toLowerCase().includes(searchTerm) ||
+                    villa.location.toLowerCase().includes(searchTerm) ||
+                    villa.tag.toLowerCase().includes(searchTerm);
+
+                  let matchesFilter = true;
+                  if (path === "/promo-villas") {
+                    matchesFilter =
+                      villa.promo && villa.promo.status === "active";
+                  } else if (currentTag) {
+                    matchesFilter = villa.tag === currentTag;
+                  }
+
+                  return matchesSearch && matchesFilter;
+                });
+                updateVillaList(filteredData);
+              });
+          });
+        }
       }
 
       if (path === "/Detailed-Property") {

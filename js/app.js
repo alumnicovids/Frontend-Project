@@ -229,7 +229,7 @@ function renderVillaDetail() {
               <div class="price-card">
                 <span class="price-range">${villa.detail.priceRange}</span>
                 <p class="room-type">${villa.detail.roomType}</p>
-                <button class="primary-btn detail">
+                <button class="primary-btn detail confirm">
                   <a href="#/Booking?name=${encodeURIComponent(
                     villa.name
                   )}">Book Now</a>
@@ -471,3 +471,89 @@ document.addEventListener("click", (e) => {
       });
   }
 });
+
+const searchInput = document.getElementById("search-input");
+
+searchInput.addEventListener("input", (e) => {
+  const searchTerm = e.target.value.toLowerCase();
+
+  fetch("/JSON/villas.json")
+    .then((response) => response.json())
+    .then((villaData) => {
+      const filteredData = villaData.filter((villa) => {
+        return (
+          villa.name.toLowerCase().includes(searchTerm) ||
+          villa.location.toLowerCase().includes(searchTerm) ||
+          villa.tag.toLowerCase().includes(searchTerm)
+        );
+      });
+      updateVillaList(filteredData);
+    });
+});
+
+function updateVillaList(filteredData) {
+  const container = document.querySelector(".villa-list");
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  if (!container) return;
+
+  if (filteredData.length === 0) {
+    container.innerHTML = `<p class="no-results">Vila tidak ditemukan...</p>`;
+    return;
+  }
+
+  container.innerHTML = filteredData
+    .map((villa) => {
+      const isWishlisted = wishlist.some((item) => item.name === villa.name);
+      const hasPromo = villa.promo && villa.promo.status === "active";
+      const discountedPrice = hasPromo
+        ? villa.price * (1 - parseInt(villa.promo.disc) / 100)
+        : villa.price;
+
+      return `
+        <article class="card">
+          <div class="card-image">
+            <img src="${villa.image[0]}" alt="${villa.name}" />
+            ${
+              hasPromo
+                ? `<span class="promo-badge">${villa.promo.disc} OFF</span>`
+                : ""
+            }
+            <button class="wishlist-btn ${isWishlisted ? "active" : ""}">
+              <i class="material-symbols-outlined">favorite</i>
+            </button>
+          </div>
+          <div class="card-content">
+            <div class="card-header">
+              <span class="tag">${villa.tag}</span>
+              <div class="rating">
+                <i class="material-symbols-outlined">star</i>
+                <span>${villa.rating}</span>
+              </div>
+            </div>
+            <a href="#/Detailed-Property?name=${encodeURIComponent(
+              villa.name
+            )}" class="villa-title">${villa.name}</a>
+            <p class="location">
+              <i class="material-symbols-outlined">location_on</i>
+              ${villa.location}
+            </p>
+            <div class="card-footer">
+              <div class="price-container">
+                <span class="price">IDR ${discountedPrice.toLocaleString(
+                  "id-ID"
+                )}</span>
+                <span class="unit">/night</span>
+              </div>
+              <button class="primary-btn book">
+                <a href="#/Booking?name=${encodeURIComponent(
+                  villa.name
+                )}" class="nav-link">Book Now</a>
+              </button>
+            </div>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}

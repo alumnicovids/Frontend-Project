@@ -107,10 +107,10 @@ function renderHeaderSlot(villa, index) {
               <h4>${villa.name}</h4>
               <span class="loc-tag">${villa.location}</span>
             </div>
-            <button class="primary-btn compare detail">
+            <button class="primary-btn confirm compare detail">
               <a href="#/Booking?name=${encodeURIComponent(
                 villa.name
-              )}" style="color:white; text-decoration:none;">Book Now</a>
+              )}">Book Now</a>
             </button>
           </td>`;
 }
@@ -202,9 +202,7 @@ window.openVillaModal = function (slot) {
             }" style="width:60px; height:45px; object-fit:cover; border-radius:4px;">
             <div class="info">
               <h5 style="margin:0;">${villa.name}</h5>
-              <small>${
-                villa.tag
-              } - IDR ${villa.price.toLocaleString()}</small>
+              <small>${villa.tag} - IDR ${villa.price.toLocaleString()}</small>
             </div>
           </div>
         `
