@@ -16,8 +16,7 @@ function initBooking() {
 }
 
 async function fetchVillas(name) {
-  const res = await fetch("/JSON/villas.json");
-  const data = await res.json();
+  const data = await getVillas();
   const villa = data.find((v) => v.name === name);
   renderBookingForm(villa);
 }
@@ -34,7 +33,7 @@ function renderBookingForm(villa) {
       <div class="card-header">
         <h3>${villa.name}</h3>
         <p class="text-muted">Complete your reservation details below.</p>
-    </div>
+      </div>
 
       <div class="form-group">
         <label>Select Room Type</label>
@@ -44,7 +43,7 @@ function renderBookingForm(villa) {
               (r) =>
                 `<option value="${r.price}" data-name="${r.type}">${
                   r.type
-                } - IDR${r.price.toLocaleString()}</option>`
+                } - ${formatIDR(r.price)}</option>`
             )
             .join("")}
         </select>
@@ -84,7 +83,7 @@ function renderBookingForm(villa) {
 
       <div class="form-group">
         <label>Kode Promo</label>
-        <input type="text" id="promo-code" placeholder="Example: DISCOUNT10" oninput="calculateTotal()">
+        <input type="text" id="promo-code" placeholder="Example: DISCOUNT 10" oninput="calculateTotal()">
       </div>
 
       <div class="form-group">
@@ -96,13 +95,13 @@ function renderBookingForm(villa) {
       </div>
 
       <div class="total-section">
-        <div">
+        <div>
           <span>Duration of Stay:</span>
           <span id="display-nights">0 Nights</span>
         </div>
         <div class="total-row">
           <span>Total Estimate:</span>
-          <span id="display-total">IDR 0</span>
+          <span id="display-total">${formatIDR(0)}</span>
         </div>
       </div>
 
@@ -118,7 +117,7 @@ function calculateTotal() {
   const checkinVal = document.getElementById("checkin-date").value;
   const checkoutVal = document.getElementById("checkout-date").value;
   const addons = document.querySelectorAll(".addon:checked");
-  const promo = document.getElementById("promo-code").value;
+  const promo = document.getElementById("promo-code").value.trim();
 
   let nights = 0;
   if (checkinVal && checkoutVal) {
@@ -139,9 +138,7 @@ function calculateTotal() {
   }
 
   document.getElementById("display-nights").innerText = `${nights} Nights`;
-  document.getElementById(
-    "display-total"
-  ).innerText = `Rp${total.toLocaleString()}`;
+  document.getElementById("display-total").innerText = formatIDR(total);
   return total;
 }
 
@@ -194,9 +191,7 @@ function renderBookingStatus(booking) {
         <hr>
         <div class="payment-detail-box">
           <small>Total to be paid</small>
-          <h2 class="price-highlight">Rp${parseInt(
-            booking.totalPrice
-          ).toLocaleString()}</h2>
+          <h2 class="price-highlight">${formatIDR(booking.totalPrice)}</h2>
           <p>Method <strong>${booking.paymentMethod}</strong></p>
         </div>
         <div class="btn-card">
@@ -223,7 +218,7 @@ function renderBookingStatus(booking) {
   } else if (booking.status === "checked-in") {
     container.innerHTML = `
       <div class="booking-card">
-        <div class="stay-icon>🏠</div>
+        <div class="stay-icon">🏠</div>
         <h4>Have a good holiday</h4>
         <p>You are currently staying in ${booking.villaName}.</p>
         <button class="primary-btn confirm" onclick="processCheckOut()">Check Out</button>
@@ -271,7 +266,7 @@ function processCheckOut() {
   history.push({ ...booking, status: "completed", id: Date.now() });
   localStorage.setItem("myBookings", JSON.stringify(history));
   localStorage.removeItem("activeBooking");
-  showToast("Terimakasih telah berkunjung!");
+  showToast("Thank you for visiting!");
   window.location.hash = "#/my-booking";
 }
 
@@ -304,25 +299,21 @@ async function renderMyBookings() {
   if (!container) return;
 
   const history = JSON.parse(localStorage.getItem("myBookings")) || [];
-
   if (history.length === 0) {
     container.innerHTML = `<div class="empty-state"><p>There is no transaction history yet.</p></div>`;
     return;
   }
 
-  try {
-    const res = await fetch("/JSON/villas.json");
-    const villasData = await res.json();
+  const villasData = await getVillas();
+  container.innerHTML = history
+    .slice()
+    .reverse()
+    .map((item, index) => {
+      const villaInfo = villasData.find((v) => v.name === item.villaName);
+      const villaImage =
+        villaInfo?.image?.[0] || "https://via.placeholder.com/150";
 
-    container.innerHTML = history
-      .slice()
-      .reverse()
-      .map((item, index) => {
-        const villaInfo = villasData.find((v) => v.name === item.villaName);
-        const villaImage =
-          villaInfo?.image?.[0] || "https://via.placeholder.com/150";
-
-        return `
+      return `
       <div class="booking-card history-card" style="animation-delay: ${
         index * 0.1
       }s">
@@ -332,45 +323,38 @@ async function renderMyBookings() {
           </div>
           <div class="villa-details">
             <div>
-              <div>
-                <h4>${item.villaName}</h4>
-                <small>TRX-${String(item.id).slice(-6)}</small>
-              </div>
+              <h4>${item.villaName}</h4>
+              <small>TRX-${String(item.id).slice(-6)}</small>
               <span class="status-badge-booking status-${item.status}">${
-          item.status
-        }</span>
+        item.status
+      }</span>
             </div>
             <p class="room-info">
-              <span>🛏️ ${item.roomType}</span>
-              <span>|</span>
-              <span>📅 ${item.checkin} - ${item.checkout}</span>
+              <span>🛏️ ${item.roomType}</span> | <span>📅 ${item.checkin} - ${
+        item.checkout
+      }</span>
             </p>
-            <div>
-              <div class="payment-info">
-                <span class="method">${item.paymentMethod}</span>
-                <span class="price">Rp${item.totalPrice.toLocaleString()}</span>
-              </div>
-              <div class="action-buttons">
-                <button class="primary-btn togrev ${
-                  item.status === "completed" ? "btn-review" : ""
-                }"
-                  onclick="${
-                    item.status === "completed"
-                      ? `showReviewPopup('${item.villaName}')`
-                      : "showToast('Detail pemesanan')"
-                  }">
-                  ${item.status === "completed" ? "Leave a Review" : "Detail"}
-                </button>
-              </div>
+            <div class="payment-info">
+              <span class="method">${item.paymentMethod}</span>
+              <span class="price">${formatIDR(item.totalPrice)}</span>
+            </div>
+            <div class="action-buttons">
+              <button class="primary-btn togrev confirm ${
+                item.status === "completed" ? "btn-review" : ""
+              }"
+                onclick="${
+                  item.status === "completed"
+                    ? `showReviewPopup('${item.villaName}')`
+                    : `showToast('Detail TRX-${String(item.id).slice(-6)}')`
+                }">
+                ${item.status === "completed" ? "Leave a Review" : "Detail"}
+              </button>
             </div>
           </div>
         </div>
       </div>`;
-      })
-      .join("");
-  } catch (error) {
-    container.innerHTML = `<p>Failed to load history.</p>`;
-  }
+    })
+    .join("");
 }
 
 window.initBooking = initBooking;

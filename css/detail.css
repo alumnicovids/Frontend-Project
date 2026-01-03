@@ -17,15 +17,14 @@
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
-  overflow-y: hidden;
   gap: 20px;
   padding: 40px 15%;
   align-items: center;
-  -webkit-overflow-scrolling: touch;
   width: 100%;
   box-sizing: border-box;
-  scroll-behavior: auto;
   margin-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-clr) rgba(0, 0, 0, 0.05);
 }
 
 .gallery-grid::-webkit-scrollbar {
@@ -40,18 +39,13 @@
 }
 
 .gallery-grid::-webkit-scrollbar-thumb {
-  background: var(--accent-clr, #8b5a2b);
+  background: var(--accent-clr);
   border-radius: 10px;
   transition: background 0.3s ease;
 }
 
 .gallery-grid::-webkit-scrollbar-thumb:hover {
-  background: var(--text-clr, #4b3621);
-}
-
-.gallery-grid {
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-clr, #8b5a2b) rgba(0, 0, 0, 0.05);
+  background: var(--text-clr);
 }
 
 .gallery-grid img {
@@ -125,12 +119,12 @@
   color: var(--cappuccino-light);
 }
 
-.primary-btn.detail {
+.detail {
   min-width: 100%;
   padding: 10px 5px;
 }
 
-.primary-btn.detail a {
+.detail a {
   text-decoration: none;
   color: var(--creamy-foam);
 }
@@ -147,19 +141,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding-left: 20px;
-}
-
-@media (max-width: 768px) {
-  .info-section {
-    grid-template-columns: 1fr;
-  }
-  .nearby-section ul {
-    grid-template-columns: 1fr;
-  }
-  .gallery-grid img {
-    flex: 0 0 85%;
-    height: 300px;
-  }
+  list-style: none;
 }
 
 .rooms-section {
@@ -171,7 +153,7 @@
 .rooms-section h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #1a1a1a;
+  color: var(--cappuccino-dark);
 }
 
 .rooms-grid {
@@ -193,7 +175,6 @@
 
 .room-item-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .room-info h4 {

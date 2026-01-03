@@ -1,6 +1,11 @@
 const toggleButton = document.getElementById("toggle-btn");
 const sidebar = document.getElementById("sidebar");
 const searchInput = document.getElementById("search-input");
+const filterMap = {
+  "/promo-villas": "promo",
+  "/couple-villas": "Couple Villa",
+  "/family-villas": "Family Villa",
+};
 let currentSearchQuery = "";
 
 function toggleSidebar() {
@@ -26,22 +31,9 @@ function closeAllSubMenu() {
   });
 }
 
-async function getVillas() {
-  const response = await fetch("/JSON/villas.json");
-  return await response.json();
-}
-
-function formatIDR(amount) {
-  return new Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-    minimumFractionDigits: 0,
-  }).format(amount);
-}
-
 function createVillaCard(villa, wishlist) {
   const isWishlisted = wishlist.some((item) => item.name === villa.name);
-  const hasPromo = villa.promo && villa.promo.status === "active";
+  const hasPromo = villa.promo?.status === "active";
   const discountedPrice = hasPromo
     ? villa.price * (1 - parseInt(villa.promo.disc) / 100)
     : villa.price;
@@ -116,8 +108,9 @@ function createVillaCard(villa, wishlist) {
 
 async function renderVillaDetail() {
   const hash = window.location.hash;
-  const queryString = hash.includes("?") ? hash.split("?")[1] : "";
-  const params = new URLSearchParams(queryString);
+  const params = new URLSearchParams(
+    hash.includes("?") ? hash.split("?")[1] : ""
+  );
   const villaName = params.get("name");
   const container = document.getElementById("villa-detail-content");
 
@@ -135,30 +128,24 @@ async function renderVillaDetail() {
 
   container.innerHTML = `
     <div class="header-section">
-    <div class="header-row">
-      <button class="nav-back-btn" onclick="history.back()" aria-label="Go back">
-        <i class="material-symbols-outlined">keyboard_double_arrow_left</i>
-      </button>
-      <h2>${villa.name}</h2>
+      <div class="header-row">
+        <h2>${villa.name}</h2>
+      </div>
+      <div class="location detail">
+        <i class="material-symbols-outlined">location_on</i>
+        <span>${villa.detail.address}</span>
+      </div>
     </div>
-    <div class="location detail" style="display: flex; align-items: center; gap: 8px; margin-left: 4px;">
-      <i class="material-symbols-outlined" style="font-size: 24px;">location_on</i>
-      <span>${villa.detail.address}</span>
-    </div>
-  </div>
-
     <div class="gallery-grid">
       ${images
         .map(
-          (img, i) => `
-        <img src="${img}" alt="${villa.name}" tabindex="0" class="${
-            i === 0 ? "active" : ""
-          }">
-      `
+          (img, i) =>
+            `<img src="${img}" alt="${villa.name}" class="${
+              i === 0 ? "active" : ""
+            }">`
         )
         .join("")}
     </div>
-
     <div class="info-section">
       <div class="main-info">
         <div class="description-card">
@@ -178,7 +165,6 @@ async function renderVillaDetail() {
             }
           </div>
         </div>
-
         <div class="rooms-section">
           <h3>Room Type & Price</h3>
           <div class="rooms-grid">
@@ -199,21 +185,18 @@ async function renderVillaDetail() {
               .join("")}
           </div>
         </div>
-
         <div class="facilities-grid">
           <h3>Facility</h3>
           <ul>
             ${villa.detail.facilities
               .map(
-                (f) => `
-              <li><i class="material-symbols-outlined">check_circle</i> ${f}</li>
-            `
+                (f) =>
+                  `<li><i class="material-symbols-outlined">check_circle</i> ${f}</li>`
               )
               .join("")}
           </ul>
         </div>
       </div>
-
       <div class="sidebar-info">
         <div class="price-card">
           <span class="price-range">${villa.detail.priceRange}</span>
@@ -229,9 +212,8 @@ async function renderVillaDetail() {
           <ul>
             ${villa.detail.nearbyPlaces
               .map(
-                (p) => `
-              <li><i class="material-symbols-outlined">explore</i> ${p}</li>
-            `
+                (p) =>
+                  `<li><i class="material-symbols-outlined">explore</i> ${p}</li>`
               )
               .join("")}
           </ul>
@@ -256,14 +238,12 @@ function setupInfiniteScroll(gallery) {
   gallery.querySelectorAll(".clone").forEach((el) => el.remove());
   const firstClone = items[0].cloneNode(true);
   const lastClone = items[items.length - 1].cloneNode(true);
-  firstClone.classList.add("clone");
-  lastClone.classList.add("clone");
+  [firstClone, lastClone].forEach((clone) => clone.classList.add("clone"));
 
   gallery.appendChild(firstClone);
   gallery.insertBefore(lastClone, items[0]);
 
-  const gap = 20;
-  const itemWidth = items[0].offsetWidth + gap;
+  const itemWidth = items[0].offsetWidth + 20;
   gallery.scrollLeft = itemWidth;
 
   let isResetting = false;
@@ -272,19 +252,13 @@ function setupInfiniteScroll(gallery) {
     const scrollPos = gallery.scrollLeft;
     const maxScroll = gallery.scrollWidth - gallery.clientWidth - 5;
 
-    if (scrollPos <= 0) {
+    if (scrollPos <= 0 || scrollPos >= maxScroll) {
       isResetting = true;
       gallery.style.scrollBehavior = "auto";
       gallery.scrollLeft =
-        gallery.scrollWidth - gallery.clientWidth - itemWidth;
-      setTimeout(() => {
-        gallery.style.scrollBehavior = "smooth";
-        isResetting = false;
-      }, 50);
-    } else if (scrollPos >= maxScroll) {
-      isResetting = true;
-      gallery.style.scrollBehavior = "auto";
-      gallery.scrollLeft = itemWidth;
+        scrollPos <= 0
+          ? gallery.scrollWidth - gallery.clientWidth - itemWidth
+          : itemWidth;
       setTimeout(() => {
         gallery.style.scrollBehavior = "smooth";
         isResetting = false;
@@ -309,18 +283,6 @@ function setupInfiniteScroll(gallery) {
   gallery.querySelectorAll("img").forEach((img) => observer.observe(img));
 }
 
-function initSearch(filterType) {
-  const searchInput = document.getElementById("search-input");
-  if (!searchInput) return;
-
-  searchInput.value = currentSearchQuery;
-
-  searchInput.addEventListener("input", (e) => {
-    currentSearchQuery = e.target.value.toLowerCase();
-    renderVillas(filterType, currentSearchQuery);
-  });
-}
-
 async function renderVillas(filterType = null, searchQuery = "") {
   const villaData = await getVillas();
   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
@@ -329,7 +291,6 @@ async function renderVillas(filterType = null, searchQuery = "") {
   if (!container) return;
 
   let filtered = villaData;
-
   if (filterType === "promo") {
     filtered = villaData.filter((v) => v.promo?.status === "active");
   } else if (filterType) {
@@ -337,34 +298,23 @@ async function renderVillas(filterType = null, searchQuery = "") {
   }
 
   if (searchQuery) {
-    filtered = filtered.filter(
-      (v) =>
-        v.name.toLowerCase().includes(searchQuery) ||
-        v.location.toLowerCase().includes(searchQuery) ||
-        v.tag.toLowerCase().includes(searchQuery)
+    filtered = filtered.filter((v) =>
+      [v.name, v.location, v.tag].some((f) =>
+        f.toLowerCase().includes(searchQuery)
+      )
     );
   }
 
   container.innerHTML = filtered.length
     ? filtered.map((v) => createVillaCard(v, wishlist)).join("")
-    : `<div>
-        <p>Vila tidak ditemukan.</p>
-      </div>`;
+    : "<div><p>Vila tidak ditemukan.</p></div>";
 }
 
 if (searchInput) {
   searchInput.addEventListener("input", (e) => {
     currentSearchQuery = e.target.value.toLowerCase();
-
-    const hash = window.location.hash || "#/";
-    const path = hash.split("?")[0].replace("#", "");
-
-    let filterType = null;
-    if (path === "/promo-villas") filterType = "promo";
-    else if (path === "/couple-villas") filterType = "Couple Villa";
-    else if (path === "/family-villas") filterType = "Family Villa";
-
-    renderVillas(filterType, currentSearchQuery);
+    const path = (window.location.hash || "#/").split("?")[0].replace("#", "");
+    renderVillas(filterMap[path] || null, currentSearchQuery);
   });
 }
 
@@ -373,8 +323,8 @@ window.addToCompare = async function (name) {
   const villa = data.find((v) => v.name === name);
   if (villa) {
     let list = JSON.parse(localStorage.getItem("compareList")) || [null, null];
-    list[0] = list[1];
-    list[1] = villa;
+    list.shift();
+    list.push(villa);
     localStorage.setItem("compareList", JSON.stringify(list));
     window.location.hash = "#/compare";
   }
@@ -399,24 +349,14 @@ document.addEventListener("click", async (e) => {
   }
 
   localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-  if (window.location.hash.includes("/wishlist")) {
-    renderWishlist();
-  }
+  if (window.location.hash.includes("/wishlist")) renderWishlist();
 });
 
 function renderWishlist() {
   const container = document.querySelector(".wishlist-container");
   if (!container) return;
-
   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-  if (wishlist.length === 0) {
-    container.innerHTML = "<p>Wishlist is empty</p>";
-    return;
-  }
-
-  container.innerHTML = wishlist
-    .map((v) => createVillaCard(v, wishlist))
-    .join("");
+  container.innerHTML = wishlist.length
+    ? wishlist.map((v) => createVillaCard(v, wishlist)).join("")
+    : "<p>Wishlist is empty</p>";
 }

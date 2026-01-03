@@ -12,25 +12,12 @@ const routes = {
 };
 
 const routeInits = {
-  "/": () => {
-    renderVillas();
-    initSearch();
-  },
+  "/": () => renderVillas(),
   "/details": () => renderVillaDetail(),
-  "/couple-villas": () => {
-    renderVillas("Couple Villa");
-    initSearch();
-  },
-  "/family-villas": () => {
-    renderVillas("Family Villa");
-    initSearch();
-  },
-  "/promo-villas": () => {
-    renderVillas("promo");
-    initSearch();
-  },
-  "/compare": () =>
-    typeof window.initCompare === "function" && window.initCompare(),
+  "/couple-villas": () => renderVillas("Couple Villa"),
+  "/family-villas": () => renderVillas("Family Villa"),
+  "/promo-villas": () => renderVillas("promo"),
+  "/compare": () => typeof initCompare === "function" && initCompare(),
   "/booking": () => typeof initBooking === "function" && initBooking(),
   "/my-booking": () =>
     typeof renderMyBookings === "function" && renderMyBookings(),
@@ -53,26 +40,42 @@ async function redirect() {
       contentDiv.innerHTML = html;
       window.scrollTo(0, 0);
       if (routeInits[path]) routeInits[path]();
+      if (
+        typeof initSearch === "function" &&
+        document.getElementById("search-input")
+      ) {
+        initSearch();
+      }
     }
 
-    document.querySelectorAll(".nav-link").forEach((link) => {
-      const parentLi = link.parentElement;
-      parentLi.classList.remove("active");
-
-      const currentPath = hash.split("?")[0];
-      if (link.getAttribute("href") === currentPath) {
-        parentLi.classList.add("active");
-        const subMenu = link.closest(".sub-menu");
-        if (subMenu) {
-          subMenu.classList.add("show");
-          const dropdownBtn = subMenu.previousElementSibling;
-          if (dropdownBtn) dropdownBtn.classList.add("rotate");
-        }
-      }
-    });
+    updateActiveNavLink(hash);
   } catch (error) {
     console.error(error);
+    const contentDiv = document.getElementById("content");
+    if (contentDiv) {
+      contentDiv.innerHTML = `<div class="error-state"><p>Failed to load page. Please try again.</p></div>`;
+    }
   }
+}
+
+function updateActiveNavLink(hash) {
+  const currentPath = hash.split("?")[0];
+
+  document.querySelectorAll(".nav-link").forEach((link) => {
+    const parentLi = link.parentElement;
+    const isMatch = link.getAttribute("href") === currentPath;
+
+    parentLi.classList.toggle("active", isMatch);
+
+    if (isMatch) {
+      const subMenu = link.closest(".sub-menu");
+      if (subMenu) {
+        subMenu.classList.add("show");
+        const dropdownBtn = subMenu.previousElementSibling;
+        if (dropdownBtn) dropdownBtn.classList.add("rotate");
+      }
+    }
+  });
 }
 
 window.addEventListener("hashchange", redirect);
