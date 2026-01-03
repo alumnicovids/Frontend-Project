@@ -135,12 +135,17 @@ async function renderVillaDetail() {
 
   container.innerHTML = `
     <div class="header-section">
+    <div class="header-row">
+      <button class="nav-back-btn" onclick="history.back()" aria-label="Go back">
+        <i class="material-symbols-outlined">keyboard_double_arrow_left</i>
+      </button>
       <h2>${villa.name}</h2>
-      <div class="location detail">
-        <i class="material-symbols-outlined">location_on</i>
-        <span class="location detail">${villa.detail.address}</span>
-      </div>
     </div>
+    <div class="location detail" style="display: flex; align-items: center; gap: 8px; margin-left: 4px;">
+      <i class="material-symbols-outlined" style="font-size: 24px;">location_on</i>
+      <span>${villa.detail.address}</span>
+    </div>
+  </div>
 
     <div class="gallery-grid">
       ${images
