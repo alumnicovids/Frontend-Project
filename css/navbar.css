@@ -129,6 +129,7 @@ main p {
   color: var(--secondary-text-clr);
   margin-top: 5px;
   margin-bottom: 15px;
+  text-align: justify;
 }
 
 .container {
