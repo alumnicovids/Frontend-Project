@@ -147,7 +147,12 @@ function renderVillaDetail() {
 
         container.innerHTML = `
           <div class="header-section">
-            <h2>${villa.name}</h2>
+            <div class="header-row">
+              <button class="nav-back-btn" onclick="history.back()" aria-label="Go back">
+                <i class="material-symbols-outlined" style="transform: rotate(180deg);">keyboard_double_arrow_right</i>
+              </button>
+              <h2>${villa.name}</h2>
+            </div>
             <div class="location detail">
               <i class="material-symbols-outlined">location_on</i>
               <span class="location detail">${villa.detail.address}</span>
