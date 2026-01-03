@@ -127,6 +127,10 @@
   flex: 1;
 }
 
+#room-select option {
+  color: #000;
+}
+
 .form-group select,
 .form-group input {
   width: 100%;
@@ -298,6 +302,10 @@
   color: var(--text-main);
 }
 
+#promo-code::placeholder {
+  color: var(--cappuccino-light);
+}
+
 #display-total {
   font-weight: 800;
   font-size: 1.4rem;
@@ -423,10 +431,6 @@
   border: 1px solid var(--line-clr);
   background: white;
   font-weight: 600;
-}
-
-.confirm:hover {
-  background: var(--agree-gradient);
 }
 
 .secondary-btn.cancel {
