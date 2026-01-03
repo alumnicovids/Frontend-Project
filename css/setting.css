@@ -1,68 +1,27 @@
-/* --- Header Profil (Aksen Ungu LuxeNest) --- */
-.profile-header {
-  background: var(--hover-clr);
-  margin: -30px -7% 30px -7%;
-  padding: 40px 7%;
-  color: var(--text-clr);
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.avatar-large {
-  width: 72px;
-  height: 72px;
-  background-color: #feba02; /* Kuning aksen untuk kontras */
-  color: var(--base-clr);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 2rem;
-  font-weight: 800;
-  border: 4px solid rgba(255, 255, 255, 0.2);
-}
-
-.status-badge {
-  color: #feba02 !important;
-  font-weight: 700;
-  font-size: 0.85rem;
-  margin: 0 !important;
-}
-
-/* --- Container Utama (Layout 2 Kolom) --- */
 .profile-edit-container {
   display: flex;
   gap: 40px;
-  background-color: var(--hover-clr) !important;
-  border: 1px solid var(--line-clr) !important;
   align-items: flex-start;
-  padding: 30px !important;
-  margin-top: 20px;
-  border-radius: 12px;
+  padding: 40px;
+  font-size: 1rem;
+  color: var(--cappuccino-dark);
+  font-weight: bolder;
 }
 
-/* --- Sisi Kiri: Foto Profil --- */
 .photo-section {
-  flex: 0 0 250px;
+  flex: 1;
   text-align: center;
-  padding: 15px;
-  background-color: var(--base-clr);
-  border-radius: 12px;
-  border: 1px solid var(--line-clr);
+  padding-right: 40px;
+  border-right: 1px solid var(--line-clr);
 }
 
 .profile-photo-wrapper {
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 8px;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 15px;
-  background-color: var(--hover-clr);
-  border: 1px solid var(--line-clr);
+  border: 4px solid var(--line-clr);
 }
 
 .profile-photo-wrapper img {
@@ -71,38 +30,19 @@
   object-fit: cover;
 }
 
-/* Efek Hover Tombol Pilih Foto */
-.btn-select-photo {
-  width: 100%;
-  padding: 10px;
-  background-color: transparent;
-  border: 1px solid var(--line-clr);
-  color: var(--text-clr);
-  border-radius: 6px;
-  cursor: pointer;
+.secondary-btn.setting {
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
   font-weight: 600;
+  cursor: pointer;
+  width: 100%;
   transition: all 0.3s ease;
 }
 
-.btn-select-photo:hover {
-  background-color: var(--accent-clr);
-  border-color: var(--accent-clr);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(121, 45, 138, 0.4);
-}
-
-.photo-info {
-  font-size: 0.75rem;
-  color: var(--secondary-text-clr);
-  margin-top: 15px;
-  line-height: 1.4;
-  text-align: left;
-}
-
-/* --- Sisi Kanan: Detail Informasi --- */
 .info-section {
-  flex: 1;
+  flex: 2;
 }
 
 .info-group {
@@ -110,114 +50,77 @@
 }
 
 .info-group h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 20px;
   color: var(--text-clr);
-  border-bottom: 2px solid var(--accent-clr);
-  display: inline-block;
-  padding-bottom: 5px;
 }
 
 .info-row {
   display: flex;
   align-items: center;
-  padding: 15px 10px;
-  border-bottom: 1px solid var(--line-clr);
-  gap: 15px;
-  transition: background-color 0.2s ease;
-  border-radius: 6px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(210, 180, 140, 0.3);
 }
 
-.info-row:hover {
-  background-color: rgba(255, 255, 255, 0.03);
+.info-row:last-child {
+  border-bottom: none;
 }
 
 .info-row .label {
-  flex: 0 0 150px;
+  width: 150px;
   color: var(--secondary-text-clr);
 }
 
 .info-row .value {
   flex: 1;
-  color: var(--text-clr);
+  color: var(--creamy-foam);
 }
 
-/* Efek Hover Link Ubah/Tambah */
-.edit-link {
-  color: #00a86b; /* Hijau sesuai referensi */
+input[type="date"].value-input {
+  flex: 1;
+  border: 1px solid var(--line-clr);
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--creamy-foam);
+  outline: none;
+  margin-right: 10px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: sepia(1) saturate(5) hue-rotate(10deg);
+  opacity: 0.7;
+}
+
+.primary-btn.edit {
+  color: var(--cappuccino-light);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  padding: 5px 12px;
-  border-radius: 4px;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--line-clr);
+  background: var(--glass-gradient);
+  backdrop-filter: blur(8px);
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.edit-link:hover {
-  background-color: rgba(0, 168, 107, 0.1);
-  text-decoration: underline;
-  transform: scale(1.05);
+.primary-btn.edit:hover {
+  background-color: var(--accent-clr);
+  color: white;
+  transform: translateY(-1px);
 }
 
 .status-tag {
-  background-color: rgba(0, 168, 107, 0.1);
-  color: #00a86b;
+  background: var(--macha);
+  color: var(--creamy-foam);
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
   margin-right: 10px;
-}
-
-/* --- Navigasi Menu Lainnya (Jika Ada) --- */
-.setting-menu li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 10px;
-  border-bottom: 1px solid var(--line-clr);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.setting-menu li:hover {
-  background-color: var(--base-clr);
-  padding-left: 20px; /* Efek bergeser */
-}
-
-.setting-menu li:hover span {
-  color: var(--accent-clr);
-}
-
-.setting-menu li:hover i {
-  color: var(--accent-clr);
-  transform: translateX(5px);
-}
-
-/* --- Responsif Mobile --- */
-@media (max-width: 800px) {
-  .profile-edit-container {
-    flex-direction: column;
-    padding: 20px !important;
-  }
-
-  .photo-section {
-    flex: 1;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .info-row {
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-
-  .info-row .label {
-    flex: 1 0 100%;
-    font-size: 0.85rem;
-  }
-
-  .info-row .value {
-    font-weight: 600;
-  }
+  margin-left: 5px;
+  border: 1px solid rgba(139, 90, 43, 0.2);
 }

@@ -1,0 +1,489 @@
+.primary-btn.empty {
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.status-badge-booking {
+  color: var(--accent-clr) !important;
+  margin: 0 !important;
+}
+
+.booking-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.progress-tracker {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 40px;
+}
+
+.progress-tracker::before {
+  content: "";
+  position: absolute;
+  top: 38px;
+  left: 60px;
+  right: 60px;
+  height: 2px;
+  background: var(--line-clr);
+  z-index: 0;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--espresso);
+}
+
+.step.active {
+  color: var(--creamy-foam);
+}
+
+.step-icon {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border: 3px solid var(--line-clr);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  color: transparent;
+}
+
+.step.active .step-icon {
+  border-color: var(--accent-clr);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(139, 90, 43, 0.2);
+}
+
+.step.active .step-icon::after {
+  content: "";
+  padding: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-clr);
+  border-radius: 50%;
+  transform: translateX(-3px);
+}
+
+.booking-card {
+  background: var(--bg-glass);
+  border-radius: 24px;
+  margin-top: 25px;
+  padding: 40px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  animation: fadeInUp 0.5s ease-out 0.2s backwards;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--line-clr);
+}
+
+.btn-card {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.btn-card button {
+  flex: 1;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.date-range-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.date-input-wrapper {
+  flex: 1;
+}
+
+#room-select option {
+  color: #000;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  margin-top: 5px;
+  box-sizing: border-box;
+  padding: 16px 20px;
+  border: 1px solid var(--line-clr);
+  background: var(--glass-gradient);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--creamy-foam);
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  background: var(--bg-glass);
+  box-shadow: 0 0 0 2px var(--accent-clr);
+}
+
+.service-item label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.service-item {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--glass-gradient);
+  border-radius: 14px;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid var(--line-clr);
+  color: var(--creamy-foam);
+}
+
+.service-item:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.service-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.service-name {
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.service-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--line-clr);
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.service-item input[type="checkbox"]:checked {
+  background: var(--agree-gradient);
+  border-color: var(--macha);
+}
+
+.service-item input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.service-price {
+  font-weight: 700;
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+}
+
+.pay-btn {
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid var(--line-clr);
+  padding: 18px;
+  border-radius: 14px;
+  background: var(--glass-gradient);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+.pay-btn:hover {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  color: var(--cappuccino-light);
+}
+
+.pay-btn.selected {
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--cappuccino-light);
+  box-shadow: 0 0 0 2px var(--accent-clr);
+  border-color: var(--accent-clr);
+}
+
+.pay-btn::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--line-clr);
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: var(--transition);
+}
+
+.pay-btn.selected::before {
+  background: var(--macha-dark);
+  border-color: var(--macha);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='14px' height='14px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.total-section {
+  background: var(--glass-gradient) !important;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--line-clr);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.total-section .d-flex {
+  background: transparent !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-section span {
+  color: var(--text-main);
+}
+
+#promo-code::placeholder {
+  color: var(--cappuccino-light);
+}
+
+#display-total {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--creamy-foam) !important;
+}
+
+.villa-image-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--line-clr);
+}
+
+.villa-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.history-card:hover .villa-img {
+  transform: scale(1.1);
+}
+
+.card-content-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.history-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  border-left: 5px solid var(--accent-clr);
+  padding: 20px !important;
+  gap: 0 !important;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.villa-image-placeholder {
+  width: 100px;
+  height: 100px;
+  background: var(--line-clr);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.villa-details {
+  flex-grow: 1;
+  color: var(--line-clr);
+}
+
+.status-badge-booking {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem !important;
+}
+
+.status-completed {
+  background: #dcfce7;
+  color: #166534 !important;
+  padding: 0 2;
+}
+
+.status-waiting {
+  background: #fef3c7;
+  color: #92400e !important;
+}
+
+.status-paid {
+  background: #dbeafe;
+  color: #1e40af !important;
+}
+
+.status-cancelled {
+  background: #fee2e2;
+  color: #991b1b !important;
+}
+
+.room-info {
+  font-size: 0.85rem;
+  color: var(--line-clr);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-info .method {
+  font-size: 0.75rem;
+  color: var(--line-clr);
+}
+
+.payment-info .price {
+  font-weight: 800;
+  color: var(--line-clr);
+}
+
+.btn-action {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--line-clr);
+  background: white;
+  font-weight: 600;
+}
+
+.secondary-btn.cancel {
+  background: rgba(0, 0, 0, 0.2);
+  color: #ca3636;
+  border: 1px solid rgba(140, 71, 71, 0.3);
+}
+
+.secondary-btn.cancel:hover {
+  background: rgba(153, 27, 27, 0.2);
+  color: #ff9999;
+  border-color: #991b1b;
+}
+
+.primary-btn.review,
+.secondary-btn.cancel.review {
+  padding: 0 50x;
+  min-width: 180px;
+  font-size: small;
+  margin-right: auto;
+}
+
+.togrev {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background: var(--glass-gradient);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 2px dashed var(--line-clr);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

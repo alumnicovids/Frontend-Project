@@ -1,0 +1,146 @@
+#sidebar {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 250px;
+  padding: 5px 1em;
+  background-color: var(--bg-glass);
+  border-right: 1px solid var(--line-clr);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  transition: 300ms ease-in-out;
+  overflow: hidden;
+  text-wrap: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+#sidebar.close {
+  padding: 5px;
+  width: 60px;
+}
+
+#sidebar ul {
+  list-style: none;
+}
+
+#sidebar > ul > li:first-child {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+#sidebar .logo {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+#sidebar ul li.active > a {
+  color: var(--creamy-foam);
+  font-weight: bolder;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#sidebar ul li.active > a i {
+  fill: var(--creamy-foam);
+  font-weight: 500;
+}
+
+#sidebar a,
+#sidebar .dropdown-btn,
+#sidebar .logo {
+  border-radius: 0.5em;
+  padding: 0.85em;
+  text-decoration: none;
+  color: var(--text-clr);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.dropdown-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+#sidebar i {
+  flex-shrink: 0;
+  fill: var(--text-clr);
+}
+
+#sidebar a span,
+#sidebar .dropdown-btn span {
+  flex-grow: 1;
+}
+
+#sidebar a:hover,
+#sidebar .dropdown-btn:hover {
+  background-color: var(--hover-clr);
+}
+
+#sidebar .sub-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 300ms ease-in-out;
+}
+
+#sidebar .sub-menu > div {
+  overflow: hidden;
+}
+
+#sidebar .sub-menu.show {
+  grid-template-rows: 1fr;
+}
+
+.dropdown-btn i {
+  transition: 200ms ease;
+}
+
+.rotate i:last-child {
+  transform: rotate(-180deg);
+}
+
+#sidebar .sub-menu a {
+  padding-left: 2em;
+}
+
+#toggle-btn {
+  margin-left: auto;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  background: none;
+  cursor: pointer;
+  color: var(--text-clr);
+}
+
+#toggle-btn i {
+  transition: transform 150ms ease;
+}
+
+main {
+  padding: min(30px, 7%);
+}
+
+main p {
+  color: var(--secondary-text-clr);
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.container {
+  border: 1px solid var(--line-clr);
+  border-radius: 1em;
+  margin-bottom: 20px;
+  padding: min(3em, 15%);
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.container h2,
+.container p {
+  margin-top: 1em;
+}

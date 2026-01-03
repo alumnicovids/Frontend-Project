@@ -1,10 +1,57 @@
-<div class="container">
-  <h2>Ini adalah halaman compare</h2>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci facere
-    aliquam unde ratione rerum quas maiores. Quam possimus fugiat, suscipit
-    nostrum natus dolor voluptates aut illo iure. Mollitia aspernatur assumenda
-    ex iure ullam illo, explicabo fugit quisquam iste officiis, atque
-    consectetur ut aperiam corporis dolore illum at nisi deleniti maxime.
-  </p>
+<div class="profile-header">
+  <div class="header-content-wrapper">
+    <div class="header-title-section">
+      <div class="icon-circle">
+        <i class="material-symbols-outlined">compare_arrows</i>
+      </div>
+      <div class="text-group">
+        <h2>Bandingkan Villa</h2>
+        <p class="status-badge">Pilih dua villa untuk melihat perbandingan fasilitas dan harga</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="secondary-btn compare-header" onclick="clearCompare()">
+        <i class="material-symbols-outlined">delete_sweep</i>
+        <span>Bersihkan</span>
+      </button>
+      <button class="primary-btn compare-header" onclick="openVillaModal(0)">
+        <i class="material-symbols-outlined">add</i>
+        <span>Pilih Villa 1</span>
+      </button>
+      <button class="primary-btn compare-header" onclick="openVillaModal(1)">
+        <i class="material-symbols-outlined">add</i>
+        <span>Pilih Villa 2</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="table-container">
+  <table class="luxury-compare-table">
+    <thead>
+      <tr></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div id="villaModal" class="modal">
+  <div class="modal-content">
+    <div
+      class="modal-header"
+      style="
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line-clr);
+      "
+    >
+      <h3>Pilih Villa</h3>
+      <span class="close-modal" style="cursor: pointer; font-size: 1.5rem"
+        >&times;</span
+      >
+    </div>
+    <div class="villa-selection-list"></div>
+  </div>
 </div>
