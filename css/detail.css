@@ -88,6 +88,7 @@
 
 .main-info p {
   color: var(--creamy-foam);
+  text-align: justify;
 }
 
 .amenities-summary {
@@ -194,7 +195,7 @@
 
 .room-info h4 {
   margin: 0 0 5px 0;
-  color: #1a1a1a;
+  color: var(--creamy-foam);
   font-size: 1.1rem;
 }
 

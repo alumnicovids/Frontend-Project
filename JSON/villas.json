@@ -1326,5 +1326,408 @@
         "price": 5000000
       }
     ]
+  },
+  {
+    "name": "Tiara Villa Ubud",
+    "tag": "Couple Villa",
+    "rating": 4.7,
+    "location": "Tampaksiring, Bali",
+    "amenities": {
+      "bed": 2,
+      "bathtub": 1,
+      "pool": true
+    },
+    "price": 1500000,
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861494.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861294.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861307.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861314.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861339.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861371.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861398.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861443.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Tiara Villa Ubud/693861464.jpg"
+    ],
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp900.000 - Rp1.500.000",
+      "roomType": "2 Bedroom Luxury Private Villa",
+      "description": "Tiara Villa Ubud adalah representasi kemewahan modern di tengah lanskap asri Tampaksiring. Menawarkan privasi mutlak, vila ini memiliki jendela-jendela besar yang menghadap langsung ke taman tropis dan kolam renang infinity. Dengan interior kontemporer yang berkelas dan suasana yang sunyi, tempat ini menjadi destinasi unggulan untuk mereka yang mencari ketenangan premium di pinggiran kawasan Ubud.",
+      "checkInTime": "13:00 WITA",
+      "checkOutTime": "11:00 WITA",
+      "address": "Jalan raya uma kelod, Sebatu, Kec. Tegallalang, Kabupaten Gianyar, Bali 80571",
+      "nearbyPlaces": [
+        "Campuhan Ridge Walk (1.2 km)",
+        "Ubud Palace (1.5 km)",
+        "Ubud Art Market (1.6 km)",
+        "Monkey Forest Ubud (2.8 km)",
+        "Tegalalang Rice Terrace (8.5 km)"
+      ],
+      "facilities": [
+        "Private Pool",
+        "Kitchenette",
+        "Living Area",
+        "En-suite Bathroom",
+        "Air Conditioning",
+        "Free Wi-Fi",
+        "Flat-screen TV",
+        "Daily Housekeeping",
+        "Parking Area",
+        "Floating Breakfast"
+      ],
+      "extraServices": [
+        "Airport Shuttle",
+        "Massage and Spa Treatment",
+        "Tour and Excursion Services",
+        "Laundry and Dry Cleaning",
+        "Scooter and Car Rental",
+        "Romantic Flower Decoration"
+      ],
+      "cancellationPolicy": "Pembatalan bersifat non-refundable atau mengikuti kebijakan khusus dari platform pemesanan yang digunakan."
+    },
+    "rooms": [
+      {
+        "type": "Superior Room without Pool",
+        "price": 900000
+      },
+      {
+        "type": "Superior dengan Kolam Renang Pribadi",
+        "price": 1500000
+      }
+    ]
+  },
+  {
+    "name": "KAPI Sebatu Villa",
+    "tag": "Family Villa",
+    "rating": 4.9,
+    "location": "Sebatu, Bali",
+    "amenities": {
+      "bed": 2,
+      "bathtub": 1,
+      "pool": true
+    },
+    "price": 1180000,
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765176404.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765176277.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765176284.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765176376.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765176404.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765376104.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765378559 - Copy.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765389299.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/765389829.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/771418276.jpg",
+      "/media/FolderFoto_Project/Family_Villas/KAPI Sebatu Villa/771418341.jpg"
+    ],
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp1.180.000 - Rp2.060.000",
+      "roomType": "1-2 Bedroom Luxury Private Family Villa",
+      "description": "KAPI Sebatu Villa adalah akomodasi eksklusif yang menawarkan pengalaman menginap dengan nuansa ketenangan di tengah alam Ubud yang asri. Villa ini sangat cocok bagi mereka yang mencari privasi dan koneksi mendalam dengan alam Bali.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "address": "Sebatu, Kec. Tegallalang, Kabupaten Gianyar, Bali 80561.",
+      "nearbyPlaces": [
+        "Pura Gunung Kawi Sebatu (1.5 km)",
+        "Pesiraman Dalem Pingit Sebatu (1.8 km)",
+        "Pura Tirta Empul (4.5 km)",
+        "Sawah Terasering Tegallalang (5.5 km)",
+        "Candi Gunung Kawi Tampaksiring (5.8 km)",
+        "Kubu Bali Experience / Sari Timbul (6.2 km)"
+      ],
+      "facilities": [
+        "Private Infinity Pool",
+        "Floating Breakfast",
+        "Balcony/Terrace",
+        "En-suite Bathroom",
+        "Air Conditioning",
+        "Flat Screen TV",
+        "High-speed Wi-Fi",
+        "Mini Bar & Tea/Coffee Maker",
+        "Safety Deposit Box",
+        "Room Service",
+        "Free Parking"
+      ],
+      "extraServices": [
+        "Airport Shuttle Service",
+        "Floating Breakfast",
+        "Romantic Candlelight Dinner",
+        "In-villa Spa & Massage",
+        "Flower Decoration Setup",
+        "Car or Scooter Rental",
+        "Day Tour & Trekking Arrangements",
+        "Laundry Service",
+        "Afternoon Tea",
+        "Cooking Class"
+      ],
+      "cancellationPolicy": "Kebijakan pembatalan di KAPI Sebatu Villa bersifat non-refundable atau mengikuti ketentuan khusus dari platform pemesanan yang digunakan, termasuk biaya penuh untuk pembatalan mendadak dalam waktu 48 jam atau jika tamu tidak datang ke lokasi tanpa pemberitahuan sebelumnya."
+    },
+    "rooms": [
+      {
+        "type": "Villa 1 Kamar Tidur",
+        "price": 1180000
+      },
+      {
+        "type": "Villa 2 Kamar Tidur",
+        "price": 2060000
+      }
+    ]
+  },
+  {
+    "name": "Villa Dolce Farniente",
+    "tag": "Family Villa",
+    "rating": 4.7,
+    "location": "Tegalalang, Bali",
+    "amenities": {
+      "bed": 3,
+      "bathtub": 2,
+      "pool": true
+    },
+    "price": 3000000,
+    "image": [
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591458565.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591458564.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591458572.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591460213.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591460937.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591463930.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591463991.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591464020.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/591465584.jpg",
+      "/media/FolderFoto_Project/Family_Villas/Villa Dolce Farniente/638242446.jpg"
+    ],
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp3.000.000 - Rp4.000.000",
+      "roomType": "2-3 Bedroom Luxury Private Family Villa",
+      "description": "Villa Dolce Farniente adalah akomodasi mewah yang terletak di kawasan tenang Tegallalang, Bali, yang dirancang khusus untuk memberikan pengalaman relaksasi maksimal di tengah alam tropis, menjadikannya sebuah tempat persembunyian yang menawarkan privasi total serta suasana damai bagi mereka yang mencari ketenangan jiwa.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "address": "Pupuan, Kec. Tegallalang, Kabupaten Gianyar, Bali.",
+      "nearbyPlaces": [
+        "Alas Harum Bali (3.2 km)",
+        "Cretya Ubud (3.4 km)",
+        "Pura Mengening (4.8 km)",
+        "Satria Coffee Plantation (5.1 km)",
+        "Bali Pulina (5.4 km)",
+        "Istana Kepresidenan Tampaksiring (5.9 km)",
+        "Suwat Waterfall (8.5 km)"
+      ],
+      "facilities": [
+        "Private Infinity Pool",
+        "High-Speed Wi-Fi Access",
+        "Fully Equipped Kitchenette",
+        "Semi-Outdoor Bathroom",
+        "Individually Controlled AC",
+        "Floating Breakfast Service",
+        "Secure Private Parking Area",
+        "Smart TV with International Channels"
+      ],
+      "extraServices": [
+        "Airport Shuttle Service",
+        "Floating Breakfast",
+        "Romantic Candlelight Dinner",
+        "In-villa Spa & Massage",
+        "Flower Decoration Setup",
+        "Car or Scooter Rental",
+        "Day Tour & Trekking Arrangements",
+        "Laundry Service",
+        "Afternoon Tea",
+        "Cooking Class"
+      ],
+      "cancellationPolicy": "Kebijakan pembatalan di Villa Dolce Farniente bersifat non-refundable (tidak dapat diuangkan kembali) atau mengikuti ketentuan khusus dari platform pemesanan yang digunakan, termasuk pengenaan biaya penuh untuk pembatalan mendadak yang dilakukan dalam waktu 48 jam sebelum kedatangan atau jika tamu tidak datang ke lokasi tanpa pemberitahuan sebelumnya (no-show)."
+    },
+    "rooms": [
+      {
+        "type": "Villa 2 Kamar Tidur",
+        "price": 3000000
+      },
+      {
+        "type": "Villa 3 Kamar Tidur",
+        "price": 4000000
+      }
+    ]
+  },
+  {
+    "name": "Eco Six Bali",
+    "tag": "Couple Villa",
+    "rating": 4.5,
+    "location": "Tampaksiring, Bali",
+    "amenities": {
+      "bed": 1,
+      "bathtub": 1,
+      "pool": true
+    },
+    "price": 4250000,
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/773970567.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/774242146.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/773970567.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/774242141.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/773933710.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/774002096.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/773933676.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/773970275.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/774005731.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/774241930.jpg",     
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/773933498.jpg", 
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/774002489.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/774243533.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/773970623.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Eco Six Bali/774243538.jpg"
+    ],
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp4.250.000-Rp5.500.000",
+      "roomType": "1-2 Bedroom Luxury Private Couple Villa",
+      "description": "Eco Six Bali adalah resor bambu mewah yang menawarkan pengalaman menginap unik di tengah alam Tampaksiring yang asri. Resor ini menggabungkan arsitektur bambu modern dengan nuansa tradisional Bali, menciptakan suasana yang tenang dan sangat Instagrammable.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "address": "Jl. Raya Ayodya, Tampaksiring, Kec. Tampaksiring, Kabupaten Gianyar, Bali 80552.",
+      "nearbyPlaces": [
+        "Pura Tirta Empul (1.3 km)",
+        "Gunung Kawi Tampaksiring (1.6 km)",
+        "Istana Kepresidenan Tampaksiring (2.1 km)",
+        "Pura Gunung Kawi Sebatu (4.5 km)",
+        "Tegallalang Rice Terrace (5.8 km)",
+        "Alas Harum Bali (6.2 km)"
+      ],
+      "facilities": [
+        "Private Infinity Pool",
+        "Rooftop Round Pool",
+        "Floating Breakfast",
+        "Smart Projector with Netflix",
+        "Nespresso Machine",
+        "Private Minibar",
+        "Semi-Open Bathroom",
+        "Luxury Bathtub",
+        "High-Speed Wi-Fi",
+        "Air Conditioning",
+        "Boho-Style Hammock",
+        "Digital Concierge Service"
+      ],
+      "extraServices": [
+        "Floating Breakfast",
+        "Flower Bath Decoration",
+        "Romantic Candlelight Dinner",
+        "In-Villa Massage & Spa",
+        "Airport Transfer Service",
+        "Scooter & Car Rental",
+        "Guided Day Tours",
+        "Afternoon Tea Service",
+        "Laundry Service",
+        "Birthday or Anniversary Decor"
+      ],
+      "cancellationPolicy": "Kebijakan pembatalan di Eco Six Bali umumnya bersifat non-refundable (tidak dapat dikembalikan), terutama untuk pemesanan melalui situs resmi atau harga promo. Namun, pada platform tertentu, pembatalan gratis atau perubahan jadwal (reschedule) terkadang dimungkinkan jika diajukan 14 hingga 30 hari sebelum tanggal check-in. Tamu sangat disarankan untuk memeriksa detail pesanan atau menghubungi staf via WhatsApp untuk kebijakan spesifik terkait perubahan rencana perjalanan."
+    },
+    "rooms": [
+      {
+        "type": "Villa 1 Kamar Tidur",
+        "price": 4250000
+      },
+      {
+        "type": "Villa 2 Kamar Tidur",
+        "price": 5500000
+      }
+    ]
+  },
+  {
+    "name": "Royal Kemala Villa",
+    "tag": "Couple Villa",
+    "rating": 4.8,
+    "location": "Tegalalang, Bali",
+    "amenities": {
+      "bed": 1,
+      "bathtub": 1,
+      "pool": true
+    },
+    "price": 1300000,
+    "image": [
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/568315999.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/602636886.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/602636885.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/568313891.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/568313915.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/623161975.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/623161989.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/623161984.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/623161962.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/623161969.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/568321153.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/623161981.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/623161978.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/527443178.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/527441865.jpg",
+      "/media/FolderFoto_Project/Couple_Villas/Royal Kemala Villa/527441856.jpg"
+    ],
+    "promo": {
+      "status": "none",
+      "disc": "0%"
+    },
+    "detail": {
+      "priceRange": "Rp1.300.000-Rp.1.500.000",
+      "roomType": "1 Bedroom Luxury Private Couple Villa",
+      "description": "Royal Kemala Villa adalah resor bambu mewah yang menawarkan pengalaman menginap unik di tengah alam Tampaksiring yang asri. Resor ini menggabungkan arsitektur bambu modern dengan nuansa tradisional Bali, menciptakan suasana yang tenang dan sangat Instagrammable.",
+      "checkInTime": "14:00 WITA",
+      "checkOutTime": "12:00 WITA",
+      "address": "Jl. Raya Pujung Kaja, Tegallalang, Kec. Tegallalang, Kabupaten Gianyar, Bali 80561.",
+      "nearbyPlaces": [
+        "Gunung Kawi Sebatu (1.2 km)",
+        "Pura Tirta Empul (1.5 km)",
+        "Gunung Kawi Tampaksiring (1.6 km)",
+        "Tegallalang Rice Terrace (4.2 km)",
+        "Alas Harum Bali (4.5 km)",
+        "D'Alas Warung (2.7 km)",
+        "Cretya Ubud (4.1 km)",
+        "Tis Cafe (4.3 km)",
+        "Padi Restaurant (4.5 km)",
+        "Lumbung Sari Coffee (4.8 km)"
+      ],
+      "facilities": [
+        "Private Pool",
+        "Fully Equipped Kitchen",
+        "Free Parking Area",
+        "Free Wi-Fi Access",
+        "Air Conditioning",
+        "Daily Housekeeping",
+        "Tropical Garden",
+        "En-suite Bathroom with Bathtub"
+      ],
+      "extraServices": [
+        "Breakfast in Villa",
+        "Airport Transfer Service",
+        "Car and Motorbike Rental",
+        "In-Villa Massage and Spa",
+        "Tour Arrangement and Local Guide",
+        "Floating Breakfast",
+        "Laundry Service",
+        "Candlelight Dinner Arrangement"
+      ],
+      "cancellationPolicy": "Kebijakan pembatalan di Royal Kemala Villa sangat bergantung pada platform pemesanan dan periode menginap, di mana tersedia opsi pembatalan gratis jika dilakukan 14 hingga 30 hari sebelum kedatangan. Namun, untuk pemesanan promo atau saat musim ramai (high season), sering kali berlaku kebijakan Non-Refundable (tidak ada pengembalian dana). Jika pembatalan dilakukan melewati batas waktu yang ditentukan, tamu akan dikenakan denda sebesar biaya satu malam hingga total biaya pesanan. Perubahan tanggal menginap juga bergantung pada ketersediaan, dan untuk kondisi darurat (force majeure), pengembalian dana biasanya memerlukan dokumen pendukung yang sah untuk dipertimbangkan oleh manajemen."
+    },
+    "rooms": [
+      {
+        "type": "Villa Superior 1 Kamar Tidur Tanpa Kolam Renang",
+        "price": 1300000
+      },
+      {
+        "type": "Villa Superior 1 Kamar Tidur",
+        "price": 1500000
+      }
+    ]
   }
 ]
