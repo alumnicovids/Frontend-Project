@@ -1,5 +1,4 @@
 function initBooking() {
-  const container = document.getElementById("booking-content");
   const urlParams = new URLSearchParams(window.location.hash.split("?")[1]);
   const villaName = urlParams.get("name");
   let currentBooking = JSON.parse(localStorage.getItem("activeBooking"));

@@ -84,8 +84,16 @@ window.initCompare = function () {
         ${renderValueCell(v2, "detail.extraServices", "Layanan Extra")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "detail.cancellationPolicy", "Kebijakan Pembatalan")}
-        ${renderValueCell(v2, "detail.cancellationPolicy", "Kebijakan Pembatalan")}
+        ${renderValueCell(
+          v1,
+          "detail.cancellationPolicy",
+          "Kebijakan Pembatalan"
+        )}
+        ${renderValueCell(
+          v2,
+          "detail.cancellationPolicy",
+          "Kebijakan Pembatalan"
+        )}
     </tr>
   `;
 };
@@ -93,14 +101,14 @@ window.initCompare = function () {
 function renderHeaderSlot(villa, index) {
   if (!villa) {
     return `<td>
-              <div class="villa-head empty" onclick="openVillaModal(${index})" style="cursor:pointer;">
-                <div class="add-icon" style="font-size:3rem; margin-bottom:10px;">+</div>
-                <p style="font-size:1.1rem; font-weight:600;">Tambah Villa</p>
+              <div class="villa-head empty" onclick="openVillaModal(${index})">
+                <div class="add-icon">+</div>
+                <p>Tambah Villa</p>
               </div>
             </td>`;
   }
   return `<td>
-            <div class="villa-head" onclick="openVillaModal(${index})" style="cursor:pointer;">
+            <div class="villa-head" onclick="openVillaModal(${index})">
               <div class="image-box"><img src="${villa.image[0]}" alt="${
     villa.name
   }"></div>
@@ -108,7 +116,7 @@ function renderHeaderSlot(villa, index) {
               <span class="loc-tag">${villa.location}</span>
             </div>
             <button class="primary-btn confirm compare detail">
-              <a href="#/Booking?name=${encodeURIComponent(
+              <a href="#/booking?name=${encodeURIComponent(
                 villa.name
               )}">Book Now</a>
             </button>

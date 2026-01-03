@@ -1,11 +1,26 @@
+let villaCache = null;
+
+async function getVillas() {
+  if (villaCache) return villaCache;
+  const res = await fetch("/JSON/villas.json");
+  villaCache = await res.json();
+  return villaCache;
+}
+
+function formatIDR(amount) {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+  }).format(amount);
+}
+
 function showEditModal(fieldName, currentValue, callback) {
   const overlay = document.createElement("div");
   overlay.className = "review-overlay";
   overlay.innerHTML = `
     <div class="review-popup">
-      <div class="popup-header">
-        <h4>Change ${fieldName}</h4>
-      </div>
+      <div class="popup-header"><h4>Ubah ${fieldName}</h4></div>
       <input type="text" id="modal-input" value="${currentValue}">
       <div class="popup-actions">
         <button class="secondary-btn cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
@@ -15,41 +30,10 @@ function showEditModal(fieldName, currentValue, callback) {
   `;
   document.body.appendChild(overlay);
 
-  const saveBtn = overlay.querySelector("#modal-save");
-  const input = overlay.querySelector("#modal-input");
-  const modal = overlay.querySelector(".review-popup");
-
-  saveBtn.addEventListener("mousedown", (e) => {
-    const ripple = document.createElement("span");
-    ripple.className = "ripple-effect";
-    saveBtn.appendChild(ripple);
-    const rect = saveBtn.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    ripple.style.width = ripple.style.height = `${size}px`;
-    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
-    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
-    ripple.addEventListener("animationend", () => ripple.remove());
-  });
-
-  saveBtn.onclick = () => {
-    const newValue = input.value;
-    if (newValue && newValue.trim() !== "") {
-      callback(newValue);
-      overlay.style.opacity = "0";
-      overlay.style.transition = "opacity 0.3s ease";
-      setTimeout(() => overlay.remove(), 300);
-    } else {
-      modal.classList.remove("shake");
-      void modal.offsetWidth;
-      modal.classList.add("shake");
-    }
+  overlay.querySelector("#modal-save").onclick = () => {
+    callback(overlay.querySelector("#modal-input").value);
+    overlay.remove();
   };
-
-  input.focus();
-  overlay.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") saveBtn.click();
-    else if (e.key === "Escape") overlay.remove();
-  });
 }
 
 function showToast(message) {
@@ -75,10 +59,7 @@ function showReviewPopup(villaName) {
   overlay.className = "review-overlay";
   overlay.innerHTML = `
     <div class="review-popup">
-      <div class="popup-header">
-        <h4>Berikan Ulasan</h4>
-        <p>${villaName}</p>
-      </div>
+      <h4>Ulasan untuk ${villaName}</h4>
       <div class="star-rating">
         <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
         <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
@@ -88,20 +69,12 @@ function showReviewPopup(villaName) {
       </div>
       <textarea id="review-text" placeholder="Ceritakan pengalaman Anda..."></textarea>
       <div class="popup-actions">
-        <button class="secondary-btn cancel review" onclick="this.closest('.review-overlay').remove()">Batal</button>
-        <button class="primary-btn review confirm" onclick="submitReview('${villaName}')">Kirim Ulasan</button>
+        <button class="secondary-btn cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
+        <button class="primary-btn confirm" onclick="submitReview('${villaName}')">Kirim</button>
       </div>
     </div>
   `;
   document.body.appendChild(overlay);
-}
-
-function closeReviewPopup() {
-  const overlay = document.querySelector(".review-overlay");
-  if (overlay) {
-    overlay.style.opacity = "0";
-    setTimeout(() => overlay.remove(), 300);
-  }
 }
 
 function submitReview(villaName) {
