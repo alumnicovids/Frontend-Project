@@ -33,25 +33,25 @@ function renderBookingForm(villa) {
     <div class="booking-card">
       <div class="card-header">
         <h3>${villa.name}</h3>
-        <p class="text-muted">Lengkapi detail reservasi Anda di bawah ini.</p>
+        <p class="text-muted">Complete your reservation details below.</p>
     </div>
 
       <div class="form-group">
-        <label>Pilih Tipe Kamar</label>
+        <label>Select Room Type</label>
         <select id="room-select" onchange="calculateTotal()">
           ${villa.rooms
             .map(
               (r) =>
                 `<option value="${r.price}" data-name="${r.type}">${
                   r.type
-                } - Rp${r.price.toLocaleString()}</option>`
+                } - IDR${r.price.toLocaleString()}</option>`
             )
             .join("")}
         </select>
       </div>
 
       <div class="form-group">
-        <label>Durasi Inap</label>
+        <label>Duration of Stay</label>
         <div class="date-range-container">
           <div class="date-input-wrapper">
             <small>Check-in</small>
@@ -65,14 +65,14 @@ function renderBookingForm(villa) {
       </div>
 
       <div class="form-group">
-        <label>Layanan Tambahan (Add-on)</label>
+        <label>Additional Services</label>
         <div class="service-list">
           <div class="service-item">
-            <label><input type="checkbox" class="addon" data-price="150000" onchange="calculateTotal()"> Sarapan</label>
+            <label><input type="checkbox" class="addon" data-price="150000" onchange="calculateTotal()"> Breakfast</label>
             <span class="service-price">Rp150.000</span>
           </div>
           <div class="service-item">
-            <label><input type="checkbox" class="addon" data-price="250000" onchange="calculateTotal()"> Jemput Bandara</label>
+            <label><input type="checkbox" class="addon" data-price="250000" onchange="calculateTotal()"> Airport Pick Up</label>
             <span class="service-price">Rp250.000</span>
           </div>
           <div class="service-item">
@@ -84,11 +84,11 @@ function renderBookingForm(villa) {
 
       <div class="form-group">
         <label>Kode Promo</label>
-        <input type="text" id="promo-code" placeholder="Contoh: DISKON10" oninput="calculateTotal()">
+        <input type="text" id="promo-code" placeholder="Example: DISCOUNT10" oninput="calculateTotal()">
       </div>
 
       <div class="form-group">
-        <label>Metode Pembayaran</label>
+        <label>Payment Method</label>
         <div class="payment-methods">
           <button class="pay-btn" onclick="selectPay(this)" data-method="Bank Transfer">Bank Transfer</button>
           <button class="pay-btn" onclick="selectPay(this)" data-method="E-Wallet">E-Wallet / Qris</button>
@@ -96,19 +96,19 @@ function renderBookingForm(villa) {
       </div>
 
       <div class="total-section">
-        <div class="d-flex justify-between">
-          <span>Durasi Menginap:</span>
-          <span id="display-nights" class="font-bold">0 Malam</span>
+        <div">
+          <span>Duration of Stay:</span>
+          <span id="display-nights">0 Nights</span>
         </div>
-        <div class="d-flex justify-between mt-3 total-row">
-          <span>Total Estimasi:</span>
-          <span id="display-total">Rp0</span>
+        <div class="total-row">
+          <span>Total Estimate:</span>
+          <span id="display-total">IDR 0</span>
         </div>
       </div>
 
       <button class="primary-btn confirm" onclick="confirmPayment('${
         villa.name
-      }')">Konfirmasi & Bayar</button>
+      }')">Confirm & Pay</button>
     </div>
   `;
 }
@@ -134,11 +134,11 @@ function calculateTotal() {
 
   let total = roomPrice * (nights || 1) + addonTotal;
 
-  if (promo === "DISKON10") {
+  if (promo === "DISCOUNT 10") {
     total = total * 0.9;
   }
 
-  document.getElementById("display-nights").innerText = `${nights} Malam`;
+  document.getElementById("display-nights").innerText = `${nights} Nights`;
   document.getElementById(
     "display-total"
   ).innerText = `Rp${total.toLocaleString()}`;
@@ -152,10 +152,10 @@ function confirmPayment(villaName) {
   const checkin = document.getElementById("checkin-date").value;
   const checkout = document.getElementById("checkout-date").value;
 
-  if (!checkin || !checkout) return showToast("Harap pilih tanggal inap!!");
+  if (!checkin || !checkout) return showToast("Please select your stay date!!");
   if (new Date(checkout) <= new Date(checkin))
-    return showToast("Tanggal tidak valid!!");
-  if (!method) return showToast("Pilih metode pembayar!!");
+    return showToast("Invalid date!!");
+  if (!method) return showToast("Select payment method!!");
 
   const booking = {
     villaName,
@@ -182,26 +182,26 @@ function renderBookingStatus(booking) {
         <div class="step active"><div class="step-icon">2</div>Payment</div>
         <div class="step"><div class="step-icon">3</div>Finish</div>
       </div>
-      <div class="timer-banner">Selesaikan pembayaran dalam: <span id="timer">--:--:--</span></div>
+      <div class="timer-banner">Complete your payment in: <span id="timer">--:--:--</span></div>
       <div class="booking-card status-card">
-        <div class="d-flex justify-between align-center">
+        <div>
           <div>
-            <h4 class="m-0">${booking.villaName}</h4>
-            <p class="text-muted m-0">${booking.roomType}</p>
+            <h4>${booking.villaName}</h4>
+            <p>${booking.roomType}</p>
           </div>
           <span class="status-badge-booking status-waiting">Waiting</span>
         </div>
-        <hr class="my-4" style="border: 0; border-top: 1px solid var(--line-clr); opacity: 0.3;">
+        <hr>
         <div class="payment-detail-box">
-          <small>Total yang harus dibayar</small>
+          <small>Total to be paid</small>
           <h2 class="price-highlight">Rp${parseInt(
             booking.totalPrice
           ).toLocaleString()}</h2>
-          <p>Metode: <strong>${booking.paymentMethod}</strong></p>
+          <p>Method <strong>${booking.paymentMethod}</strong></p>
         </div>
         <div class="btn-card">
-          <button class="primary-btn confirm pay" onclick="payNow()">Bayar Sekarang</button>
-          <button class="secondary-btn cancel" onclick="cancelBooking()">Batalkan Pesanan</button>
+          <button class="primary-btn confirm pay" onclick="payNow()">Pay Now</button>
+          <button class="secondary-btn cancel" onclick="cancelBooking()">Cancel Booking</button>
         </div>
       </div>
     `;
@@ -213,19 +213,19 @@ function renderBookingStatus(booking) {
         <div class="step"><div class="step-icon">2</div>Payment</div>
         <div class="step active"><div class="step-icon">3</div>Finish</div>
       </div>
-      <div class="booking-card text-center py-5">
-        <div class="success-icon mb-4">✓</div>
-        <h4>Pembayaran Berhasil!</h4>
-        <p class="text-muted">Terima kasih atas reservasi Anda.<br>Silakan check-in pada <strong>${booking.checkin}</strong></p>
-        <button class="primary-btn confirm" onclick="processCheckIn()">Check In Sekarang</button>
+      <div class="booking-card">
+        <div class="success-icon">✓</div>
+        <h4>Payment Successful!</h4>
+        <p>Thank you for your reservation.<br> Please check in at <strong>${booking.checkin}</strong></p>
+        <button class="primary-btn confirm" onclick="processCheckIn()">Check In Now</button>
       </div>
     `;
   } else if (booking.status === "checked-in") {
     container.innerHTML = `
-      <div class="booking-card text-center py-5">
-        <div class="stay-icon mb-4">🏠</div>
-        <h4>Selamat Menikmati Liburan</h4>
-        <p class="text-muted">Anda sedang dalam masa inap di ${booking.villaName}.</p>
+      <div class="booking-card">
+        <div class="stay-icon>🏠</div>
+        <h4>Have a good holiday</h4>
+        <p>You are currently staying in ${booking.villaName}.</p>
         <button class="primary-btn confirm" onclick="processCheckOut()">Check Out</button>
       </div>
     `;
@@ -255,7 +255,7 @@ function payNow() {
 }
 
 function cancelBooking() {
-  if (confirm("Batalkan pesanan?")) {
+  if (confirm("Cancel Booking??")) {
     localStorage.removeItem("activeBooking");
     location.reload();
   }
@@ -293,8 +293,8 @@ function renderEmpty() {
   document.getElementById("booking-content").innerHTML = `
     <div class="empty-state">
       <div class="empty-icon">🛏️</div>
-      <p>Belum ada villa yang dibooking</p>
-      <a href="#/" class="primary-btn empty" style="text-decoration:none">Cari Villa Sekarang</a>
+      <p>No villas booked yet</p>
+      <a href="#/" class="primary-btn empty" style="text-decoration:none">Search for villas now</a>
     </div>
   `;
 }
@@ -306,7 +306,7 @@ async function renderMyBookings() {
   const history = JSON.parse(localStorage.getItem("myBookings")) || [];
 
   if (history.length === 0) {
-    container.innerHTML = `<div class="empty-state"><p>Belum ada riwayat transaksi.</p></div>`;
+    container.innerHTML = `<div class="empty-state"><p>There is no transaction history yet.</p></div>`;
     return;
   }
 
@@ -359,7 +359,7 @@ async function renderMyBookings() {
                       ? `showReviewPopup('${item.villaName}')`
                       : "showToast('Detail pemesanan')"
                   }">
-                  ${item.status === "completed" ? "Beri Ulasan" : "Detail"}
+                  ${item.status === "completed" ? "Leave a Review" : "Detail"}
                 </button>
               </div>
             </div>
@@ -369,7 +369,7 @@ async function renderMyBookings() {
       })
       .join("");
   } catch (error) {
-    container.innerHTML = `<p>Gagal memuat riwayat.</p>`;
+    container.innerHTML = `<p>Failed to load history.</p>`;
   }
 }
 

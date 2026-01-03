@@ -20,11 +20,11 @@ function showEditModal(fieldName, currentValue, callback) {
   overlay.className = "review-overlay";
   overlay.innerHTML = `
     <div class="review-popup">
-      <div class="popup-header"><h4>Ubah ${fieldName}</h4></div>
+      <div class="popup-header"><h4>Change ${fieldName}</h4></div>
       <input type="text" id="modal-input" value="${currentValue}">
       <div class="popup-actions">
-        <button class="secondary-btn cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
-        <button class="primary-btn confirm" id="modal-save">Simpan</button>
+        <button class="secondary-btn cancel" onclick="this.closest('.review-overlay').remove()">Cancel</button>
+        <button class="primary-btn confirm" id="modal-save">Save</button>
       </div>
     </div>
   `;
@@ -59,7 +59,7 @@ function showReviewPopup(villaName) {
   overlay.className = "review-overlay";
   overlay.innerHTML = `
     <div class="review-popup">
-      <h4>Ulasan untuk ${villaName}</h4>
+      <h4>Review for ${villaName}</h4>
       <div class="star-rating">
         <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
         <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
@@ -67,10 +67,10 @@ function showReviewPopup(villaName) {
         <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
         <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
       </div>
-      <textarea id="review-text" placeholder="Ceritakan pengalaman Anda..."></textarea>
+      <textarea id="review-text" placeholder="Tell us about your experience..."></textarea>
       <div class="popup-actions">
-        <button class="secondary-btn cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
-        <button class="primary-btn confirm" onclick="submitReview('${villaName}')">Kirim</button>
+        <button class="secondary-btn cancel" onclick="this.closest('.review-overlay').remove()">Cancel</button>
+        <button class="primary-btn confirm" onclick="submitReview('${villaName}')">Send</button>
       </div>
     </div>
   `;
@@ -81,10 +81,8 @@ function submitReview(villaName) {
   const rating = document.querySelector('input[name="rating"]:checked')?.value;
   const comment = document.getElementById("review-text").value;
 
-  if (!rating) return showToast("Pilih rating bintang terlebih dahulu!");
+  if (!rating) return showToast("Choose a star rating first!");
 
-  showToast(
-    `Terima kasih! Ulasan bintang ${rating} untuk ${villaName} telah terkirim.`
-  );
+  showToast(`Your review for ${villaName} has been submitted.`);
   document.querySelector(".review-overlay").remove();
 }

@@ -305,6 +305,7 @@ body {
   max-width: 450px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   text-align: left;
+  color: var(--creamy-foam);
 }
 
 .popup-header h4 {

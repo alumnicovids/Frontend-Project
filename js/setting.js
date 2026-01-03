@@ -2,8 +2,8 @@ const state = JSON.parse(localStorage.getItem("userProfile")) || {
   name: "Undefined",
   birth: "Undefined",
   sex: "Undefined",
-  Email: "Undefined",
-  Phone: "Undefined",
+  email: "Undefined",
+  phone: "Undefined",
 };
 
 function saveState() {
@@ -15,8 +15,8 @@ function loadProfile() {
     profileName: state.name,
     profileBirth: state.birth,
     profileSex: state.sex,
-    profileEmail: state.Email,
-    profileNumber: state.Phone,
+    profileEmail: state.email,
+    profileNumber: state.phone,
   };
 
   for (const [id, value] of Object.entries(fields)) {
@@ -47,8 +47,8 @@ function updateProfile() {
   if (nameEl) state.name = nameEl.innerText;
   if (birthEl) state.birth = birthEl.value;
   if (sexEl) state.sex = sexEl.innerText;
-  if (emailEl) state.Email = emailEl.innerText;
-  if (phoneEl) state.Phone = phoneEl.innerText;
+  if (emailEl) state.email = emailEl.innerText;
+  if (phoneEl) state.phone = phoneEl.innerText;
   if (imgEl) state.profileImage = imgEl.src;
 
   saveState();
@@ -67,7 +67,7 @@ function attachEventListeners() {
 
       showEditModal(fieldName, valueSpan.innerText, (newValue) => {
         valueSpan.innerText = newValue;
-        showToast(fieldName + " Berhasil diperbarui");
+        showToast(fieldName + " Updated successfully");
         updateProfile();
       });
     };
@@ -78,7 +78,7 @@ function attachEventListeners() {
   if (birthBtn && birthInput) {
     birthBtn.onclick = () => {
       updateProfile();
-      showToast("Tanggal lahir berhasil diperbarui");
+      showToast("Date of birth updated successfully");
     };
   }
 
@@ -98,7 +98,7 @@ function attachEventListeners() {
           };
           reader.readAsDataURL(file);
         } else {
-          showToast("File terlalu besar atau format tidak sesuai");
+          showToast("File is too large or format is not correct");
         }
       };
       input.click();

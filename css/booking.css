@@ -468,6 +468,10 @@
   border: 2px dashed var(--line-clr);
 }
 
+.empty-state p {
+  text-align: center;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

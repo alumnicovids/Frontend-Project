@@ -127,7 +127,7 @@ async function renderVillaDetail() {
   const villa = data.find((v) => v.name === decodeURIComponent(villaName));
 
   if (!villa) {
-    container.innerHTML = "<p>Villa tidak ditemukan.</p>";
+    container.innerHTML = "<p>Villa not found.</p>";
     return;
   }
 
@@ -157,7 +157,7 @@ async function renderVillaDetail() {
     <div class="info-section">
       <div class="main-info">
         <div class="description-card">
-          <h3>Deskripsi Properti</h3>
+          <h3>Property Description</h3>
           <p>${villa.detail.description}</p>
           <div class="amenities-summary">
             <span><i class="material-symbols-outlined">bed</i> ${
@@ -175,7 +175,7 @@ async function renderVillaDetail() {
         </div>
 
         <div class="rooms-section">
-          <h3>Tipe Kamar & Harga</h3>
+          <h3>Room Type & Price</h3>
           <div class="rooms-grid">
             ${villa.rooms
               .map(
@@ -196,7 +196,7 @@ async function renderVillaDetail() {
         </div>
 
         <div class="facilities-grid">
-          <h3>Fasilitas</h3>
+          <h3>Facility</h3>
           <ul>
             ${villa.detail.facilities
               .map(
@@ -220,7 +220,7 @@ async function renderVillaDetail() {
           </button>
         </div>
         <div class="nearby-card">
-          <h3>Tempat Terdekat</h3>
+          <h3>Nearby Places</h3>
           <ul>
             ${villa.detail.nearbyPlaces
               .map(
@@ -232,7 +232,7 @@ async function renderVillaDetail() {
           </ul>
         </div>
         <div class="policy-card">
-          <h3>Kebijakan</h3>
+          <h3>Policy</h3>
           <p><strong>Check-in:</strong> ${villa.detail.checkInTime}</p>
           <p><strong>Check-out:</strong> ${villa.detail.checkOutTime}</p>
           <p class="cancel-policy">${villa.detail.cancellationPolicy}</p>
@@ -342,7 +342,7 @@ async function renderVillas(filterType = null, searchQuery = "") {
 
   container.innerHTML = filtered.length
     ? filtered.map((v) => createVillaCard(v, wishlist)).join("")
-    : `<div class="no-results" style="grid-column: 1/-1; text-align: center; padding: 40px;">
+    : `<div>
         <p>Vila tidak ditemukan.</p>
       </div>`;
 }
@@ -407,7 +407,7 @@ function renderWishlist() {
   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
   if (wishlist.length === 0) {
-    container.innerHTML = "<p>Wishlist kosong</p>";
+    container.innerHTML = "<p>Wishlist is empty</p>";
     return;
   }
 

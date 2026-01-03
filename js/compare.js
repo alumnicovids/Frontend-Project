@@ -16,51 +16,51 @@ window.initCompare = function () {
   `;
 
   table.querySelector("tbody").innerHTML = `
-    <tr class="section-divider"><td colspan="2">Ringkasan & Harga</td></tr>
+    <tr class="section-divider"><td colspan="2">Summary & Pricing</td></tr>
     <tr>
         ${renderValueCell(v1, "rating", "Rating")}
         ${renderValueCell(v2, "rating", "Rating")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "location", "Lokasi")}
-        ${renderValueCell(v2, "location", "Lokasi")}
+        ${renderValueCell(v1, "location", "Location")}
+        ${renderValueCell(v2, "location", "Location")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "price", "Harga Per Malam")}
-        ${renderValueCell(v2, "price", "Harga Per Malam")}
+        ${renderValueCell(v1, "price", "Price Per Night")}
+        ${renderValueCell(v2, "price", "Price Per Night")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "promo.disc", "Promo Diskon")}
-        ${renderValueCell(v2, "promo.disc", "Promo Diskon")}
+        ${renderValueCell(v1, "promo.disc", "Discount Promo")}
+        ${renderValueCell(v2, "promo.disc", "Discount Promo")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "detail.priceRange", "Range Harga")}
-        ${renderValueCell(v2, "detail.priceRange", "Range Harga")}
+        ${renderValueCell(v1, "detail.priceRange", "Price Range")}
+        ${renderValueCell(v2, "detail.priceRange", "Price Range")}
     </tr>
 
-    <tr class="section-divider"><td colspan="2">Fasilitas & Kamar</td></tr>
+    <tr class="section-divider"><td colspan="2">Facilities & Rooms</td></tr>
     <tr>
-        ${renderValueCell(v1, "detail.roomType", "Tipe Kamar")}
-        ${renderValueCell(v2, "detail.roomType", "Tipe Kamar")}
+        ${renderValueCell(v1, "detail.roomType", "Room Type")}
+        ${renderValueCell(v2, "detail.roomType", "Room Type")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "amenities.bed", "Kamar Tidur")}
-        ${renderValueCell(v2, "amenities.bed", "Kamar Tidur")}
+        ${renderValueCell(v1, "amenities.bed", "Bedroom")}
+        ${renderValueCell(v2, "amenities.bed", "Bedroom")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "amenities.bathtub", "Kamar Mandi")}
-        ${renderValueCell(v2, "amenities.bathtub", "Kamar Mandi")}
+        ${renderValueCell(v1, "amenities.bathtub", "Bathroom")}
+        ${renderValueCell(v2, "amenities.bathtub", "Bathroom")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "amenities.pool", "Kolam Renang")}
-        ${renderValueCell(v2, "amenities.pool", "Kolam Renang")}
+        ${renderValueCell(v1, "amenities.pool", "Swiming Pool")}
+        ${renderValueCell(v2, "amenities.pool", "Swiming Pool")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "detail.facilities", "Fasilitas Detail")}
-        ${renderValueCell(v2, "detail.facilities", "Fasilitas Detail")}
+        ${renderValueCell(v1, "detail.facilities", "Facilities Details")}
+        ${renderValueCell(v2, "detail.facilities", "Facilities Details")}
     </tr>
 
-    <tr class="section-divider"><td colspan="2">Waktu & Lokasi</td></tr>
+    <tr class="section-divider"><td colspan="2">Times & Location</td></tr>
     <tr>
         ${renderValueCell(v1, "detail.checkInTime", "Check-In")}
         ${renderValueCell(v2, "detail.checkInTime", "Check-In")}
@@ -70,29 +70,29 @@ window.initCompare = function () {
         ${renderValueCell(v2, "detail.checkOutTime", "Check-Out")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "detail.nearbyPlaces", "Tempat Terdekat")}
-        ${renderValueCell(v2, "detail.nearbyPlaces", "Tempat Terdekat")}
+        ${renderValueCell(v1, "detail.nearbyPlaces", "Nearby Place")}
+        ${renderValueCell(v2, "detail.nearbyPlaces", "Nearby Place")}
     </tr>
     <tr>
-        ${renderValueCell(v1, "detail.address", "Alamat")}
-        ${renderValueCell(v2, "detail.address", "Alamat")}
+        ${renderValueCell(v1, "detail.address", "Address")}
+        ${renderValueCell(v2, "detail.address", "Address")}
     </tr>
 
-    <tr class="section-divider"><td colspan="2">Layanan & Kebijakan</td></tr>
+    <tr class="section-divider"><td colspan="2">Services & Policies</td></tr>
     <tr>
-        ${renderValueCell(v1, "detail.extraServices", "Layanan Extra")}
-        ${renderValueCell(v2, "detail.extraServices", "Layanan Extra")}
+        ${renderValueCell(v1, "detail.extraServices", "Extra Services")}
+        ${renderValueCell(v2, "detail.extraServices", "Extra Services")}
     </tr>
     <tr>
         ${renderValueCell(
           v1,
           "detail.cancellationPolicy",
-          "Kebijakan Pembatalan"
+          "Cancellation Policy"
         )}
         ${renderValueCell(
           v2,
           "detail.cancellationPolicy",
-          "Kebijakan Pembatalan"
+          "Cancellation Policy"
         )}
     </tr>
   `;
@@ -103,7 +103,7 @@ function renderHeaderSlot(villa, index) {
     return `<td>
               <div class="villa-head empty" onclick="openVillaModal(${index})">
                 <div class="add-icon">+</div>
-                <p>Tambah Villa</p>
+                <p>Add Villa</p>
               </div>
             </td>`;
   }
@@ -169,7 +169,7 @@ function renderValueCell(villa, path, label) {
         statusClass = "price-win";
         icon = '<i class="material-symbols-outlined">pool</i>';
       }
-      displayValue = currentVal ? "Tersedia" : "-";
+      displayValue = currentVal ? "Available" : "-";
     }
   }
 
@@ -178,7 +178,7 @@ function renderValueCell(villa, path, label) {
       .map((i) => `<li style="margin-bottom:4px;">• ${i}</li>`)
       .join("")}</ul>`;
   } else if (typeof currentVal === "boolean") {
-    displayValue = currentVal ? "Tersedia" : "-";
+    displayValue = currentVal ? "Available" : "-";
   } else if (path === "price" && !icon) {
     displayValue = `IDR ${currentVal.toLocaleString("id-ID")}`;
   }
