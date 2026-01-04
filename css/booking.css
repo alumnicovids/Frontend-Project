@@ -180,7 +180,7 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
   margin-bottom: 0;
 }
 
@@ -485,6 +485,53 @@
   padding: 5px 10px;
   font-size: 0.8rem;
   margin-top: 5px;
+}
+
+.payment-modal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.payment-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line-clr);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-clr);
+  font-size: 1rem;
+}
+
+.card-row {
+  display: flex;
+  gap: 10px;
+}
+
+.qris-container {
+  text-align: center;
+}
+
+.qris-image-wrapper {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 15px auto;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.qris-image-wrapper img {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.payment-total-label {
+  color: var(--creamy-foam);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: block;
 }
 
 @keyframes fadeIn {

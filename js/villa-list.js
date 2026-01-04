@@ -156,7 +156,9 @@ async function renderVillaDetail() {
                   <p>${room.description}</p>
                 </div>
                 <div class="room-price">
-                <span class="price detail">IDR ${new Intl.NumberFormat('id-ID').format(room.price)}</span>
+                <span class="price detail">IDR ${new Intl.NumberFormat(
+                  "id-ID"
+                ).format(room.price)}</span>
                   <span class="unit">/night</span>
                 </div>
               </div>`
@@ -215,9 +217,11 @@ function setupInfiniteScroll(gallery) {
   if (items.length < 2) return;
 
   gallery.querySelectorAll(".clone").forEach((el) => el.remove());
+
   const firstClone = items[0].cloneNode(true);
   const lastClone = items[items.length - 1].cloneNode(true);
-  [firstClone, lastClone].forEach((clone) => clone.classList.add("clone"));
+  firstClone.classList.add("clone");
+  lastClone.classList.add("clone");
 
   gallery.appendChild(firstClone);
   gallery.insertBefore(lastClone, items[0]);
@@ -226,18 +230,25 @@ function setupInfiniteScroll(gallery) {
   gallery.scrollLeft = itemWidth;
 
   let isResetting = false;
+
   gallery.addEventListener("scroll", () => {
     if (isResetting) return;
-    const scrollPos = gallery.scrollLeft;
-    const maxScroll = gallery.scrollWidth - gallery.clientWidth - 5;
 
-    if (scrollPos <= 0 || scrollPos >= maxScroll) {
+    const scrollPos = gallery.scrollLeft;
+    const totalWidth = gallery.scrollWidth - gallery.clientWidth;
+
+    if (scrollPos >= totalWidth - 10) {
       isResetting = true;
       gallery.style.scrollBehavior = "auto";
-      gallery.scrollLeft =
-        scrollPos <= 0
-          ? gallery.scrollWidth - gallery.clientWidth - itemWidth
-          : itemWidth;
+      gallery.scrollLeft = itemWidth;
+      setTimeout(() => {
+        gallery.style.scrollBehavior = "smooth";
+        isResetting = false;
+      }, 50);
+    } else if (scrollPos <= 10) {
+      isResetting = true;
+      gallery.style.scrollBehavior = "auto";
+      gallery.scrollLeft = totalWidth - itemWidth;
       setTimeout(() => {
         gallery.style.scrollBehavior = "smooth";
         isResetting = false;
@@ -256,7 +267,11 @@ function setupInfiniteScroll(gallery) {
         }
       });
     },
-    { root: gallery, threshold: 0.6 }
+    {
+      root: gallery,
+      threshold: 0.6,
+      rootMargin: "0px -20% 0px -20%",
+    }
   );
 
   gallery.querySelectorAll("img").forEach((img) => observer.observe(img));

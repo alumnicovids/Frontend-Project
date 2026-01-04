@@ -256,7 +256,51 @@ function startTimer(deadline) {
 }
 
 function payNow() {
-  updateStatus("paid");
+  const booking = JSON.parse(localStorage.getItem("activeBooking"));
+  const isCard = booking.paymentMethod === "Bank Transfer";
+
+  const content = isCard
+    ? `
+    <div class="review-popup payment-modal-card">
+      <div class="popup-header"><h4>Credit Card Payment</h4></div>
+      <input type="text" class="payment-input" placeholder="Card Number">
+      <div class="card-row">
+        <input type="text" class="payment-input" placeholder="MM/YY">
+        <input type="text" class="payment-input" placeholder="CVV">
+      </div>
+      <span class="payment-total-label">Total: ${formatIDR(
+        booking.totalPrice
+      )}</span>
+      <div class="popup-actions">
+        <button class="secondary-btn cancel">Cancel</button>
+        <button class="primary-btn confirm" id="confirm-pay">Pay Now</button>
+      </div>
+    </div>
+  `
+    : `
+    <div class="review-popup qris-container">
+      <div class="popup-header"><h4>Scan QRIS to Pay</h4></div>
+      <div class="qris-image-wrapper">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=PAY-${
+          booking.totalPrice
+        }">
+      </div>
+      <span class="payment-total-label">Total: ${formatIDR(
+        booking.totalPrice
+      )}</span>
+      <div class="popup-actions">
+        <button class="secondary-btn cancel">Cancel</button>
+        <button class="primary-btn confirm" id="confirm-pay">I Have Paid</button>
+      </div>
+    </div>
+  `;
+
+  const overlay = createOverlay(content);
+  overlay.querySelector(".cancel").onclick = () => overlay.remove();
+  overlay.querySelector("#confirm-pay").onclick = () => {
+    overlay.remove();
+    updateStatus("paid");
+  };
 }
 
 function cancelBooking() {

@@ -26,6 +26,7 @@
   margin-bottom: 20px;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-clr) rgba(0, 0, 0, 0.05);
+  scroll-snap-type: x mandatory;
 }
 
 .gallery-grid::-webkit-scrollbar {
@@ -59,6 +60,7 @@
   opacity: 0.4;
   transform: scale(0.8);
   filter: grayscale(100%);
+  scroll-snap-align: center;
 }
 
 .gallery-grid img.clone {
