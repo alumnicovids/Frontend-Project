@@ -7,7 +7,6 @@
 
   --line-clr: #d2b48c;
   --text-clr: #3c2a21;
-  --text-muted: #634832;
   --accent-clr: #8b5e3c;
   --espresso: #4b3621;
   --cappuccino-dark: #2c1e16;
@@ -17,16 +16,20 @@
   --macha-dark: #555b41;
 
   --primary-gradient: linear-gradient(
-    135deg,
-    var(--line-clr),
-    var(--cappuccino-dark)
+    225deg,
+    var(--accent-clr) 45%,
+    var(--creamy-foam)
   );
   --glass-gradient: linear-gradient(
     225deg,
     transparent 60%,
     rgba(0, 0, 0, 0.3)
   );
-  --agree-gradient: linear-gradient(135deg, var(--macha), var(--macha-dark));
+  --agree-gradient: linear-gradient(
+    225deg,
+    var(--macha-dark) 45%,
+    var(--creamy-foam)
+  );
 
   --shadow-soft: 0 10px 30px rgba(75, 54, 33, 0.1);
 }

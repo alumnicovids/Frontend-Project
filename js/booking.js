@@ -31,7 +31,11 @@ function renderBookingForm(villa) {
     </div>
     <div class="booking-card">
       <div class="card-header">
-        <h3>${villa.name}</h3>
+        <h3>
+          <a href="/" class="villa-title detail">
+            <i class="material-symbols-outlined">keyboard_double_arrow_left</i>
+            ${villa.name}
+          <a></h3>
         <p class="text-muted">Complete your reservation details below.</p>
       </div>
 
@@ -39,12 +43,18 @@ function renderBookingForm(villa) {
         <label>Select Room Type</label>
         <select id="room-select" onchange="calculateTotal()">
           ${villa.rooms
-            .map(
-              (r) =>
-                `<option value="${r.price}" data-name="${r.type}">${
-                  r.type
-                } - ${formatIDR(r.price)}</option>`
-            )
+            .map((r) => {
+              const hasPromo = villa.promo?.status === "active";
+              const discountedPrice = hasPromo
+                ? r.price * (1 - parseInt(villa.promo.disc) / 100)
+                : r.price;
+
+              return `
+                <option value="${discountedPrice}" data-name="${r.type}">
+                  ${r.type} - ${formatIDR(discountedPrice)}
+                  ${hasPromo ? `(Promo ${villa.promo.disc} OFF)` : ""}
+                </option>`;
+            })
             .join("")}
         </select>
       </div>
@@ -105,7 +115,7 @@ function renderBookingForm(villa) {
         </div>
       </div>
 
-      <button class="primary-btn confirm" onclick="confirmPayment('${
+      <button class="primary-btn confirm detailed" onclick="confirmPayment('${
         villa.name
       }')">Confirm & Pay</button>
     </div>
@@ -300,7 +310,7 @@ async function renderMyBookings() {
 
   const history = JSON.parse(localStorage.getItem("myBookings")) || [];
   if (history.length === 0) {
-    container.innerHTML = `<div class="empty-state"><p>There is no transaction history yet.</p></div>`;
+    container.innerHTML = `<div class="empty-state myBooking"><p>There is no transaction history yet.</p></div>`;
     return;
   }
 

@@ -39,11 +39,12 @@ async function redirect() {
     if (contentDiv) {
       contentDiv.innerHTML = html;
       window.scrollTo(0, 0);
-      if (routeInits[path]) routeInits[path]();
-      if (
-        typeof initSearch === "function" &&
-        document.getElementById("search-input")
-      ) {
+
+      if (routeInits[path]) {
+        routeInits[path]();
+      }
+
+      if (document.getElementById("search-input")) {
         initSearch();
       }
     }

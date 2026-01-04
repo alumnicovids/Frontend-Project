@@ -260,3 +260,18 @@
 .compare:hover {
   background: var(--line-clr);
 }
+
+.wishlist {
+  max-width: 100%;
+}
+
+.wishlist-container.wish {
+  padding: 0;
+}
+
+.empty-state.wishlist,
+.empty-state.search {
+  margin: 0;
+  max-width: 100%;
+  color: var(--creamy-foam);
+}

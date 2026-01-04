@@ -16,13 +16,14 @@
 .empty {
   margin: 0 auto;
   max-height: 50px;
-  background: linear-gradient(
-    225deg,
-    var(--accent-clr) 45%,
-    var(--creamy-foam)
-  );
+  background: var(--primary-gradient);
   border: none;
   border-radius: 50px;
+}
+
+.myBooking {
+  margin: 0;
+  color: var(--creamy-foam);
 }
 
 .status-badge-booking {
@@ -453,6 +454,11 @@
   border: 1px solid var(--line-clr);
   background: white;
   font-weight: 600;
+}
+
+.detailed {
+  width: 100%;
+  margin: 15px 0;
 }
 
 .secondary-btn.cancel {

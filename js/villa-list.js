@@ -1,35 +1,9 @@
-const toggleButton = document.getElementById("toggle-btn");
-const sidebar = document.getElementById("sidebar");
-const searchInput = document.getElementById("search-input");
 const filterMap = {
   "/promo-villas": "promo",
   "/couple-villas": "Couple Villa",
   "/family-villas": "Family Villa",
 };
 let currentSearchQuery = "";
-
-function toggleSidebar() {
-  sidebar.classList.toggle("close");
-  toggleButton.classList.toggle("rotate");
-  closeAllSubMenu();
-}
-
-function toggleSubMenu(button) {
-  if (!button.nextElementSibling.classList.contains("show")) closeAllSubMenu();
-  button.nextElementSibling.classList.toggle("show");
-  button.classList.toggle("rotate");
-  if (sidebar.classList.contains("close")) {
-    sidebar.classList.remove("close");
-    toggleButton.classList.remove("rotate");
-  }
-}
-
-function closeAllSubMenu() {
-  Array.from(sidebar.getElementsByClassName("show")).forEach((ul) => {
-    ul.classList.remove("show");
-    ul.previousElementSibling.classList.remove("rotate");
-  });
-}
 
 function createVillaCard(villa, wishlist) {
   const isWishlisted = wishlist.some((item) => item.name === villa.name);
@@ -95,11 +69,11 @@ function createVillaCard(villa, wishlist) {
             }')">
               <i class="material-symbols-outlined">compare_arrows</i>
             </button>
-            <button class="primary-btn book">
-              <a href="#/booking?name=${encodeURIComponent(
-                villa.name
-              )}" class="nav-link">Book Now</a>
-            </button>
+            <a href="#/booking?name=${encodeURIComponent(
+              villa.name
+            )}" class="primary-btn book" style="text-decoration: none">
+              Book Now
+            </a>
           </div>
         </div>
       </div>
@@ -129,7 +103,12 @@ async function renderVillaDetail() {
   container.innerHTML = `
     <div class="header-section">
       <div class="header-row">
-        <h2>${villa.name}</h2>
+        <h2>
+          <a href="/" class="villa-title detail">
+            <i class="material-symbols-outlined">keyboard_double_arrow_left</i>
+            ${villa.name}
+          <a>
+        </h2>
       </div>
       <div class="location detail">
         <i class="material-symbols-outlined">location_on</i>
@@ -201,11 +180,11 @@ async function renderVillaDetail() {
         <div class="price-card">
           <span class="price-range">${villa.detail.priceRange}</span>
           <p class="room-type">${villa.detail.roomType}</p>
-          <button class="primary-btn detail confirm">
-            <a href="#/Booking?name=${encodeURIComponent(
-              villa.name
-            )}">Book Now</a>
-          </button>
+          <a href="#/booking?name=${encodeURIComponent(
+            villa.name
+          )}" class="primary-btn detail confirm" style="text-decoration: none; display: block; text-align: center;">
+            Book Now
+          </a>
         </div>
         <div class="nearby-card">
           <h3>Nearby Places</h3>
@@ -307,15 +286,21 @@ async function renderVillas(filterType = null, searchQuery = "") {
 
   container.innerHTML = filtered.length
     ? filtered.map((v) => createVillaCard(v, wishlist)).join("")
-    : "<div><p>Vila tidak ditemukan.</p></div>";
+    : "<div class='empty-state search'><p>Villa not found.</p></div>";
 }
 
-if (searchInput) {
-  searchInput.addEventListener("input", (e) => {
-    currentSearchQuery = e.target.value.toLowerCase();
-    const path = (window.location.hash || "#/").split("?")[0].replace("#", "");
-    renderVillas(filterMap[path] || null, currentSearchQuery);
-  });
+function initSearch() {
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) {
+    searchInput.value = currentSearchQuery;
+    searchInput.addEventListener("input", (e) => {
+      currentSearchQuery = e.target.value.toLowerCase();
+      const path = (window.location.hash || "#/")
+        .split("?")[0]
+        .replace("#", "");
+      renderVillas(filterMap[path] || null, currentSearchQuery);
+    });
+  }
 }
 
 window.addToCompare = async function (name) {
@@ -358,5 +343,5 @@ function renderWishlist() {
   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
   container.innerHTML = wishlist.length
     ? wishlist.map((v) => createVillaCard(v, wishlist)).join("")
-    : "<p>Wishlist is empty</p>";
+    : "<p class='empty-state wishlist'>Wishlist is empty</p>";
 }

@@ -1,16 +1,22 @@
-const state = JSON.parse(localStorage.getItem("userProfile")) || {
-  name: "Undefined",
-  birth: "Undefined",
-  sex: "Undefined",
-  email: "Undefined",
-  phone: "Undefined",
-};
+function getProfileState() {
+  return (
+    JSON.parse(localStorage.getItem("userProfile")) || {
+      name: "Undefined",
+      birth: "",
+      sex: "Undefined",
+      email: "Undefined",
+      phone: "Undefined",
+      profileImage: "/Media/photo-profile.jpg",
+    }
+  );
+}
 
-function saveState() {
+function saveState(state) {
   localStorage.setItem("userProfile", JSON.stringify(state));
 }
 
 function loadProfile() {
+  const state = getProfileState();
   const fields = {
     profileName: state.name,
     profileBirth: state.birth,
@@ -31,6 +37,7 @@ function loadProfile() {
 }
 
 function updateProfile() {
+  const state = getProfileState();
   const getValue = (id, isInput = false) => {
     const el = document.getElementById(id);
     return el ? (isInput ? el.value : el.innerText) : "Undefined";
@@ -43,25 +50,26 @@ function updateProfile() {
   state.phone = getValue("profileNumber");
   state.profileImage = document.getElementById("profile-img")?.src;
 
-  saveState();
+  saveState(state);
 }
 
 function attachEventListeners() {
-  document.querySelectorAll(".primary-btn.edit").forEach((button) => {
-    button.onclick = (e) => {
-      if (e.target.id === "changeBirth") return;
+  const container = document.querySelector(".profile-edit-container");
+  if (!container) return;
 
-      const valueSpan = e.target.parentElement.querySelector(".value");
-      if (!valueSpan) return;
+  container.addEventListener("click", (e) => {
+    const editBtn = e.target.closest(".primary-btn.edit");
+    if (!editBtn || editBtn.id === "changeBirth") return;
 
-      const fieldName = e.target.id.replace("change", "");
+    const valueSpan = editBtn.parentElement.querySelector(".value");
+    if (!valueSpan) return;
 
-      showEditModal(fieldName, valueSpan.innerText, (newValue) => {
-        valueSpan.innerText = newValue;
-        updateProfile();
-        showToast(`${fieldName} updated successfully`);
-      });
-    };
+    const fieldName = editBtn.id.replace("change", "");
+    showEditModal(fieldName, valueSpan.innerText, (newValue) => {
+      valueSpan.innerText = newValue;
+      updateProfile();
+      showToast(`${fieldName} updated successfully`);
+    });
   });
 
   const birthBtn = document.getElementById("changeBirth");
@@ -89,7 +97,7 @@ function attachEventListeners() {
           };
           reader.readAsDataURL(file);
         } else {
-          showToast("File too large (max 5MB) or invalid format");
+          showToast("File too large (max 5MB)");
         }
       };
       input.click();
