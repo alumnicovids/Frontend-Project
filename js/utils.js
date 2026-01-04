@@ -1,55 +1,57 @@
-function showEditModal(fieldName, currentValue, callback) {
+const toggleButton = document.getElementById("toggle-btn");
+const sidebar = document.getElementById("sidebar");
+let villaCache = null;
+
+function toggleSidebar() {
+  sidebar.classList.toggle("close");
+  toggleButton.classList.toggle("rotate");
+  closeAllSubMenu();
+}
+
+function toggleSubMenu(button) {
+  if (!button.nextElementSibling.classList.contains("show")) closeAllSubMenu();
+  button.nextElementSibling.classList.toggle("show");
+  button.classList.toggle("rotate");
+  if (sidebar.classList.contains("close")) {
+    sidebar.classList.remove("close");
+    toggleButton.classList.remove("rotate");
+  }
+}
+
+function closeAllSubMenu() {
+  Array.from(sidebar.getElementsByClassName("show")).forEach((ul) => {
+    ul.classList.remove("show");
+    ul.previousElementSibling.classList.remove("rotate");
+  });
+}
+
+async function getVillas() {
+  if (villaCache) return villaCache;
+  try {
+    const res = await fetch("/JSON/villas.json");
+    if (!res.ok) throw new Error("Failed to fetch");
+    villaCache = await res.json();
+    return villaCache;
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+}
+
+function formatIDR(amount) {
+  return new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    minimumFractionDigits: 0,
+  }).format(amount);
+}
+
+function createOverlay(content) {
   const overlay = document.createElement("div");
   overlay.className = "review-overlay";
-  overlay.innerHTML = `
-    <div class="review-popup">
-      <div class="popup-header">
-        <h4>Change ${fieldName}</h4>
-      </div>
-      <input type="text" id="modal-input" value="${currentValue}">
-      <div class="popup-actions">
-        <button class="secondary-btn cancel" onclick="this.closest('.review-overlay').remove()">Batal</button>
-        <button class="primary-btn confirm" id="modal-save">Simpan</button>
-      </div>
-    </div>
-  `;
+  overlay.innerHTML = content;
   document.body.appendChild(overlay);
-
-  const saveBtn = overlay.querySelector("#modal-save");
-  const input = overlay.querySelector("#modal-input");
-  const modal = overlay.querySelector(".review-popup");
-
-  saveBtn.addEventListener("mousedown", (e) => {
-    const ripple = document.createElement("span");
-    ripple.className = "ripple-effect";
-    saveBtn.appendChild(ripple);
-    const rect = saveBtn.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    ripple.style.width = ripple.style.height = `${size}px`;
-    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
-    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
-    ripple.addEventListener("animationend", () => ripple.remove());
-  });
-
-  saveBtn.onclick = () => {
-    const newValue = input.value;
-    if (newValue && newValue.trim() !== "") {
-      callback(newValue);
-      overlay.style.opacity = "0";
-      overlay.style.transition = "opacity 0.3s ease";
-      setTimeout(() => overlay.remove(), 300);
-    } else {
-      modal.classList.remove("shake");
-      void modal.offsetWidth;
-      modal.classList.add("shake");
-    }
-  };
-
-  input.focus();
-  overlay.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") saveBtn.click();
-    else if (e.key === "Escape") overlay.remove();
-  });
+  return overlay;
 }
 
 function showToast(message) {
@@ -58,10 +60,7 @@ function showToast(message) {
   toast.innerText = message;
   document.body.appendChild(toast);
 
-  setTimeout(() => {
-    toast.classList.add("show");
-  }, 10);
-
+  setTimeout(() => toast.classList.add("show"), 10);
   setTimeout(() => {
     toast.classList.remove("show");
     toast.addEventListener("transitionend", () => toast.remove(), {
@@ -70,48 +69,55 @@ function showToast(message) {
   }, 3000);
 }
 
-function showReviewPopup(villaName) {
-  const overlay = document.createElement("div");
-  overlay.className = "review-overlay";
-  overlay.innerHTML = `
+function showEditModal(fieldName, currentValue, callback) {
+  const content = `
     <div class="review-popup">
-      <div class="popup-header">
-        <h4>Berikan Ulasan</h4>
-        <p>${villaName}</p>
-      </div>
-      <div class="star-rating">
-        <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
-        <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
-        <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
-        <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
-        <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
-      </div>
-      <textarea id="review-text" placeholder="Ceritakan pengalaman Anda..."></textarea>
+      <div class="popup-header"><h4>Change ${fieldName}</h4></div>
+      <input type="text" id="modal-input" value="${currentValue}">
       <div class="popup-actions">
-        <button class="secondary-btn cancel review" onclick="this.closest('.review-overlay').remove()">Batal</button>
-        <button class="primary-btn review confirm" onclick="submitReview('${villaName}')">Kirim Ulasan</button>
+        <button class="secondary-btn cancel">Cancel</button>
+        <button class="primary-btn confirm" id="modal-save">Save</button>
       </div>
     </div>
   `;
-  document.body.appendChild(overlay);
+  const overlay = createOverlay(content);
+
+  overlay.querySelector(".cancel").onclick = () => overlay.remove();
+  overlay.querySelector("#modal-save").onclick = () => {
+    callback(overlay.querySelector("#modal-input").value);
+    overlay.remove();
+  };
 }
 
-function closeReviewPopup() {
-  const overlay = document.querySelector(".review-overlay");
-  if (overlay) {
-    overlay.style.opacity = "0";
-    setTimeout(() => overlay.remove(), 300);
-  }
-}
+function showReviewPopup(villaName) {
+  const content = `
+    <div class="review-popup">
+      <h4>Review for ${villaName}</h4>
+      <div class="star-rating">
+        ${[5, 4, 3, 2, 1]
+          .map(
+            (num) => `
+          <input type="radio" name="rating" id="star${num}" value="${num}">
+          <label for="star${num}">★</label>
+        `
+          )
+          .join("")}
+      </div>
+      <textarea id="review-text" placeholder="Tell us about your experience..."></textarea>
+      <div class="popup-actions">
+        <button class="secondary-btn cancel">Cancel</button>
+        <button class="primary-btn confirm">Send</button>
+      </div>
+    </div>
+  `;
+  const overlay = createOverlay(content);
 
-function submitReview(villaName) {
-  const rating = document.querySelector('input[name="rating"]:checked')?.value;
-  const comment = document.getElementById("review-text").value;
+  overlay.querySelector(".cancel").onclick = () => overlay.remove();
+  overlay.querySelector(".confirm").onclick = () => {
+    const rating = overlay.querySelector('input[name="rating"]:checked')?.value;
+    if (!rating) return showToast("Choose a star rating first!");
 
-  if (!rating) return showToast("Pilih rating bintang terlebih dahulu!");
-
-  showToast(
-    `Terima kasih! Ulasan bintang ${rating} untuk ${villaName} telah terkirim.`
-  );
-  document.querySelector(".review-overlay").remove();
+    showToast(`Your review for ${villaName} has been submitted.`);
+    overlay.remove();
+  };
 }

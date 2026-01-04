@@ -78,7 +78,7 @@
 
 #sidebar a:hover,
 #sidebar .dropdown-btn:hover {
-  background-color: var(--hover-clr);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 #sidebar .sub-menu {
@@ -126,21 +126,6 @@ main {
 }
 
 main p {
-  color: var(--secondary-text-clr);
   margin-top: 5px;
   margin-bottom: 15px;
-}
-
-.container {
-  border: 1px solid var(--line-clr);
-  border-radius: 1em;
-  margin-bottom: 20px;
-  padding: min(3em, 15%);
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(5px);
-}
-
-.container h2,
-.container p {
-  margin-top: 1em;
 }

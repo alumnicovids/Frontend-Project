@@ -41,24 +41,16 @@
   color: var(--base-clr);
 }
 
-.primary-btn.compare-header,
-.secondary-btn.compare-header {
+.compare-header {
   border-radius: 20px;
   white-space: nowrap;
   font-size: 0.85rem;
   padding: 8px 15px;
 }
 
-.primary-btn.compare-header:hover,
-.secondary-btn.compare-header:hover {
+.compare-header:hover {
   transform: scale(1.05);
   background-color: var(--hover-clr);
-}
-
-.secondary-btn.compare-header {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .table-container {
@@ -144,7 +136,7 @@
   object-fit: cover;
 }
 
-.villa-head.empty {
+.empty {
   border: 2px dashed var(--line-clr);
   border-radius: 10px;
   height: 250px;
@@ -153,7 +145,7 @@
   align-items: center;
   justify-content: center;
   color: var(--secondary-text-clr);
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .section-divider td {
@@ -170,13 +162,8 @@
 .price-win {
   color: #1ac863 !important;
   font-weight: 700;
-  background: rgba(39, 174, 96, 0.05);
+  background: rgba(39, 174, 96, 0.1);
   border-radius: 8px;
-}
-
-.price-lose {
-  color: #ff4833 !important;
-  font-weight: 500;
 }
 
 .value-cell i {
@@ -198,11 +185,12 @@
 }
 
 .modal-content {
-  background: #fff8f0;
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--cappuccino-light);
   width: 100%;
   max-width: 500px;
   border-radius: 15px;
-  border: 1px solid var(--line-clr);
+  border: 1px solid var(--accent-clr);
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -225,7 +213,7 @@
 }
 
 .selection-item:hover {
-  background: var(--hover-clr);
+  background: var(--glass-gradient);
 }
 
 .selection-item img {
@@ -233,25 +221,4 @@
   height: 45px;
   object-fit: cover;
   border-radius: 5px;
-}
-
-.primary-btn.compare {
-  margin-top: 15px;
-  width: 100%;
-}
-
-@media (max-width: 800px) {
-  .compare-main {
-    padding-bottom: 80px;
-  }
-
-  .header-content-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-actions {
-    width: 100%;
-    justify-content: center;
-  }
 }

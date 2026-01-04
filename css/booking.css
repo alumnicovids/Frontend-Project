@@ -1,6 +1,29 @@
-.primary-btn.empty {
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background: var(--glass-gradient);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 2px dashed var(--line-clr);
   max-width: 50%;
   margin: 0 auto;
+}
+
+.empty-state p {
+  text-align: center;
+}
+
+.empty {
+  margin: 0 auto;
+  max-height: 50px;
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: 50px;
+}
+
+.myBooking {
+  margin: 0;
+  color: var(--creamy-foam);
 }
 
 .status-badge-booking {
@@ -380,7 +403,7 @@
 .status-completed {
   background: #dcfce7;
   color: #166534 !important;
-  padding: 0 2;
+  padding: 0 3px;
 }
 
 .status-waiting {
@@ -433,6 +456,11 @@
   font-weight: 600;
 }
 
+.detailed {
+  width: 100%;
+  margin: 15px 0;
+}
+
 .secondary-btn.cancel {
   background: rgba(0, 0, 0, 0.2);
   color: #ca3636;
@@ -457,15 +485,6 @@
   padding: 5px 10px;
   font-size: 0.8rem;
   margin-top: 5px;
-}
-
-.empty-state {
-  text-align: center;
-  padding: 40px;
-  background: var(--glass-gradient);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  border: 2px dashed var(--line-clr);
 }
 
 @keyframes fadeIn {

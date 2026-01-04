@@ -30,13 +30,11 @@
   object-fit: cover;
 }
 
-.secondary-btn.setting {
+.setting {
   color: white;
-  border: none;
   padding: 10px 24px;
   border-radius: 8px;
   font-weight: 600;
-  cursor: pointer;
   width: 100%;
   transition: all 0.3s ease;
 }
@@ -68,7 +66,7 @@
 
 .info-row .label {
   width: 150px;
-  color: var(--secondary-text-clr);
+  color: var(--cappuccino-dark);
 }
 
 .info-row .value {
@@ -93,7 +91,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0.7;
 }
 
-.primary-btn.edit {
+.edit {
   color: var(--cappuccino-light);
   text-decoration: none;
   font-weight: 600;
@@ -107,7 +105,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-.primary-btn.edit:hover {
+.edit:hover {
   background-color: var(--accent-clr);
   color: white;
   transform: translateY(-1px);
