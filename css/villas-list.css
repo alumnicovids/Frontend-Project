@@ -275,3 +275,71 @@
   max-width: 100%;
   color: var(--creamy-foam);
 }
+
+@media (max-width: 768px) {
+  .villa-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    padding: 15px !important;
+  }
+
+  .villa-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 10px 0 !important;
+    display: block !important;
+    height: auto !important;
+    position: relative !important;
+  }
+
+  .villa-image {
+    height: 200px !important;
+    width: 100% !important;
+  }
+
+  .card-content {
+    padding: 15px !important;
+  }
+
+  .villa-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .amenities {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding: 10px 0 !important;
+  }
+
+  .action-buttons {
+    flex-direction: row !important;
+    gap: 8px !important;
+    margin-top: 12px !important;
+  }
+
+  .book,
+  .compare {
+    flex: 1 !important;
+    padding: 8px 5px;
+    font-size: 0.75rem !important;
+    border-radius: 8px !important;
+    min-height: auto !important;
+    height: 35px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 4px !important;
+  }
+
+  .book {
+    padding: 10px 20px;
+  }
+
+  .book i,
+  .compare i {
+    font-size: 0.8rem !important;
+  }
+}

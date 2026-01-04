@@ -222,3 +222,34 @@
   object-fit: cover;
   border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+  .luxury-compare-table,
+  .luxury-compare-table tbody,
+  .luxury-compare-table tr,
+  .luxury-compare-table td,
+  .luxury-compare-table th {
+    display: block;
+    width: 100%;
+  }
+
+  .luxury-compare-table tr {
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--line-clr);
+  }
+
+  .luxury-compare-table td,
+  .luxury-compare-table th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid rgba(210, 180, 140, 0.3);
+  }
+
+  .luxury-compare-table .image-box {
+    height: 250px;
+  }
+
+  .section-divider td {
+    text-align: center !important;
+  }
+}

@@ -371,13 +371,6 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-@keyframes slideUpFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .villa-image-placeholder {
   width: 100px;
   height: 100px;
@@ -534,22 +527,43 @@
   display: block;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 0 10px;
+    margin: 20px auto;
   }
-  to {
-    opacity: 1;
-  }
-}
 
-@keyframes popIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
+  .empty-state {
+    max-width: 90%;
   }
-  to {
-    transform: scale(1);
-    opacity: 1;
+
+  .progress-tracker {
+    padding: 10px;
+  }
+
+  .progress-tracker::before {
+    left: 30px;
+    right: 30px;
+  }
+
+  .step span {
+    display: none;
+  }
+
+  .booking-card {
+    padding: 20px;
+  }
+
+  .date-range-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-card {
+    flex-direction: column;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
   }
 }

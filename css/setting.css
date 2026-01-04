@@ -122,3 +122,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin-left: 5px;
   border: 1px solid rgba(139, 90, 43, 0.2);
 }
+
+@media (max-width: 768px) {
+  .profile-edit-container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .photo-section {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--line-clr);
+    padding-bottom: 20px;
+  }
+
+  .info-section {
+    width: 100%;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .info-row .label {
+    width: 100%;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .info-row .value {
+    width: 100%;
+  }
+}

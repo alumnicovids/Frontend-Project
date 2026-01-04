@@ -9,9 +9,16 @@ function toggleSidebar() {
 }
 
 function toggleSubMenu(button) {
-  if (!button.nextElementSibling.classList.contains("show")) closeAllSubMenu();
-  button.nextElementSibling.classList.toggle("show");
-  button.classList.toggle("rotate");
+  const subMenu = button.nextElementSibling;
+  const isOpen = subMenu.classList.contains("show");
+
+  closeAllSubMenu();
+
+  if (!isOpen) {
+    subMenu.classList.add("show");
+    button.classList.add("rotate");
+  }
+
   if (sidebar.classList.contains("close")) {
     sidebar.classList.remove("close");
     toggleButton.classList.remove("rotate");
