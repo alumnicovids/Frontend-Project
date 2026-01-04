@@ -156,7 +156,7 @@ async function renderVillaDetail() {
                   <p>${room.description}</p>
                 </div>
                 <div class="room-price">
-                  <span class="price detail">${formatIDR(room.price)}</span>
+                <span class="price detail">IDR ${new Intl.NumberFormat('id-ID').format(room.price)}</span>
                   <span class="unit">/night</span>
                 </div>
               </div>`

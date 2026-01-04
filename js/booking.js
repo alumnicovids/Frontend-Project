@@ -78,15 +78,15 @@ function renderBookingForm(villa) {
         <div class="service-list">
           <div class="service-item">
             <label><input type="checkbox" class="addon" data-price="150000" onchange="calculateTotal()"> Breakfast</label>
-            <span class="service-price">Rp150.000</span>
+            <span class="service-price">IDR 150.000</span>
           </div>
           <div class="service-item">
             <label><input type="checkbox" class="addon" data-price="250000" onchange="calculateTotal()"> Airport Pick Up</label>
-            <span class="service-price">Rp250.000</span>
+            <span class="service-price">IDR 250.000</span>
           </div>
           <div class="service-item">
             <label><input type="checkbox" class="addon" data-price="100000" onchange="calculateTotal()"> Extra Bed</label>
-            <span class="service-price">Rp100.000</span>
+            <span class="service-price">IDR 100.000</span>
           </div>
         </div>
       </div>
