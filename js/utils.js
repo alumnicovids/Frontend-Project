@@ -36,7 +36,7 @@ async function getVillas() {
   if (villaCache) return villaCache;
   try {
     // Mengambil data sumber dari file JSON lokal
-    const res = await fetch("/JSON/villas.json");
+    const res = await fetch("JSON/villas.json");
     if (!res.ok) throw new Error("Failed to fetch");
     villaCache = await res.json();
     return villaCache;
