@@ -170,3 +170,44 @@ LuxeNest/
 ├── routers/
 │   └── routers.js          # 🧭 Router System (Mengambil file dari folder /pages)
 └── index.html              # 🚪 Pintu masuk utama (Main Entry Point / Shell)
+
+---
+
+## 🛠 Instalasi Web
+
+### 1. Akses Langsung (GitHub Pages)
+Project ini telah dideploy dan dapat diakses secara instan melalui tautan resmi berikut:
+👉 **[Live Demo LuxeNest](https://alumnicovids.github.io/Frontend-Project/#/)**
+
+---
+
+### 2. Menjalankan di Lingkungan Lokal (Development)
+Untuk menjalankan project ini secara lokal, Anda memerlukan **Local Server** agar fitur `fetch()` (untuk memuat data JSON dan halaman parsial) dapat berfungsi dengan benar tanpa terblokir oleh kebijakan keamanan browser (CORS).
+
+#### **Langkah-langkah Menjalankan Project:**
+
+1.  **Clone Repository**
+    Buka terminal atau command prompt, lalu jalankan perintah berikut untuk mengunduh source code:
+    ```bash
+    git clone [https://github.com/alumnicovids/Frontend-Project.git](https://github.com/alumnicovids/Frontend-Project.git)
+    ```
+
+2.  **Masuk ke Folder Project**
+    ```bash
+    cd Frontend-Project
+    ```
+
+3.  **Jalankan dengan Local Server (Pilih salah satu)**:
+    * **Metode A: VS Code (Live Server)**
+        * Instal ekstensi **Live Server** di VS Code.
+        * Klik kanan pada file `index.html`.
+        * Pilih **Open with Live Server**.
+    * **Metode B: Python**
+        ```bash
+        python -m http.server 8000
+        ```
+        Lalu buka `http://localhost:8000` di browser.
+    * **Metode C: Node.js (npx)**
+        ```bash
+        npx serve .
+        ```
