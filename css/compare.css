@@ -144,7 +144,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--secondary-text-clr);
+  color: var(--creamy-foam);
   background: rgba(255, 255, 255, 0.2);
 }
 

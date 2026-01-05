@@ -84,12 +84,13 @@ window.initCompare = function () {
 function renderHeaderSlot(villa, index) {
   if (!villa) {
     // Tampilan jika slot belum dipilih (tombol tambah)
-    return `<td>
-              <div class="villa-head empty" onclick="openVillaModal(${index})">
-                <div class="add-icon">+</div>
-                <p>Add Villa</p>
-              </div>
-            </td>`;
+    return `
+    <td class="empty-state">
+      <div class="villa-head" onclick="openVillaModal(${index})">
+        <span>+</span>
+        <p>Search Villa</p>
+      </div>
+    </td>`;
   }
   // Tampilan jika villa sudah dipilih
   return `<td>

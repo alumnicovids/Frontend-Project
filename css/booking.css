@@ -1,12 +1,13 @@
 .empty-state {
   text-align: center;
   padding: 40px;
+  height: 120px;
   background: var(--glass-gradient);
   backdrop-filter: blur(8px);
   border-radius: 20px;
   border: 2px dashed var(--line-clr);
   max-width: 50%;
-  margin: 0 auto;
+  margin: 15px;
 }
 
 .empty-state p {
