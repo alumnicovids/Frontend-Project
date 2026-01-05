@@ -12,6 +12,7 @@ function getProfileState() {
 }
 
 function saveState(state) {
+  // Persistensi data profil menggunakan LocalStorage (Name, Email, Phone, Profile Image)
   localStorage.setItem("userProfile", JSON.stringify(state));
 }
 
@@ -37,6 +38,7 @@ function loadProfile() {
 }
 
 function updateProfile() {
+  // Mengambil semua data dari elemen input/span lalu disimpan ke state global
   const state = getProfileState();
   const getValue = (id, isInput = false) => {
     const el = document.getElementById(id);
@@ -50,7 +52,7 @@ function updateProfile() {
   state.phone = getValue("profileNumber");
   state.profileImage = document.getElementById("profile-img")?.src;
 
-  saveState(state);
+  saveState(state); // Update property state
 }
 
 function attachEventListeners() {
@@ -90,6 +92,7 @@ function attachEventListeners() {
         const file = e.target.files[0];
         if (file && file.size <= 5000000) {
           const reader = new FileReader();
+          // Menggunakan FileReader API untuk mengubah file gambar yang diupload menjadi Base64 string agar bisa disimpan langsung di LocalStorage
           reader.onload = (event) => {
             document.getElementById("profile-img").src = event.target.result;
             updateProfile();

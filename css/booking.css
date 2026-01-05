@@ -26,6 +26,7 @@
   color: var(--creamy-foam);
 }
 
+/* Badge status dinamis (Waiting/Paid/Completed) */
 .status-badge-booking {
   color: var(--accent-clr) !important;
   margin: 0 !important;
@@ -38,6 +39,7 @@
   animation: fadeInUp 0.5s ease-out;
 }
 
+/* Tracker langkah (Step 1, 2, 3) untuk memudahkan user melihat progres booking */
 .progress-tracker {
   display: flex;
   justify-content: space-between;
@@ -180,7 +182,7 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
   margin-bottom: 0;
 }
 
@@ -371,13 +373,6 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-@keyframes slideUpFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .villa-image-placeholder {
   width: 100px;
   height: 100px;
@@ -487,22 +482,90 @@
   margin-top: 5px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.payment-modal-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-@keyframes popIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
+.payment-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line-clr);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-clr);
+  font-size: 1rem;
+}
+
+.card-row {
+  display: flex;
+  gap: 10px;
+}
+
+.qris-container {
+  text-align: center;
+}
+
+.qris-image-wrapper {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 15px auto;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.qris-image-wrapper img {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
+
+.payment-total-label {
+  color: var(--creamy-foam);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 0 10px;
+    margin: 20px auto;
   }
-  to {
-    transform: scale(1);
-    opacity: 1;
+
+  .empty-state {
+    max-width: 90%;
+  }
+
+  .progress-tracker {
+    padding: 10px;
+  }
+
+  .progress-tracker::before {
+    left: 30px;
+    right: 30px;
+  }
+
+  .step span {
+    display: none;
+  }
+
+  .booking-card {
+    padding: 20px;
+  }
+
+  .date-range-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-card {
+    flex-direction: column;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
   }
 }

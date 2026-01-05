@@ -6,8 +6,10 @@ const filterMap = {
 let currentSearchQuery = "";
 
 function createVillaCard(villa, wishlist) {
-  const isWishlisted = wishlist.some((item) => item.name === villa.name);
-  const hasPromo = villa.promo?.status === "active";
+  const isWishlisted = wishlist.some((item) => item.name === villa.name); // Mengecek apakah villa ini ada dalam daftar wishlist (berdasarkan nama)
+  const hasPromo = villa.promo?.status === "active"; // Memeriksa apakah villa memiliki promo yang sedang aktif
+
+  // Menghitung harga akhir: Jika ada promo, potong harga asli dengan persentase diskon
   const discountedPrice = hasPromo
     ? villa.price * (1 - parseInt(villa.promo.disc) / 100)
     : villa.price;
@@ -17,11 +19,13 @@ function createVillaCard(villa, wishlist) {
       <div class="card-image">
         <img src="${villa.image[0]}" alt="${villa.name}" />
         ${
+          // Render badge diskon hanya jika promo aktif
           hasPromo
             ? `<span class="promo-badge">${villa.promo.disc} OFF</span>`
             : ""
         }
         <button class="wishlist-btn ${
+          // Menambah class 'active' agar ikon hati berwarna jika sudah di-wishlist
           isWishlisted ? "active" : ""
         }" data-name="${villa.name}">
           <i class="material-symbols-outlined">favorite</i>
@@ -54,6 +58,7 @@ function createVillaCard(villa, wishlist) {
         <div class="card-footer">
           <div class="price-container">
             ${
+              // Tampilkan harga asli (coret) hanya jika ada promo
               hasPromo
                 ? `<span class="original-price">${formatIDR(
                     villa.price
@@ -81,7 +86,7 @@ function createVillaCard(villa, wishlist) {
 }
 
 async function renderVillaDetail() {
-  const hash = window.location.hash;
+  const hash = window.location.hash; // Mengambil nama villa dari URL (misal: #/details?name=Villa%20Bali)
   const params = new URLSearchParams(
     hash.includes("?") ? hash.split("?")[1] : ""
   );
@@ -90,7 +95,7 @@ async function renderVillaDetail() {
 
   if (!container || !villaName) return;
 
-  const data = await getVillas();
+  const data = await getVillas(); // Mencocokkan nama dari URL dengan database JSON
   const villa = data.find((v) => v.name === decodeURIComponent(villaName));
 
   if (!villa) {
@@ -98,8 +103,9 @@ async function renderVillaDetail() {
     return;
   }
 
-  const images = Array.isArray(villa.image) ? villa.image : [villa.image];
+  const images = Array.isArray(villa.image) ? villa.image : [villa.image]; // Memastikan data gambar dalam bentuk Array untuk keperluan gallery
 
+  // Membangun struktur HTML secara dinamis
   container.innerHTML = `
     <div class="header-section">
       <div class="header-row">
@@ -156,7 +162,9 @@ async function renderVillaDetail() {
                   <p>${room.description}</p>
                 </div>
                 <div class="room-price">
-                  <span class="price detail">${formatIDR(room.price)}</span>
+                <span class="price detail">IDR ${new Intl.NumberFormat(
+                  "id-ID"
+                ).format(room.price)}</span>
                   <span class="unit">/night</span>
                 </div>
               </div>`
@@ -206,38 +214,54 @@ async function renderVillaDetail() {
       </div>
     </div>`;
 
+  // Aktifkan fitur scroll tak terbatas jika gallery berhasil dimuat
   const gallery = document.querySelector(".gallery-grid");
   if (gallery) setupInfiniteScroll(gallery);
 }
 
+// Membuat ilusi scroll yang tidak pernah habis dengan menduplikasi elemen pertama dan terakhir.
 function setupInfiniteScroll(gallery) {
   const items = [...gallery.querySelectorAll("img")];
   if (items.length < 2) return;
 
   gallery.querySelectorAll(".clone").forEach((el) => el.remove());
+
+  // Kloning elemen untuk teknik 'seamless looping'
   const firstClone = items[0].cloneNode(true);
   const lastClone = items[items.length - 1].cloneNode(true);
-  [firstClone, lastClone].forEach((clone) => clone.classList.add("clone"));
+  firstClone.classList.add("clone");
+  lastClone.classList.add("clone");
 
   gallery.appendChild(firstClone);
   gallery.insertBefore(lastClone, items[0]);
 
-  const itemWidth = items[0].offsetWidth + 20;
+  const itemWidth = items[0].offsetWidth + 20; // Set posisi awal scroll agar tidak memperlihatkan kloningan terakhir di awal
   gallery.scrollLeft = itemWidth;
 
   let isResetting = false;
+
+  // Listener untuk mendeteksi saat scroll mencapai ujung
   gallery.addEventListener("scroll", () => {
     if (isResetting) return;
-    const scrollPos = gallery.scrollLeft;
-    const maxScroll = gallery.scrollWidth - gallery.clientWidth - 5;
 
-    if (scrollPos <= 0 || scrollPos >= maxScroll) {
+    const scrollPos = gallery.scrollLeft;
+    const totalWidth = gallery.scrollWidth - gallery.clientWidth;
+
+    // Jika sampai di ujung kanan, lompat ke posisi awal tanpa animasi
+    if (scrollPos >= totalWidth - 10) {
       isResetting = true;
       gallery.style.scrollBehavior = "auto";
-      gallery.scrollLeft =
-        scrollPos <= 0
-          ? gallery.scrollWidth - gallery.clientWidth - itemWidth
-          : itemWidth;
+      gallery.scrollLeft = itemWidth;
+      setTimeout(() => {
+        gallery.style.scrollBehavior = "smooth";
+        isResetting = false;
+      }, 50);
+
+      // Jika sampai di ujung kiri, lompat ke posisi akhir tanpa animasi
+    } else if (scrollPos <= 10) {
+      isResetting = true;
+      gallery.style.scrollBehavior = "auto";
+      gallery.scrollLeft = totalWidth - itemWidth;
       setTimeout(() => {
         gallery.style.scrollBehavior = "smooth";
         isResetting = false;
@@ -245,6 +269,7 @@ function setupInfiniteScroll(gallery) {
     }
   });
 
+  // Menambahkan class 'active' (zoom/highlight) pada gambar yang berada di tengah layar
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -256,7 +281,11 @@ function setupInfiniteScroll(gallery) {
         }
       });
     },
-    { root: gallery, threshold: 0.6 }
+    {
+      root: gallery,
+      threshold: 0.6,
+      rootMargin: "0px -20% 0px -20%",
+    }
   );
 
   gallery.querySelectorAll("img").forEach((img) => observer.observe(img));
@@ -269,6 +298,7 @@ async function renderVillas(filterType = null, searchQuery = "") {
 
   if (!container) return;
 
+  // Logika filter: berdasarkan kategori (Couple/Family) atau status promo
   let filtered = villaData;
   if (filterType === "promo") {
     filtered = villaData.filter((v) => v.promo?.status === "active");
@@ -276,6 +306,7 @@ async function renderVillas(filterType = null, searchQuery = "") {
     filtered = villaData.filter((v) => v.tag === filterType);
   }
 
+  // Logika search: mencocokkan input user dengan Nama, Lokasi, atau Tag
   if (searchQuery) {
     filtered = filtered.filter((v) =>
       [v.name, v.location, v.tag].some((f) =>
@@ -304,43 +335,46 @@ function initSearch() {
 }
 
 window.addToCompare = async function (name) {
-  const data = await getVillas();
-  const villa = data.find((v) => v.name === name);
+  const data = await getVillas(); // Mengambil data seluruh villa dari file JSON/Cache
+  const villa = data.find((v) => v.name === name); // Mencari objek villa yang spesifik berdasarkan nama yang diklik
   if (villa) {
-    let list = JSON.parse(localStorage.getItem("compareList")) || [null, null];
-    list.shift();
-    list.push(villa);
-    localStorage.setItem("compareList", JSON.stringify(list));
-    window.location.hash = "#/compare";
+    let list = JSON.parse(localStorage.getItem("compareList")) || [null, null]; // Mengambil list perbandingan dari LocalStorage (default: array kosong isi 2 slot)
+    list.shift(); // Logika Geser: Hapus elemen paling lama (index 0)
+    list.push(villa); // Masukkan villa baru ke posisi paling baru (index 1)
+    localStorage.setItem("compareList", JSON.stringify(list)); // Simpan kembali ke LocalStorage agar datanya tetap ada saat pindah halaman
+    window.location.hash = "#/compare"; // Redirect otomatis ke halaman perbandingan
   }
 };
 
 document.addEventListener("click", async (e) => {
-  const btn = e.target.closest(".wishlist-btn");
+  const btn = e.target.closest(".wishlist-btn"); // Mendeteksi apakah elemen yang diklik adalah tombol wishlist (ikon hati)
   if (!btn) return;
 
   const name = btn.dataset.name;
-  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-  const index = wishlist.findIndex((v) => v.name === name);
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []; // Mengambil data wishlist yang sudah tersimpan
+  const index = wishlist.findIndex((v) => v.name === name); // Mengecek apakah villa ini sudah ada di wishlist atau belum
 
+  // JIKA TIDAK ADA: Ambil data villa lengkap dan masukkan ke array wishlist
   if (index === -1) {
     const data = await getVillas();
     const villa = data.find((v) => v.name === name);
     if (villa) wishlist.push(villa);
-    btn.classList.add("active");
+    btn.classList.add("active"); // Tambah class 'active' untuk mengubah warna ikon jadi merah
+
+    // JIKA SUDAH ADA: Hapus villa tersebut dari array (Toggle Off)
   } else {
     wishlist.splice(index, 1);
     btn.classList.remove("active");
   }
 
-  localStorage.setItem("wishlist", JSON.stringify(wishlist));
-  if (window.location.hash.includes("/wishlist")) renderWishlist();
+  localStorage.setItem("wishlist", JSON.stringify(wishlist)); // Update LocalStorage dengan data terbaru
+  if (window.location.hash.includes("/wishlist")) renderWishlist(); // Jika user sedang berada di halaman wishlist, langsung refresh tampilan agar data yang dihapus hilang
 });
 
 function renderWishlist() {
   const container = document.querySelector(".wishlist-container");
-  if (!container) return;
-  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  if (!container) return; // Jika wishlist tidak kosong, render kartu villa menggunakan createVillaCard, jika kosong, tampilkan pesan "Wishlist is empty"
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || []; // Ambil data dari LocalStorage
   container.innerHTML = wishlist.length
     ? wishlist.map((v) => createVillaCard(v, wishlist)).join("")
     : "<p class='empty-state wishlist'>Wishlist is empty</p>";
