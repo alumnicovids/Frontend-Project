@@ -159,6 +159,7 @@
   padding: 15px;
 }
 
+/* Penanda visual untuk villa yang 'menang' dalam perbandingan (misal: harga termurah) */
 .price-win {
   color: #1ac863 !important;
   font-weight: 700;
@@ -172,6 +173,7 @@
   margin-left: 5px;
 }
 
+/* Modal overlay untuk memilih villa yang akan dibandingkan */
 .modal {
   display: none;
   position: fixed;

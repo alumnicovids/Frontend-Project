@@ -13,6 +13,7 @@
   text-decoration: none;
 }
 
+/* Galeri foto horizontal dengan snap scrolling (slide per foto) */
 .gallery-grid {
   display: flex;
   flex-direction: row;

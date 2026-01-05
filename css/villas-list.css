@@ -1,3 +1,4 @@
+/* Desain search bar yang mencolok dengan border tebal dan efek shadow */
 #search-input {
   background: var(--glass-gradient);
   backdrop-filter: blur(12px);
@@ -55,6 +56,7 @@
   opacity: 0.6;
 }
 
+/* Grid sistem untuk merapikan daftar villa */
 .villa-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));

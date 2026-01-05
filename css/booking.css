@@ -26,6 +26,7 @@
   color: var(--creamy-foam);
 }
 
+/* Badge status dinamis (Waiting/Paid/Completed) */
 .status-badge-booking {
   color: var(--accent-clr) !important;
   margin: 0 !important;
@@ -38,6 +39,7 @@
   animation: fadeInUp 0.5s ease-out;
 }
 
+/* Tracker langkah (Step 1, 2, 3) untuk memudahkan user melihat progres booking */
 .progress-tracker {
   display: flex;
   justify-content: space-between;

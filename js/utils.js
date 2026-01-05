@@ -1,6 +1,6 @@
 const toggleButton = document.getElementById("toggle-btn");
 const sidebar = document.getElementById("sidebar");
-let villaCache = null;
+let villaCache = null; // Cache global agar tidak fetch JSON berulang kali
 
 function toggleSidebar() {
   sidebar.classList.toggle("close");
@@ -35,6 +35,7 @@ function closeAllSubMenu() {
 async function getVillas() {
   if (villaCache) return villaCache;
   try {
+    // Mengambil data sumber dari file JSON lokal
     const res = await fetch("/JSON/villas.json");
     if (!res.ok) throw new Error("Failed to fetch");
     villaCache = await res.json();
@@ -46,6 +47,7 @@ async function getVillas() {
 }
 
 function formatIDR(amount) {
+  // Formatter standar untuk mata uang Rupiah
   return new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
@@ -62,11 +64,13 @@ function createOverlay(content) {
 }
 
 function showToast(message) {
+  // Notifikasi pop-up singkat yang otomatis hilang setelah 3 detik
   const toast = document.createElement("div");
   toast.className = "toast-notification";
   toast.innerText = message;
   document.body.appendChild(toast);
 
+  // ... logic transisi
   setTimeout(() => toast.classList.add("show"), 10);
   setTimeout(() => {
     toast.classList.remove("show");

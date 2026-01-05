@@ -15,6 +15,7 @@
   border-right: 1px solid var(--line-clr);
 }
 
+/* Bingkai foto profil berbentuk lingkaran sempurna */
 .profile-photo-wrapper {
   width: 140px;
   height: 140px;
@@ -74,6 +75,7 @@
   color: var(--creamy-foam);
 }
 
+/* Styling khusus untuk input tanggal lahir agar sesuai dengan tema warna aplikasi */
 input[type="date"].value-input {
   flex: 1;
   border: 1px solid var(--line-clr);
