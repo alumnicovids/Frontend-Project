@@ -1,15 +1,15 @@
 const routes = {
   // ... mapping path URL ke file fisik HTML di folder pages
-  "/": "/pages/home.html",
-  "/couple-villas": "/pages/couple.html",
-  "/family-villas": "/pages/family.html",
-  "/promo-villas": "/pages/promo.html",
-  "/details": "/pages/detail.html",
-  "/booking": "/pages/booking.html",
-  "/my-booking": "/pages/my-booking.html",
-  "/setting": "/pages/setting.html",
-  "/wishlist": "/pages/wishlist.html",
-  "/compare": "/pages/compare.html",
+  "/": "pages/home.html",
+  "/couple-villas": "pages/couple.html",
+  "/family-villas": "pages/family.html",
+  "/promo-villas": "pages/promo.html",
+  "/details": "pages/detail.html",
+  "/booking": "pages/booking.html",
+  "/my-booking": "pages/my-booking.html",
+  "/setting": "pages/setting.html",
+  "/wishlist": "pages/wishlist.html",
+  "/compare": "pages/compare.html",
 };
 
 const routeInits = {
