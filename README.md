@@ -16,9 +16,9 @@
 2.  [Bedah Fitur Unggulan](#-bedah-fitur-unggulan)
 3.  [Arsitektur Teknis & Engineering](#-arsitektur-teknis--engineering)
 4.  [Design System & UI/UX](#-design-system--uiux)
-5.  [Struktur Direktori](#-struktur-direktori)
-6.  [Panduan Instalasi & Menjalankan](#-panduan-instalasi--menjalankan)
-7.  [Roadmap Pengembangan](#-roadmap-pengembangan)
+5.  [Panduan Penggunaan Menu](#-panduan-penggunaan-dan-dokumentasi-menu)
+6.  [Struktur Direktori](#-struktur-direktori)
+
 
 ---
 
@@ -92,6 +92,30 @@ LuxeNest mengusung gaya visual **Glassmorphism** dan **Tropical Luxury**.
 
 ---
 
+## 🛠 Panduan Penggunaan dan Dokumentasi Menu
+
+Aplikasi ini memiliki alur navigasi yang intuitif dari atas ke bawah:
+
+### 1. Pencarian & Filter (Home, Couple, Family, Promo)
+* **Real-time Search:** Masukkan nama villa pada kolom pencarian; hasil akan muncul secara instan saat Anda mengetik.
+* **Kategori:** Pilih kategori pada sidebar untuk melihat daftar villa yang telah dikurasi oleh tim LuxeNest.
+
+### 2. Detail Villa
+* Klik kartu villa untuk melihat galeri foto resolusi tinggi, kebijakan pembatalan, dan daftar detail kamar. Di sini, Anda juga dapat menekan ikon hati untuk menambahkannya ke **Wishlist**.
+
+### 3. Villa Comparison (Fitur Perbandingan)
+* Masuk ke menu **Compare**.
+* Gunakan tombol "Select Villa" untuk membuka modal daftar villa.
+* Pilih dua villa berbeda, dan tabel akan menyajikan data teknis keduanya untuk membantu Anda mengambil keputusan.
+
+### 4. Booking System
+* Pilih villa, isi data pada form reservasi di halaman **Booking**.
+* Setelah berhasil, reservasi Anda akan tercatat secara otomatis di halaman **My Booking**.
+
+### 5. Settings (Pengaturan Profil)
+* Halaman ini memungkinkan Anda mengubah foto profil (maks. 10MB) dan mengedit data pribadi seperti nama, tanggal lahir, dan kontak. Data ini disimpan secara persisten di browser Anda.
+
+---
 ## 📂 Struktur Direktori
 
 Berikut adalah peta navigasi kode sumber proyek ini. Struktur ini memisahkan logika (JS), gaya (CSS), dan konten tampilan (HTML Pages) untuk kemudahan pengembangan.
