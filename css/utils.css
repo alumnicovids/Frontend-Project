@@ -69,7 +69,7 @@ body {
       rgba(245, 245, 220, 0.255),
       rgba(245, 245, 220, 0.255)
     ),
-    url(/Media/background-photo.jpg);
+    url(../Media/background-photo.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
