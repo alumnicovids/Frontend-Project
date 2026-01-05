@@ -1,16 +1,3 @@
-function getProfileState() {
-  return (
-    JSON.parse(localStorage.getItem("userProfile")) || {
-      name: "Undefined",
-      birth: "",
-      sex: "Undefined",
-      email: "Undefined",
-      phone: "Undefined",
-      profileImage: "Media/photo-profile.jpg",
-    }
-  );
-}
-
 function saveState(state) {
   // Persistensi data profil menggunakan LocalStorage (Name, Email, Phone, Profile Image)
   localStorage.setItem("userProfile", JSON.stringify(state));

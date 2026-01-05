@@ -139,6 +139,19 @@ function showReviewPopup(villaName) {
   };
 }
 
+function getProfileState() {
+  return (
+    JSON.parse(localStorage.getItem("userProfile")) || {
+      name: "Undefined",
+      birth: "",
+      sex: "Undefined",
+      email: "Undefined",
+      phone: "Undefined",
+      profileImage: `${basePath}Media/photo-profile.jpg`,
+    }
+  );
+}
+
 function applyGlobalStyles() {
   const bgPath = `${basePath}Media/background-photo.jpg`;
   document.body.style.backgroundImage = `
