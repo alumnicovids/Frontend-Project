@@ -132,47 +132,6 @@ Aplikasi ini memiliki alur navigasi yang intuitif dari atas ke bawah:
 
 ---
 
-## 📂 Struktur Direktori
-
-Berikut adalah peta navigasi kode sumber proyek ini. Struktur ini memisahkan logika (JS), gaya (CSS), dan konten tampilan (HTML Pages) untuk kemudahan pengembangan.
-
-```text
-LuxeNest/
-├── css/                    # 🎨 Stylesheets
-│   ├── utils.css           #    > Variabel global, reset, animasi
-│   ├── navbar.css          #    > Styling Sidebar & Navigasi
-│   ├── villas-list.css     #    > Grid layout untuk katalog
-│   ├── detail.css          #    > Styling halaman detail
-│   ├── compare.css         #    > Styling tabel perbandingan
-│   ├── booking.css         #    > Styling form booking
-│   └── setting.css         #    > Profile info, photo upload, & form styling
-├── js/                     # 🧠 Logika Aplikasi (Core Logic)
-│   ├── utils.js            #    > Helper functions (Format IDR, Toast, Modals)
-│   ├── villa-list.js       #    > Render logika katalog (Home/Couple/Family)
-│   ├── compare.js          #    > Logika perbandingan villa
-│   ├── booking.js          #    > Logika form booking
-│   └── setting.js          #    > Logika pengaturan profil
-├── JSON
-│    ├── villas.json        # 💾 Database JSON (Sumber data villa)
-├── Media
-│    ├── FolderFoto_Project # 🖼️ Berisikan Media foto Lokal dari seluruh Villa
-├── pages/                  # 📄 Halaman Parsial (SPA Views/Fragments)
-│   ├── home.html           #    > Landing page utama
-│   ├── detail.html         #    > Template detail spesifik villa
-│   ├── couple.html         #    > Kategori: Couple Villas
-│   ├── family.html         #    > Kategori: Family Villas
-│   ├── promo.html          #    > Kategori: Promo Special
-│   ├── compare.html        #    > Fitur perbandingan villa
-│   ├── booking.html        #    > Formulir pemesanan
-│   ├── my-booking.html     #    > Halaman riwayat pemesanan user
-│   ├── wishlist.html       #    > Halaman villa favorit
-│   └── setting.html        #    > Pengaturan & edit profil pengguna
-├── routers/
-│   └── routers.js          # 🧭 Router System (Mengambil file dari folder /pages)
-└── index.html              # 🚪 Pintu masuk utama (Main Entry Point / Shell)
-
----
-
 ## 🛠 Instalasi Web
 
 ### 1. Akses Langsung (GitHub Pages)
@@ -211,3 +170,44 @@ Untuk menjalankan project ini secara lokal, Anda memerlukan **Local Server** aga
         ```bash
         npx serve .
         ```
+
+---
+
+## 📂 Struktur Direktori
+
+Berikut adalah peta navigasi kode sumber proyek ini. Struktur ini memisahkan logika (JS), gaya (CSS), dan konten tampilan (HTML Pages) untuk kemudahan pengembangan.
+
+```text
+LuxeNest/
+├── css/                    # 🎨 Stylesheets
+│   ├── utils.css           #    > Variabel global, reset, animasi
+│   ├── navbar.css          #    > Styling Sidebar & Navigasi
+│   ├── villas-list.css     #    > Grid layout untuk katalog
+│   ├── detail.css          #    > Styling halaman detail
+│   ├── compare.css         #    > Styling tabel perbandingan
+│   ├── booking.css         #    > Styling form booking
+│   └── setting.css         #    > Profile info, photo upload, & form styling
+├── js/                     # 🧠 Logika Aplikasi (Core Logic)
+│   ├── utils.js            #    > Helper functions (Format IDR, Toast, Modals)
+│   ├── villa-list.js       #    > Render logika katalog (Home/Couple/Family)
+│   ├── compare.js          #    > Logika perbandingan villa
+│   ├── booking.js          #    > Logika form booking
+│   └── setting.js          #    > Logika pengaturan profil
+├── JSON
+│    ├── villas.json        # 💾 Database JSON (Sumber data villa)
+├── Media
+│    ├── FolderFoto_Project # 🖼️ Berisikan Media foto Lokal dari seluruh Villa
+├── pages/                  # 📄 Halaman Parsial (SPA Views/Fragments)
+│   ├── home.html           #    > Landing page utama
+│   ├── detail.html         #    > Template detail spesifik villa
+│   ├── couple.html         #    > Kategori: Couple Villas
+│   ├── family.html         #    > Kategori: Family Villas
+│   ├── promo.html          #    > Kategori: Promo Special
+│   ├── compare.html        #    > Fitur perbandingan villa
+│   ├── booking.html        #    > Formulir pemesanan
+│   ├── my-booking.html     #    > Halaman riwayat pemesanan user
+│   ├── wishlist.html       #    > Halaman villa favorit
+│   └── setting.html        #    > Pengaturan & edit profil pengguna
+├── routers/
+│   └── routers.js          # 🧭 Router System (Mengambil file dari folder /pages)
+└── index.html              # 🚪 Pintu masuk utama (Main Entry Point / Shell)
