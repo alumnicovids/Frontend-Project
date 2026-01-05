@@ -362,7 +362,7 @@ function selectPay(btn) {
 // Menampilkan UI jika tidak ada aktivitas pemesanan yang sedang berjalan
 function renderEmpty() {
   document.getElementById("booking-content").innerHTML = `
-    <div class="empty-state">
+    <div class="empty-state booking-cont">
       <div class="empty-icon">🛏️</div>
       <p>No villas booked yet</p>
       <a href="#/" class="primary-btn empty" style="text-decoration:none">Search for villas now</a>
