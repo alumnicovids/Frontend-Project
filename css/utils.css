@@ -65,9 +65,6 @@ button,
 body {
   min-height: 100vh;
   min-height: 100dvh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   color: var(--text-clr);
   display: grid;

@@ -139,4 +139,15 @@ function showReviewPopup(villaName) {
   };
 }
 
-document.body.style.backgroundImage = `linear-gradient(rgba(245, 245, 220, 0.255), rgba(245, 245, 220, 0.255)), url('${bgPath}')`;
+function applyGlobalStyles() {
+  const bgPath = `${basePath}Media/background-photo.jpg`;
+  document.body.style.backgroundImage = `
+        linear-gradient(rgba(245, 245, 220, 0.255), rgba(245, 245, 220, 0.255)),
+        url('${bgPath}')
+    `;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundAttachment = "fixed";
+}
+
+document.addEventListener("DOMContentLoaded", applyGlobalStyles);
