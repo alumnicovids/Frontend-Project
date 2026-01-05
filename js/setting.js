@@ -6,7 +6,7 @@ function getProfileState() {
       sex: "Undefined",
       email: "Undefined",
       phone: "Undefined",
-      profileImage: "/Media/photo-profile.jpg",
+      profileImage: "Media/photo-profile.jpg",
     }
   );
 }
