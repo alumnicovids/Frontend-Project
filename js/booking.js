@@ -33,7 +33,7 @@ function renderBookingForm(villa) {
     <div class="booking-card">
       <div class="card-header">
         <h3>
-          <a href="/" class="villa-title detail">
+          <a href="#/" class="villa-title detail">
             <i class="material-symbols-outlined">keyboard_double_arrow_left</i>
             ${villa.name}
           <a></h3>

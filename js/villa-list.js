@@ -110,7 +110,7 @@ async function renderVillaDetail() {
     <div class="header-section">
       <div class="header-row">
         <h2>
-          <a href="/" class="villa-title detail">
+          <a href="#/" class="villa-title detail">
             <i class="material-symbols-outlined">keyboard_double_arrow_left</i>
             ${villa.name}
           <a>
