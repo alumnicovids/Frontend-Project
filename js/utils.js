@@ -1,3 +1,6 @@
+const isGithub = window.location.hostname.includes("github.io");
+const basePath = isGithub ? "/Frontend-Project/" : "/";
+
 const toggleButton = document.getElementById("toggle-btn");
 const sidebar = document.getElementById("sidebar");
 let villaCache = null; // Cache global agar tidak fetch JSON berulang kali
@@ -36,7 +39,7 @@ async function getVillas() {
   if (villaCache) return villaCache;
   try {
     // Mengambil data sumber dari file JSON lokal
-    const res = await fetch("JSON/villas.json");
+    const res = await fetch(`${basePath}JSON/villas.json`);
     if (!res.ok) throw new Error("Failed to fetch");
     villaCache = await res.json();
     return villaCache;
