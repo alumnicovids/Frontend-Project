@@ -12,13 +12,25 @@
 
 ## 📖 Table of Contents (Daftar Isi)
 
-1.  [Latar Belakang & Filosofi Proyek](#-latar-belakang--filosofi-proyek)
-2.  [Bedah Fitur Unggulan](#-bedah-fitur-unggulan)
-3.  [Arsitektur Teknis & Engineering](#-arsitektur-teknis--engineering)
-4.  [Design System & UI/UX](#-design-system--uiux)
-5.  [Panduan Penggunaan Menu](#-panduan-penggunaan-dan-dokumentasi-menu)
-6.  [Struktur Direktori](#-struktur-direktori)
+1.  [Daftar Anggota Tim](#-Daftar-Anggota-Tim)
+2.  [Latar Belakang & Filosofi Proyek](#-latar-belakang--filosofi-proyek)
+3.  [Bedah Fitur Unggulan](#-bedah-fitur-unggulan)
+4.  [Arsitektur Teknis & Engineering](#-arsitektur-teknis--engineering)
+5.  [Design System & UI/UX](#-design-system--uiux)
+6.  [Panduan Penggunaan Menu](#-panduan-penggunaan-dan-dokumentasi-menu)
+7.  [Struktur Direktori](#-struktur-direktori)
+8.  [Panduan Instalasi](#-Instalasi-Web)
 
+---
+
+## 👥 Daftar Anggota Tim
+
+Berikut adalah kontributor di balik pengembangan LuxeNest:
+
+1. **I Gusti Ngurah Agung Pradnaya Asmara Kusuma (240040043)**
+   * **Peran:** Lead Developer - Bertanggung jawab atas seluruh Logika Website (*Back-end logic simulation*, Routing SPA, State Management, dan Integrasi JSON).
+2. **Putu Raditya Dharma Putra (240040015)**
+   * **Peran:** UI/UX Designer & Stylist - Bertanggung jawab atas estetika visual, *Styling* CSS, implementasi *Glassmorphism*, dan responsivitas antarmuka.
 
 ---
 
@@ -116,6 +128,7 @@ Aplikasi ini memiliki alur navigasi yang intuitif dari atas ke bawah:
 * Halaman ini memungkinkan Anda mengubah foto profil (maks. 10MB) dan mengedit data pribadi seperti nama, tanggal lahir, dan kontak. Data ini disimpan secara persisten di browser Anda.
 
 ---
+
 ## 📂 Struktur Direktori
 
 Berikut adalah peta navigasi kode sumber proyek ini. Struktur ini memisahkan logika (JS), gaya (CSS), dan konten tampilan (HTML Pages) untuk kemudahan pengembangan.
