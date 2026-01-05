@@ -18,8 +18,8 @@
 4.  [Arsitektur Teknis & Engineering](#-arsitektur-teknis--engineering)
 5.  [Design System & UI/UX](#-design-system--uiux)
 6.  [Panduan Penggunaan Menu](#-panduan-penggunaan-dan-dokumentasi-menu)
-7.  [Struktur Direktori](#-struktur-direktori)
-8.  [Panduan Instalasi](#-Instalasi-Web)
+7.  [Panduan Instalasi](#-Instalasi-Web)
+8.  [Struktur Direktori](#-struktur-direktori)
 
 ---
 
