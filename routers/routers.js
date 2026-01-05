@@ -65,6 +65,16 @@ async function redirect() {
   }
 }
 
+async function handleLocation() {
+  const path = window.location.pathname.replace("/Frontend-Project", "") || "/";
+  const route = routes[path] || routes["/"];
+
+  // Gunakan path relatif tanpa / di depan
+  const response = await fetch(route);
+  const html = await response.text();
+  document.getElementById("main-content").innerHTML = html;
+}
+
 function updateActiveNavLink(hash) {
   const currentPath = hash.split("?")[0];
 
