@@ -25,6 +25,7 @@
   background: var(--primary-gradient);
   border: none;
   border-radius: 50px;
+  animation: ghostRipple 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .myBooking {

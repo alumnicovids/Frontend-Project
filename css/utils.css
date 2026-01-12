@@ -408,6 +408,17 @@ body {
   }
 }
 
+@keyframes ghostRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(223, 211, 195, 0.7),
+      0 0 0 0 rgba(223, 211, 195, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(223, 211, 195, 0),
+      0 0 0 20px rgba(223, 211, 195, 0);
+  }
+}
+
 @media (max-width: 768px) {
   body {
     grid-template-columns: 1fr;
