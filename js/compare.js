@@ -85,10 +85,12 @@ function renderHeaderSlot(villa, index) {
   if (!villa) {
     // Tampilan jika slot belum dipilih (tombol tambah)
     return `
-    <td class="empty-state">
-      <div class="villa-head" onclick="openVillaModal(${index})">
-        <span>+</span>
-        <p>Search Villa</p>
+    <td class="compare-empty-slot">
+      <div class="add-villa-placeholder" onclick="openVillaModal(${index})">
+        <div class="plus-icon">
+          <i class="material-symbols-outlined">add</i>
+        </div>
+        <p>Add Villa</p>
       </div>
     </td>`;
   }

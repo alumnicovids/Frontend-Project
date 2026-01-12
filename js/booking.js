@@ -37,7 +37,7 @@ function renderBookingForm(villa) {
             <i class="material-symbols-outlined">keyboard_double_arrow_left</i>
             ${villa.name}
           <a></h3>
-        <p class="text-muted">Complete your reservation details below.</p>
+        <p>Complete your reservation details below.</p>
       </div>
 
       <div class="form-group">
@@ -78,18 +78,17 @@ function renderBookingForm(villa) {
       <div class="form-group">
         <label>Additional Services</label>
         <div class="service-list">
-          <div class="service-item">
-            <label><input type="checkbox" class="addon" data-price="150000" onchange="calculateTotal()"> Breakfast</label>
-            <span class="service-price">IDR 150.000</span>
-          </div>
-          <div class="service-item">
-            <label><input type="checkbox" class="addon" data-price="250000" onchange="calculateTotal()"> Airport Pick Up</label>
-            <span class="service-price">IDR 250.000</span>
-          </div>
-          <div class="service-item">
-            <label><input type="checkbox" class="addon" data-price="100000" onchange="calculateTotal()"> Extra Bed</label>
-            <span class="service-price">IDR 100.000</span>
-          </div>
+          ${villa.detail.extraServices
+            .map(
+              (service) => `
+            <div class="service-item">
+              <label><input type="checkbox" class="addon" data-price="${
+                service.price
+              }" onchange="calculateTotal()"> ${service.type}</label>
+              <span class="service-price">${formatIDR(service.price)}</span>
+            </div>`
+            )
+            .join("")}
         </div>
       </div>
 
@@ -364,8 +363,8 @@ function renderEmpty() {
   document.getElementById("booking-content").innerHTML = `
     <div class="empty-state booking-cont">
       <div class="empty-icon">🛏️</div>
-      <p>No villas booked yet</p>
-      <a href="#/" class="primary-btn empty" style="text-decoration:none">Search for villas now</a>
+      <p style="margin-bottom: 20px;">No villas booked yet</p>
+      <a href="#/" class="primary-btn empty" style="text-decoration:none; display:flex; align-items:center; justify-content:center;">Search for villas now</a>
     </div>
   `;
 }

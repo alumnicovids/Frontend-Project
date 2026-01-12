@@ -317,7 +317,22 @@ async function renderVillas(filterType = null, searchQuery = "") {
 
   container.innerHTML = filtered.length
     ? filtered.map((v) => createVillaCard(v, wishlist)).join("")
-    : "<div class='empty-state search'><p>Villa not found.</p></div>";
+    : `
+    <div class="no-results">
+      <div class="icon-box">
+        <i class="material-symbols-outlined">search_off</i>
+      </div>
+      <h3>No villas found</h3>
+      <p>We couldn't find any matches for "${searchQuery}".<br>Try different keywords or check spelling.</p>
+      <button class="primary-btn book" onclick="initSearch(); document.getElementById('search-input').value=''; renderVillas();" style="margin-top:15px; width:auto;">Clear Search</button>
+    </div>
+    `;
+
+  if (filtered.length === 0) {
+    container.style.display = "block";
+  } else {
+    container.style.display = "grid";
+  }
 }
 
 function initSearch() {

@@ -136,16 +136,68 @@
   object-fit: cover;
 }
 
-.empty {
+.compare-empty-slot {
+  vertical-align: top;
+  padding: 25px 15px;
+  height: 300px;
+}
+
+.add-villa-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
   border: 2px dashed var(--line-clr);
-  border-radius: 10px;
-  height: 250px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  color: var(--cappuccino-light);
+  gap: 15px;
+}
+
+.add-villa-placeholder:hover {
+  border-color: var(--accent-clr);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(210, 180, 140, 0.1);
+  transform: translateY(-5px);
+}
+
+.add-villa-placeholder p {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
   color: var(--creamy-foam);
-  background: rgba(255, 255, 255, 0.2);
+}
+
+.plus-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--glass-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-clr);
+  transition: transform 0.3s ease;
+}
+
+.plus-icon i {
+  font-size: 2rem;
+  color: var(--accent-clr);
+}
+
+.add-villa-placeholder:hover .plus-icon {
+  transform: scale(1.1) rotate(90deg);
+  background: var(--accent-clr);
+  border-color: var(--accent-clr);
+}
+
+.add-villa-placeholder:hover .plus-icon i {
+  color: white;
 }
 
 .section-divider td {

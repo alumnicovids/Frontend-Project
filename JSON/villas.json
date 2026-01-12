@@ -57,10 +57,10 @@
       ],
       "cancellationPolicy": "Free cancellation up to 48 hours before arrival date.",
       "extraServices": [
-        "Floating Breakfast",
-        "Airport Transfer",
-        "Massage & Spa in Villa",
-        "Car & Bicycle Rental"
+        { "type": "Floating Breakfast", "price": 250000 },
+        { "type": "Airport Transfer", "price": 300000 },
+        { "type": "Massage & Spa in Villa", "price": 350000 },
+        { "type": "Car & Bicycle Rental", "price": 150000 }
       ],
       "facilities": [
         "Free WiFi",
@@ -78,6 +78,7 @@
       { "type": "Suite Room", "price": 3500000 }
     ]
   },
+
   {
     "name": "Sake Bali Suites",
     "tag": "Couple Villa",
@@ -134,10 +135,10 @@
         "Free Private Parking"
       ],
       "extraServices": [
-        "Airport Shuttle (Surcharge)",
-        "Laundry Service",
-        "Massage & Wellness Treatment",
-        "Traditional Village Tour Arrangement"
+        { "type": "Airport Shuttle (Surcharge)", "price": 300000 },
+        { "type": "Laundry Service", "price": 50000 },
+        { "type": "Massage & Wellness Treatment", "price": 350000 },
+        { "type": "Traditional Village Tour Arrangement", "price": 500000 }
       ],
       "cancellationPolicy": "Cancellation can be made according to the terms and conditions applicable at the time of booking."
     },
@@ -156,6 +157,7 @@
       }
     ]
   },
+
   {
     "name": "Da Vinci The Villa",
     "tag": "Family Villa",
@@ -217,11 +219,11 @@
         "Private Garage"
       ],
       "extraServices": [
-        "Private Chef Service",
-        "Daily Housekeeping",
-        "Airport Transfer (Surcharge)",
-        "In-villa Massage",
-        "Car Rental with Driver"
+        { "type": "Private Chef Service", "price": 1500000 },
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "Airport Transfer (Surcharge)", "price": 300000 },
+        { "type": "In-villa Massage", "price": 350000 },
+        { "type": "Car Rental with Driver", "price": 600000 }
       ],
       "cancellationPolicy": "Cancellation can be made according to the terms and conditions applicable at the time of booking."
     },
@@ -236,6 +238,7 @@
       }
     ]
   },
+
   {
     "name": "Enchanting Canggu Villa",
     "tag": "Family Villa",
@@ -326,10 +329,10 @@
         "Safety Deposit Box"
       ],
       "extraServices": [
-        "Airport Shuttle (Surcharge)",
-        "Bicycle & Car Rental",
-        "Daily Housekeeping",
-        "Grocery Deliveries"
+        { "type": "Airport Shuttle (Surcharge)", "price": 300000 },
+        { "type": "Bicycle & Car Rental", "price": 250000 },
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "Grocery Deliveries", "price": 50000 }
       ],
       "cancellationPolicy": "Cancellation can be made according to the terms and conditions applicable at the time of booking."
     },
@@ -344,6 +347,7 @@
       }
     ]
   },
+
   {
     "name": "Hidden 5BR Gem Luxe Pool",
     "tag": "Family Villa",
@@ -419,11 +423,11 @@
         "Free Private Parking"
       ],
       "extraServices": [
-        "Daily Housekeeping",
-        "In-villa Private Chef",
-        "Airport Transfer (Surcharge)",
-        "Scooter & Car Rental",
-        "Laundry Service"
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "In-villa Private Chef", "price": 1500000 },
+        { "type": "Airport Transfer (Surcharge)", "price": 300000 },
+        { "type": "Scooter & Car Rental", "price": 150000 },
+        { "type": "Laundry Service", "price": 50000 }
       ],
       "cancellationPolicy": "Cancellations made at least 14 days prior to arrival are eligible for a full refund.."
     },
@@ -438,6 +442,7 @@
       }
     ]
   },
+
   {
     "name": "Sojourn",
     "tag": "Couple Villa",
@@ -497,11 +502,11 @@
         "Free Private Parking"
       ],
       "extraServices": [
-        "Floating Breakfast",
-        "Daily Housekeeping",
-        "Airport Shuttle (Surcharge)",
-        "In-villa Spa & Massage",
-        "Car Rental with Driver"
+        { "type": "Floating Breakfast", "price": 250000 },
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "Airport Shuttle (Surcharge)", "price": 300000 },
+        { "type": "In-villa Spa & Massage", "price": 350000 },
+        { "type": "Car Rental with Driver", "price": 600000 }
       ],
       "cancellationPolicy": "Cancellations made at least 7 days prior to the check-in date are eligible for a full refund."
     },
@@ -516,6 +521,7 @@
       }
     ]
   },
+
   {
     "name": "Villa Kiki Modern Tropical",
     "tag": "Couple Villa",
@@ -603,10 +609,10 @@
         "Sun Terrace & Lounge"
       ],
       "extraServices": [
-        "Daily Housekeeping",
-        "Airport Transfer (Surcharge)",
-        "Laundry Service",
-        "In-villa Massage"
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "Airport Transfer (Surcharge)", "price": 300000 },
+        { "type": "Laundry Service", "price": 50000 },
+        { "type": "In-villa Massage", "price": 350000 }
       ],
       "cancellationPolicy": "Cancellation terms may vary depending on the platform and time of booking."
     },
@@ -621,6 +627,7 @@
       }
     ]
   },
+
   {
     "name": "Predmed Kabaka Resort",
     "tag": "Family Villa",
@@ -680,11 +687,11 @@
         "Free Parking Area"
       ],
       "extraServices": [
-        "Airport Pickup (Surcharge)",
-        "Floating Breakfast",
-        "Bike Rental",
-        "Tour Desk",
-        "In-room Massage"
+        { "type": "Airport Pickup (Surcharge)", "price": 300000 },
+        { "type": "Floating Breakfast", "price": 250000 },
+        { "type": "Bike Rental", "price": 100000 },
+        { "type": "Tour Desk", "price": 500000 },
+        { "type": "In-room Massage", "price": 350000 }
       ],
       "cancellationPolicy": "Cancellation terms may vary depending on the platform and time of booking."
     },
@@ -699,6 +706,7 @@
       }
     ]
   },
+
   {
     "name": "Villa 10 Viber Canggu",
     "tag": "Couple Villa",
@@ -769,11 +777,11 @@
         "Sunbed & Outdoor Lounge Area"
       ],
       "extraServices": [
-        "Daily Housekeeping",
-        "Airport Transfer (Surcharge)",
-        "Scooter Rental",
-        "In-villa Massage",
-        "Floating Breakfast Arrangement"
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "Airport Transfer (Surcharge)", "price": 300000 },
+        { "type": "Scooter Rental", "price": 100000 },
+        { "type": "In-villa Massage", "price": 350000 },
+        { "type": "Floating Breakfast Arrangement", "price": 250000 }
       ],
       "cancellationPolicy": "Cancellations made at least 3 days prior to arrival are eligible for a full refund."
     },
@@ -788,6 +796,7 @@
       }
     ]
   },
+
   {
     "name": "Villa Fleur",
     "tag": "Couple Villa",
@@ -872,11 +881,11 @@
         "Security Box"
       ],
       "extraServices": [
-        "In-villa Private Chef",
-        "Daily Housekeeping",
-        "Airport Shuttle (Surcharge)",
-        "Massage & Spa Treatment",
-        "Laundry Service"
+        { "type": "In-villa Private Chef", "price": 1500000 },
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "Airport Shuttle (Surcharge)", "price": 300000 },
+        { "type": "Massage & Spa Treatment", "price": 350000 },
+        { "type": "Laundry Service", "price": 50000 }
       ],
       "cancellationPolicy": "Cancellations made at least 3 days prior to arrival are eligible for a full refund."
     },
@@ -895,6 +904,7 @@
       }
     ]
   },
+
   {
     "name": "Riyuri Guesthouse",
     "tag": "Family Villa",
@@ -961,10 +971,10 @@
         "Terrace/Balcony"
       ],
       "extraServices": [
-        "Scooter Rental",
-        "Laundry Service",
-        "Airport Transfer (Surcharge)",
-        "Tour Arrangement"
+        { "type": "Scooter Rental", "price": 100000 },
+        { "type": "Laundry Service", "price": 50000 },
+        { "type": "Airport Transfer (Surcharge)", "price": 300000 },
+        { "type": "Tour Arrangement", "price": 500000 }
       ],
       "cancellationPolicy": "Cancellations made at least 3 days prior to arrival are eligible for a full refund."
     },
@@ -983,6 +993,7 @@
       }
     ]
   },
+
   {
     "name": "Villa Auri Pererenan",
     "tag": "Family Villa",
@@ -1044,10 +1055,10 @@
         "Private Parking"
       ],
       "extraServices": [
-        "Airport Transfer (Surcharge)",
-        "Scooter Rental",
-        "Daily Housekeeping",
-        "Laundry Service"
+        { "type": "Airport Transfer (Surcharge)", "price": 300000 },
+        { "type": "Scooter Rental", "price": 100000 },
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "Laundry Service", "price": 50000 }
       ],
       "cancellationPolicy": "Cancellations made at least 3 days prior to arrival are eligible for a full refund."
     },
@@ -1062,6 +1073,7 @@
       }
     ]
   },
+
   {
     "name": "Villa Salamanca",
     "tag": "Family Villa",
@@ -1123,11 +1135,11 @@
         "Daily Housekeeping"
       ],
       "extraServices": [
-        "Airport Transfer (Surcharge)",
-        "Private Chef Service",
-        "Scooter & Car Rental",
-        "In-villa Massage",
-        "Laundry Service"
+        { "type": "Airport Transfer (Surcharge)", "price": 300000 },
+        { "type": "Private Chef Service", "price": 1500000 },
+        { "type": "Scooter & Car Rental", "price": 250000 },
+        { "type": "In-villa Massage", "price": 350000 },
+        { "type": "Laundry Service", "price": 50000 }
       ],
       "cancellationPolicy": "Cancellations made at least 3 days prior to arrival are eligible for a full refund."
     },
@@ -1142,6 +1154,7 @@
       }
     ]
   },
+
   {
     "name": "Villa Rosado",
     "tag": "Couple Villa",
@@ -1210,11 +1223,11 @@
         "Flat-screen TV with Cable"
       ],
       "extraServices": [
-        "Daily Housekeeping",
-        "Airport Pickup Arrangement",
-        "In-villa Spa & Massage",
-        "Car/Scooter Rental",
-        "Laundry & Dry Cleaning"
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "Airport Pickup Arrangement", "price": 300000 },
+        { "type": "In-villa Spa & Massage", "price": 350000 },
+        { "type": "Car/Scooter Rental", "price": 250000 },
+        { "type": "Laundry & Dry Cleaning", "price": 75000 }
       ],
       "cancellationPolicy": "Cancellations made at least 3 days prior to arrival are eligible for a full refund."
     },
@@ -1233,6 +1246,7 @@
       }
     ]
   },
+
   {
     "name": "Villa Sista",
     "tag": "Couple Villa",
@@ -1310,11 +1324,11 @@
         "Private Garage"
       ],
       "extraServices": [
-        "Daily Housekeeping",
-        "In-villa Private Chef",
-        "Airport Transfer",
-        "Laundry Service",
-        "Car Rental with Driver"
+        { "type": "Daily Housekeeping", "price": 150000 },
+        { "type": "In-villa Private Chef", "price": 1500000 },
+        { "type": "Airport Transfer", "price": 300000 },
+        { "type": "Laundry Service", "price": 50000 },
+        { "type": "Car Rental with Driver", "price": 600000 }
       ],
       "cancellationPolicy": "Cancellations made at least 3 days prior to arrival are eligible for a full refund."
     },
@@ -1329,6 +1343,7 @@
       }
     ]
   },
+
   {
     "name": "Tiara Villa Ubud",
     "tag": "Couple Villa",
@@ -1382,12 +1397,12 @@
         "Floating Breakfast"
       ],
       "extraServices": [
-        "Airport Shuttle",
-        "Massage and Spa Treatment",
-        "Tour and Excursion Services",
-        "Laundry and Dry Cleaning",
-        "Scooter and Car Rental",
-        "Romantic Flower Decoration"
+        { "type": "Airport Shuttle", "price": 300000 },
+        { "type": "Massage and Spa Treatment", "price": 350000 },
+        { "type": "Tour and Excursion Services", "price": 500000 },
+        { "type": "Laundry and Dry Cleaning", "price": 75000 },
+        { "type": "Scooter and Car Rental", "price": 250000 },
+        { "type": "Romantic Flower Decoration", "price": 500000 }
       ],
       "cancellationPolicy": "Cancellations made at least 3 days prior to arrival are eligible for a full refund."
     },
@@ -1402,6 +1417,7 @@
       }
     ]
   },
+
   {
     "name": "KAPI Sebatu Villa",
     "tag": "Family Villa",
@@ -1459,16 +1475,16 @@
         "Free Parking"
       ],
       "extraServices": [
-        "Airport Shuttle Service",
-        "Floating Breakfast",
-        "Romantic Candlelight Dinner",
-        "In-villa Spa & Massage",
-        "Flower Decoration Setup",
-        "Car or Scooter Rental",
-        "Day Tour & Trekking Arrangements",
-        "Laundry Service",
-        "Afternoon Tea",
-        "Cooking Class"
+        { "type": "Airport Shuttle Service", "price": 300000 },
+        { "type": "Floating Breakfast", "price": 250000 },
+        { "type": "Romantic Candlelight Dinner", "price": 1500000 },
+        { "type": "In-villa Spa & Massage", "price": 350000 },
+        { "type": "Flower Decoration Setup", "price": 500000 },
+        { "type": "Car or Scooter Rental", "price": 250000 },
+        { "type": "Day Tour & Trekking Arrangements", "price": 600000 },
+        { "type": "Laundry Service", "price": 50000 },
+        { "type": "Afternoon Tea", "price": 150000 },
+        { "type": "Cooking Class", "price": 450000 }
       ],
       "cancellationPolicy": "The cancellation policy at KAPI Sebatu Villa is non-refundable or follows the specific terms of the booking platform used, including full charges for late cancellations within 48 hours or no-shows without prior notice."
     },
@@ -1483,6 +1499,7 @@
       }
     ]
   },
+
   {
     "name": "Villa Dolce Farniente",
     "tag": "Family Villa",
@@ -1537,16 +1554,16 @@
         "Smart TV with International Channels"
       ],
       "extraServices": [
-        "Airport Shuttle Service",
-        "Floating Breakfast",
-        "Romantic Candlelight Dinner",
-        "In-villa Spa & Massage",
-        "Flower Decoration Setup",
-        "Car or Scooter Rental",
-        "Day Tour & Trekking Arrangements",
-        "Laundry Service",
-        "Afternoon Tea",
-        "Cooking Class"
+        { "type": "Airport Shuttle Service", "price": 300000 },
+        { "type": "Floating Breakfast", "price": 250000 },
+        { "type": "Romantic Candlelight Dinner", "price": 1500000 },
+        { "type": "In-villa Spa & Massage", "price": 350000 },
+        { "type": "Flower Decoration Setup", "price": 500000 },
+        { "type": "Car or Scooter Rental", "price": 250000 },
+        { "type": "Day Tour & Trekking Arrangements", "price": 600000 },
+        { "type": "Laundry Service", "price": 50000 },
+        { "type": "Afternoon Tea", "price": 150000 },
+        { "type": "Cooking Class", "price": 450000 }
       ],
       "cancellationPolicy": "The cancellation policy at Villa Dolce Farniente is non-refundable (cannot be refunded) or follows the specific terms of the booking platform used, including full charges for late cancellations within 48 hours or no-shows without prior notice."
     },
@@ -1561,6 +1578,7 @@
       }
     ]
   },
+
   {
     "name": "Eco Six Bali",
     "tag": "Couple Villa",
@@ -1623,16 +1641,16 @@
         "Digital Concierge Service"
       ],
       "extraServices": [
-        "Floating Breakfast",
-        "Flower Bath Decoration",
-        "Romantic Candlelight Dinner",
-        "In-Villa Massage & Spa",
-        "Airport Transfer Service",
-        "Scooter & Car Rental",
-        "Guided Day Tours",
-        "Afternoon Tea Service",
-        "Laundry Service",
-        "Birthday or Anniversary Decor"
+        { "type": "Floating Breakfast", "price": 250000 },
+        { "type": "Flower Bath Decoration", "price": 400000 },
+        { "type": "Romantic Candlelight Dinner", "price": 1500000 },
+        { "type": "In-Villa Massage & Spa", "price": 350000 },
+        { "type": "Airport Transfer Service", "price": 300000 },
+        { "type": "Scooter & Car Rental", "price": 250000 },
+        { "type": "Guided Day Tours", "price": 600000 },
+        { "type": "Afternoon Tea Service", "price": 150000 },
+        { "type": "Laundry Service", "price": 50000 },
+        { "type": "Birthday or Anniversary Decor", "price": 500000 }
       ],
       "cancellationPolicy": "The cancellation policy at Eco Six Bali is generally non-refundable (cannot be refunded), especially for bookings made through the official website or promotional prices. However, on certain platforms, free cancellation or schedule changes are sometimes possible if requested 14 to 30 days before the check-in date. Guests are strongly advised to review booking details or contact staff via WhatsApp for specific policies regarding itinerary changes."
     },
@@ -1647,6 +1665,7 @@
       }
     ]
   },
+
   {
     "name": "Royal Kemala Villa",
     "tag": "Couple Villa",
@@ -1710,14 +1729,14 @@
         "En-suite Bathroom with Bathtub"
       ],
       "extraServices": [
-        "Breakfast in Villa",
-        "Airport Transfer Service",
-        "Car and Motorbike Rental",
-        "In-Villa Massage and Spa",
-        "Tour Arrangement and Local Guide",
-        "Floating Breakfast",
-        "Laundry Service",
-        "Candlelight Dinner Arrangement"
+        { "type": "Breakfast in Villa", "price": 150000 },
+        { "type": "Airport Transfer Service", "price": 300000 },
+        { "type": "Car and Motorbike Rental", "price": 250000 },
+        { "type": "In-Villa Massage and Spa", "price": 350000 },
+        { "type": "Tour Arrangement and Local Guide", "price": 600000 },
+        { "type": "Floating Breakfast", "price": 250000 },
+        { "type": "Laundry Service", "price": 50000 },
+        { "type": "Candlelight Dinner Arrangement", "price": 1500000 }
       ],
       "cancellationPolicy": "The cancellation policy at Royal Kemala Villa is highly dependent on the booking platform and the length of stay, where free cancellation is available if done 14 to 30 days before arrival. However, for promotional bookings or during peak season (high season), a Non-Refundable policy (no refund) often applies. If cancellation is made beyond the specified time limit, guests will be charged a fee equal to one night's stay up to the total booking cost. Changes in check-in dates also depend on availability, and for emergency situations (force majeure), refunds typically require supporting documents for consideration by management."
     },

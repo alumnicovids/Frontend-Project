@@ -5,7 +5,14 @@
   backdrop-filter: blur(8px);
   border-radius: 20px;
   border: 2px dashed var(--line-clr);
-  max-width: 50%;
+
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .empty-state p {
