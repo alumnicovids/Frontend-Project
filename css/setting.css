@@ -4,7 +4,7 @@
   align-items: flex-start;
   padding: 40px;
   font-size: 1rem;
-  color: var(--cappuccino-dark);
+  color: var(--cappuccino-light);
   font-weight: bolder;
 }
 
@@ -51,7 +51,7 @@
 .info-group h3 {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  color: var(--text-clr);
+  color: var(--creamy-foam);
 }
 
 .info-row {
@@ -67,7 +67,7 @@
 
 .info-row .label {
   width: 150px;
-  color: var(--cappuccino-dark);
+  color: var(--cappuccino-light);
 }
 
 .info-row .value {

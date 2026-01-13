@@ -1,8 +1,8 @@
 const isGithub = window.location.hostname.includes("github.io");
 const basePath = isGithub ? "/Frontend-Project/" : "/";
-const bgPath = isGithub
-  ? "/Frontend-Project/Media/background-photo.jpg"
-  : "/Media/background-photo.jpg";
+// const bgPath = isGithub
+//   ? "/Frontend-Project/Media/background-photo.jpg"
+//   : "/Media/background-photo.jpg";
 
 const toggleButton = document.getElementById("toggle-btn");
 const sidebar = document.getElementById("sidebar");
@@ -152,15 +152,15 @@ function getProfileState() {
   );
 }
 
-function applyGlobalStyles() {
-  const bgPath = `${basePath}Media/background-photo.jpg`;
-  document.body.style.backgroundImage = `
-        linear-gradient(rgba(245, 245, 220, 0.255), rgba(245, 245, 220, 0.255)),
-        url('${bgPath}')
-    `;
-  document.body.style.backgroundSize = "cover";
-  document.body.style.backgroundPosition = "center";
-  document.body.style.backgroundAttachment = "fixed";
-}
+// function applyGlobalStyles() {
+//   const bgPath = `${basePath}Media/background-photo.jpg`;
+//   document.body.style.backgroundImage = `
+//         linear-gradient(rgba(245, 245, 220, 0.255), rgba(245, 245, 220, 0.255)),
+//         url('${bgPath}')
+//     `;
+//   document.body.style.backgroundSize = "cover";
+//   document.body.style.backgroundPosition = "center";
+//   document.body.style.backgroundAttachment = "fixed";
+// }
 
 document.addEventListener("DOMContentLoaded", applyGlobalStyles);

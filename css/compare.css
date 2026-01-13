@@ -201,7 +201,7 @@
 }
 
 .section-divider td {
-  background: var(--accent-clr);
+  background: var(--macha-dark);
   color: var(--creamy-foam);
   font-weight: 700;
   text-transform: uppercase;

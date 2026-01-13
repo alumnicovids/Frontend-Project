@@ -2,14 +2,14 @@
   padding: 40px 20px;
   max-width: 1250px;
   margin: 15px auto;
-  color: var(--espresso);
+  color: var(--cappuccino-light);
   border-radius: 25px;
 }
 
 .villa-title.detail {
   font-size: 2.5rem;
   margin-bottom: 5px;
-  color: var(--espresso);
+  color: var(--creamy-foam);
   text-decoration: none;
 }
 
@@ -157,7 +157,7 @@
 .rooms-section h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: var(--cappuccino-dark);
+  color: var(--cappuccino-light);
 }
 
 .rooms-grid {

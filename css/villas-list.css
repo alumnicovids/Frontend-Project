@@ -7,7 +7,7 @@
   border: 3px solid var(--line-clr);
   border-radius: 50px;
   padding: 15px 25px;
-  color: var(--cappuccino-dark);
+  color: var(--cappuccino-light);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
@@ -16,44 +16,13 @@
 }
 
 #search-input::placeholder {
-  color: var(--espresso);
+  color: var(--creamy-foam);
 }
 
 #search-input:focus {
   border: 3px solid var(--macha);
   box-shadow: 0 8px 32px 0 var(--shadow-soft);
   transform: translateY(-2px);
-}
-
-.no-results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  text-align: center;
-  color: var(--espresso);
-  background: var(--glass-gradient);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border: 1px dashed var(--line-clr);
-  margin: 20px auto;
-  width: 100%;
-}
-
-.no-results::before {
-  content: "search_off";
-  font-family: "Material Symbols Outlined";
-  font-size: 48px;
-  margin-bottom: 15px;
-  opacity: 0.5;
-}
-
-.no-results::after {
-  content: "Try using a different keyword or check your spelling.";
-  font-size: 14px;
-  margin-top: 8px;
-  opacity: 0.6;
 }
 
 /* Grid sistem untuk merapikan daftar villa */
